@@ -6,7 +6,6 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.text :directions
       t.integer :serving
       t.integer :time
-
       t.timestamps
     end
   end
