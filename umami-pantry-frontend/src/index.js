@@ -1,1 +1,2 @@
-console.log('loaded');
+// Instantiate adapter
+const app = new Adapter()
