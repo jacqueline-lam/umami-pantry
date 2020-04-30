@@ -41,6 +41,12 @@ Things you may want to cover:
     2. Your client-side JavaScript code must use `fetch` with the appropriate HTTP verb, and your Rails API should use RESTful conventions.
         1. resource generator - set up with CRUD functionality being RESTful; e.g. post request to `/posts` when you create new post
 
+# Description of app
+* Pantry Recipes packed with a punch of umami
+* Simple pantry ingredients
+* Relatively easy-to-subsitute ingredients
+
+
 ## AJAX Requests - then use serialization process in controller to return associated data
 1. get /recipes (render recipes with selected ingredients) 
 2. get /recipes/:id
