@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_04_29_180940) do
   end
 
   create_table "recipe_ingredients", force: :cascade do |t|
+    t.string "amount"
+    t.string "preparation_method"
     t.bigint "recipe_id", null: false
     t.bigint "ingredient_id", null: false
     t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
