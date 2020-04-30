@@ -47,7 +47,17 @@ Things you may want to cover:
 * Relatively easy-to-subsitute ingredients
 
 # Classes
-* 
+* Ingredient
+  ** name, image_url, category
+* Recipe
+  ** name, image_url, category?, directions, serving, time (int)
+* Adapter (what's going to talk to our backend API)
+* AppContainer
+  ** ingredients: []
+  ** receipes: []
+  ** getRecipes: f
+  ** renderRecipes:f
+  ** recipeResults: {}
 
 
 ## AJAX Requests - then use serialization process in controller to return associated data
