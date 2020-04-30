@@ -46,6 +46,9 @@ Things you may want to cover:
 * Simple pantry ingredients
 * Relatively easy-to-subsitute ingredients
 
+# Classes
+* 
+
 
 ## AJAX Requests - then use serialization process in controller to return associated data
 1. get /recipes (render recipes with selected ingredients) 

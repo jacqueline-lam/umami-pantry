@@ -3,23 +3,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umami Pantry</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Umami Pantry</h1>
-  </header>
+    
+  <div class ="container">
+    <div id="header">
+      <h1>Umami Pantry</h1>
+    </div>
+    
+    <div id="ingredients-container">
+      <!-- Display all ingredients for user selection -->
+    </div>
 
-  <main>
-    <!-- Add our Recipes -->
+    <form id="new-filter-form">
+      <input type="submit" value="What can I cook?">
+    </form>
+  
+    <div id="recipes-container">
+      <!-- Goal of JS: Make requests to backend to get current list of recipes -->
+      <!-- Add our Recipes -->
+      <!-- <div class="card" data-id="1"><p>Recipe #1</p>
+        <button data-trainer-id="1">Add Pokemon</button>
+        <ul>
+          <li>${reciepe_ingredient.amount} ${ingredient.name} <button class="release" data-recipe-id="???">Release</button></li>
+        </ul>
+      </div> -->
+    </div>
 
-    <!-- <div class="card" data-id="1"><p>Recipe #1</p>
-      <button data-trainer-id="1">Add Pokemon</button>
-      <ul>
-        <li>${reciepe_ingredient.amount} ${ingredient.name} <button class="release" data-recipe-id="???">Release</button></li>
-      </ul>
-    </div> -->
-  </main>
-  <script src="src/index.js"></script>
+    <!-- Link JS file to HTML -->
+    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+  </div>
 </body>
 </html>
