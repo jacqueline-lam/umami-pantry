@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 2020_04_29_180940) do
     t.string "name"
     t.string "category"
     t.text "directions"
-    t.integer "serving"
+    t.integer "servings"
     t.integer "time"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
