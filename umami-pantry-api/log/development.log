@@ -932,3 +932,18 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms | Allocations: 734)
 
 
+Started GET "/ingredients" for ::1 at 2020-04-30 19:51:37 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (22.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 86ms (Views: 20.9ms | ActiveRecord: 58.9ms | Allocations: 15635)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-01 01:14:44 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 18.7ms | ActiveRecord: 6.4ms | Allocations: 15609)
+
+

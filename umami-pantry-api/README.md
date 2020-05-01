@@ -45,6 +45,11 @@ Things you may want to cover:
 * Pantry Recipes packed with a punch of umami
 * Simple pantry ingredients
 * Relatively easy-to-subsitute ingredients
+* Freestyle Cooking
+* The world is your oyster, cook creatively with ingredients 
+* tons of overripe bananas but no baking poweder? A half-cup of yogurt and a teaspoon of baking soda. reduce the liquid ingredients by ½ cup to keep everything proportional
+* Self-quarantine recipes - what to cook when you're stuck at home
+
 
 # Classes
 * Ingredient
