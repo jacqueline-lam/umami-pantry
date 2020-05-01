@@ -114,6 +114,10 @@ ingredients.each do |ingredient_data|
   ingredients_hash[ingredient_data[:name]] = Ingredient.new(ingredient_data)
 end
 
+ingredients_hash.values.each do |unsaved_ingredient|
+  save_queue << unsaved_ingredient
+end
+
 # =================== Create Recipe instances ===================
 recipe_data = [
   {
@@ -125,20 +129,19 @@ recipe_data = [
     time: 25,
     ingredients: [
       {
-        item: ingredients_hash[:pasta],
+        item: ingredients_hash['Pasta'],
         amount: '16 ounces',
-        # preparation_method: '',
       },
       {
-        item: ingredients_hash[:butter],
+        item: ingredients_hash['Butter'],
         amount: '6 tbsps',
       },
       {
-        item: ingredients_hash[:miso],
+        item: ingredients_hash['Miso'],
         amount: '3 tbsps',
       },
       {
-        item: ingredients_hash[:parmesan],
+        item: ingredients_hash['Parmesan'],
         amount: '4 ounces',
         preparation_method: 'finely grated (1 packed cup)',
       },
@@ -184,6 +187,7 @@ recipe_data.each do |recipe_item|
     servings: recipe_item[:servings],
     time: recipe_item[:time],
   )
+  save_queue << recipe
 
   # Initialize the RecipeIngredient join table objects
   recipe_item[:ingredients].each do |ingredient_data|
@@ -195,23 +199,15 @@ recipe_data.each do |recipe_item|
     )
     save_queue << ri
   end
-  save_queue << recipe
-end
-
-ingredients_hash.values.each do |unsaved_ingredient|
-  save_queue << unsaved_ingredient
 end
 
 # Transaction block ensures that everything inside the block succeeds or fails transactionally
 # Meaning that it's "all or nothing"
 ActiveRecord::Base.transaction do
-  save_queue.flatten.each do |item_to_be_saved|
-    binding.pry
+  save_queue.flatten.each_with_index do |item_to_be_saved, index|
     item_to_be_saved.save!
   end
 end
-
-
 
 
 # =================== Create RecipeIngredient instances ===================
@@ -221,3 +217,4 @@ end
   # recipe.id
   # ingredient.id
 
+puts "Done seeding!"
