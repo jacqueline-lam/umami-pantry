@@ -26,6 +26,7 @@ bread = { name: "Bread", category: "Grains", image_url:  '<img src="https://img.
 rice_paper = { name: "Rice Paper", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/grains-of-rice.png"/>' }
 oats = { name: "Oats", category: "Grains", image_url: '<img src="https://img.icons8.com/dusk/100/000000/rolled-oats.png"/>' }
 cornflakes = { name: "Cornflakes", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/cereal.png"/>' }
+flour = { name: "Flour", category: "Grains", image_url: '<img src="<img src="https://img.icons8.com/color/100/000000/flour-in-paper-packaging.png"/>' }
 
 chickpeas = { name: "Chickpeas", category: "Beans & Peas", image_url:'<img src="https://static.thenounproject.com/png/1525935-200.png"/>' }
 beans = { name: "Beans", category: "Beans & Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/heinz-beans.png"/>' }
@@ -89,14 +90,23 @@ tofu = { name: "Tofu", category: "Protein Foods", image_url: '<img src="https://
 broth = { name: "Broth", category: "Soup & Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/soup-plate.png"/>' }
 coconut_milk = { name: "Coconut Milk", category: "Soup & Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/coconut-milk.png"/>' }
 miso = {name: 'Miso', category: 'Sauce & Condiments', image_url:'<img src="https://vignette.wikia.nocookie.net/huntcook/images/c/cd/Recipes_-_Miso.png/revision/latest?cb=20160821190307"/>' }
-soy_sauce = {name: 'Soy Sauce', category: 'Sauce & Condiments', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png"/>' }
+soy_sauce = { name: 'Soy Sauce', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png"/>' }
+olive_oil = { name: 'Olive Oil', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/olive-oil.png"/>' }
+salt = { name: 'Salt', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/salt-shaker.png"/>' }
+sugar = { name: 'Sugar', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/sugar.png"/>' }
+baking_soda = { name: 'Baking Soda', category: 'Sauce, Condiments & Additives' }
+vanilla = { name: 'Vanilla', category: 'Sauce, Condiments & Additives' }
+
+red_pepper_flakes = {name: 'Red Pepper Flakes', category: 'Herb & Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/chili-pepper.png"/>' }
+parsley = {name: 'Parsley', category: 'Herb & Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/natural-food.png"/>' }
+
 banana = { name: "Banana", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/banana.png"/>' }
 lemon = { name: "Lemon", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/citrus.png"/>' }
 lime = { name: "Lime", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/lime.png"/>' }
 berries = { name: "Berries", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/blueberry.png"/>' }
 raisin = { name: "Raisin", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/raisins.png"/>' }
 
-ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, cornflakes,
+ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, cornflakes, flour,
   chickpeas, beans, lentils, peas, edamames,
   pistachios, nuts, seeds,
   carrot, sweet_potato, radish, potato, beet, onion, pumpkin_squash, ginger,
@@ -104,7 +114,8 @@ ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, 
   tomato, corn, cauliflower, avocado, brussels_sprout, green_bean, cucumber, cabbage, mushroom, scallion, zucchini, asparagus, celery, bell_pepper,
   milk, butter, cream, yogurt, parmesan,
   egg, beef, bacon, ham, spam, chicken_turkey, salmon, canned_tuna, prawn, anchovy, dumpling, tofu,
-  broth, coconut_milk, miso, soy_sauce,
+  broth, coconut_milk, miso, soy_sauce, olive_oil,
+  red_pepper_flakes, parsley, salt, sugar, baking_soda, vanilla,
   banana, lemon, lime, berries, raisin]
 
 # Store all ingredients inside a hash
@@ -122,8 +133,8 @@ end
 recipe_data = [
   {
     name: 'Five-Ingredient Creamy Miso Pasta',
-    category: 'Italian',
-    directions: "<li><ol>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</ol><ol>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes. Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. (VIGOROUSLY! To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</ol><ol>Divide among shallow bowls and sprinkle with nori or furikake, if using.</ol></li>",
+    category: 'Japanese',
+    directions: "<li><ol>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</ol><ol>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes. Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</ol><ol>Divide among shallow bowls and sprinkle with nori or furikake, if using.</ol></li>",
     image_url: '<img src="https://static01.nyt.com/images/2020/04/17/dining/17help/aw-miso-pasta-articleLarge.jpg"/>',
     servings: 4,
     time: 25,
@@ -148,7 +159,120 @@ recipe_data = [
     ],
   },
   # more recipes here
-  # Aglio e Olio (garlic, olive oil, parsley, and Parmigiano-Reggiano cheese tossed with cooked pasta)
+  {
+    name: 'Aglio e Olio (aka 🧄🧀🍝)',
+    category: 'Italian',
+    directions: "<li><ol>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1 cup pasta water, then drain the pasta.</ol><ol>Add the oil, garlic and red pepper flakes into a large deep pan set over medium-high heat, and cook until the garlic is translucent and golden, 2 to 3 minutes. Add the parsley to the pan, and turn off the heat.</ol><ol>Cool the oil for a couple of minutes, add 1/2 cup of the pasta cooking water, and reduce over high heat by about half.</ol><ol>Add the pasta, and stir vigorously as it continues to cook. Add the reserved pasta water a bit at a time as necessary to finish cooking the pasta, and develop the thickened sauce.</ol><ol>Add the parmesan and toss well. Season with salt, and serve.</ol></li>",
+    image_url: '<img src="https://static01.nyt.com/images/2015/03/22/magazine/22eat5pepperoncini/22eat5pepperoncini-articleLarge.jpg"/>',
+    servings: 4,
+    time: 20,
+    ingredients: [
+      {
+        item: ingredients_hash['Pasta'],
+        amount: '1 pound'
+      },
+      {
+        item: ingredients_hash['Salt'],
+      },
+      {
+        item: ingredients_hash['Red Pepper Flakes'],
+        amount: '1/2 tsps',
+      },
+      {
+        item: ingredients_hash['Garlic'],
+        amount: '5 cloves',
+        preparation_method: 'thinly sliced'
+      },
+      {
+        item: ingredients_hash['Olive Oil'],
+        amount: '2/3 cup',
+      },
+      {
+        item: ingredients_hash['Parsley'],
+        amount: '1/4 cup',
+        preparation_method: 'finely chopped',
+      },
+      {
+        item: ingredients_hash['Parmsean'],
+        amount: '1 cup',
+        preparation_method: 'freshly grated, plus extra for serving',
+      },
+    ],
+  },
+  {
+    name: 'Banana bread (because everyone is baking)',
+    category: 'Pastries',
+    directions: "<li><ol>Remove odd pots and pans from oven</ol><ol>Preheat oven to 350º / 180º.</ol><ol>Cream together butter and sugar.</ol><ol>Add eggs and crushed bananas. Combine well</ol><ol>Sift together flour, soda and salt. Add to creamed mixture. Add vanilla.</ol><ol>Mix just until combined. Do not overmix.</ol><ol>Pour into greased and floured loaf pan.</ol><ol>Bake at 350º / 180º for 55 minutes.</ol><ol>Keeps well, refrigerated.</ol></li>",
+    image_url: '<img src="https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_721,h_406/v1/img/recipes/28/86/wBZxNua1T8yfDwbfo9Fz_0S9A9315.jpg"/>',
+    servings: 10,
+    time: 65,
+    ingredients: [
+      {
+        item: ingredients_hash['Butter'],
+        amount: '1/2 cup',
+        preparation_method: 'softened and at room temperature'
+      },
+      {
+        item: ingredients_hash['Sugar'],
+        amount: '1 cup',
+        preparation_method: 'granulated'
+      },
+      {
+        item: ingredients_hash['Egg'],
+        amount: '2',
+        preparation_method: 'beaten'
+      },
+      {
+        item: ingredients_hash['Flour'],
+        amount: '2 cups',
+        preparation_method: 'All-purpose or whole-wheat'
+      },
+      {
+        item: ingredients_hash['Banana'],
+        amount: '3',
+        preparation_method: 'finely crushed (for extremely moist and delicious, try 4 bananas)'
+      },
+      {
+        item: ingredients_hash['Baking Soda'],
+        amount: '1 tsp',
+      },
+      {
+        item: ingredients_hash['Salt'],
+        amount: '1/2 tsp',
+      },
+      {
+        item: ingredients_hash['Vanilla Extract'],
+        amount: '1/2 tsp',
+        preparation_method: 'optional'
+      },
+    ],
+  },
+  # {
+  #   name: 'CYO Stir Fry Noodles',
+  #   category: 'Chinese',
+  #   directions: "<li><ol></ol><ol></ol><ol></ol><ol></ol><ol></ol><ol></ol><ol</ol><ol></ol></li>",
+  #   image_url: '<img src=""/>',
+  #   servings: 4,
+  #   time: 30,
+  #   ingredients: [
+  #     {
+  #       item: ingredients_hash['Butter'],
+  #       amount: '1/2 cup',
+  #       preparation_method: 'softened and at room temperature'
+  #     },
+  #     {
+  #       item: ingredients_hash['Sugar'],
+  #       amount: '1 cup',
+  #       preparation_method: 'granulated'
+  #     },
+  #     {
+  #       item: ingredients_hash['Egg'],
+  #       amount: '2',
+  #       preparation_method: 'beaten'
+  #     },
+  #   ],
+  # },
+
   # Banana bread
   # Fluffiest Banana Oat Pancakes
   # CYO Fried Rice
@@ -175,6 +299,7 @@ recipe_data = [
   # Cereal ice cream
   # Cornflakes Cookies
   # Chickpea sandwich
+  # One-pot braised chicken + tofu
 ]
 
 recipe_data.each do |recipe_item|
@@ -208,7 +333,6 @@ ActiveRecord::Base.transaction do
     item_to_be_saved.save!
   end
 end
-
 
 # =================== Create RecipeIngredient instances ===================
 # Create recipe_ingredient instances to enable the many-to-many relationship
