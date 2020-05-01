@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
       # include - API to send a resource's data along with its associated resources' data
       render json: recipe.to_json(include: {
         ingredients: { only: :name },
-        recipe_ingredients: { only: [:amount, :preparation_method] }
+        recipe_ingredients: { only: [:ingredient_id, :amount, :preparation_method] }
       }, except: [:created_at, :updated_at])
     else
       render json: { message: 'Recipe not found.' }

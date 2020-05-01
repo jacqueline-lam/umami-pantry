@@ -8,9 +8,9 @@
 
 # Don't let seed duplicate data more than once
 puts "Dropping DB..."
-Ingredient.delete_all
-Recipe.delete_all
-RecipeIngredient.delete_all
+RecipeIngredient.destroy_all
+Ingredient.destroy_all
+Recipe.destroy_all
 
 save_queue = []
 
@@ -44,6 +44,7 @@ radish = { name: "Radish", category: "Other Vegetables", image_url: '<img src="h
 potato = { name: "Potato", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/potato.png"/>' }
 beet = { name: "Beet", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/beet.png"/>' }
 onion = { name: "Onion", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/onion.png"/>' }
+garlic = { name: "Garlic", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/garlic.png"/>' }
 pumpkin_squash = { name: "Pumpkin or Squash", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/pumpkin.png"/>' }
 ginger = { name: "Ginger", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/ginger.png"/>' }
 
@@ -109,7 +110,7 @@ raisin = { name: "Raisin", category: "Fruits", image_url: '<img src="https://img
 ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, cornflakes, flour,
   chickpeas, beans, lentils, peas, edamames,
   pistachios, nuts, seeds,
-  carrot, sweet_potato, radish, potato, beet, onion, pumpkin_squash, ginger,
+  carrot, sweet_potato, radish, potato, beet, onion, garlic, pumpkin_squash, ginger,
   spinach, kale, broccoli, bok_choy, mesclun,
   tomato, corn, cauliflower, avocado, brussels_sprout, green_bean, cucumber, cabbage, mushroom, scallion, zucchini, asparagus, celery, bell_pepper,
   milk, butter, cream, yogurt, parmesan,
@@ -193,7 +194,7 @@ recipe_data = [
         preparation_method: 'finely chopped',
       },
       {
-        item: ingredients_hash['Parmsean'],
+        item: ingredients_hash['Parmesan'],
         amount: '1 cup',
         preparation_method: 'freshly grated, plus extra for serving',
       },
@@ -238,10 +239,10 @@ recipe_data = [
       },
       {
         item: ingredients_hash['Salt'],
-        amount: '1/2 tsp',
+        amount: '1/2 tsp'
       },
       {
-        item: ingredients_hash['Vanilla Extract'],
+        item: ingredients_hash['Vanilla'],
         amount: '1/2 tsp',
         preparation_method: 'optional'
       },
