@@ -14,11 +14,17 @@ class Adapter {
   // make a fetch request to recipesUrl
   // once we get back a resp, parse JSON from response
   // fetch return Promise and if resolved, do next then until we get a JSON representation of our ingredients
+
+  // fetch returns an object that represents what the api sent back
+  // call .then on returned obj
   getIngredients() {
-    return fetch(this.recipesUrl)
+    return fetch(this.ingredientsUrl)
       .then(resp => resp.json())
       .then(data => console.log(data))
       .catch(err => alert(err))
+  }
+  renderIngredients(){
+
   }
 
   getRecipes(){
@@ -26,9 +32,13 @@ class Adapter {
     // populate recipe and ingredient properties with returned data
       // temporarily persisting to propetrties in container instances
     // call renderRecipes - DOM manipulation via render activities
+    return fetch(this.recipesUrl)
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+    .catch(err => alert(err))
   }
 
-  getRecipes(){
+  renderRecipes(){
     //create DOM nodes and insert data into them to render in the DOM
   }
 }
