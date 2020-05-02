@@ -3029,3 +3029,52 @@ puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
   [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 17], ["LIMIT", 11]]
   [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 17]]
+Started GET "/ingredients" for ::1 at 2020-05-01 19:08:25 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 1.2ms | Allocations: 11769)
+
+
+Started GET "/" for ::1 at 2020-05-01 19:09:20 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jackie.lam/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jackie.lam/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.3ms | Allocations: 201)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 867)
+
+
+Started GET "/" for ::1 at 2020-05-01 19:29:16 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jackie.lam/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jackie.lam/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.2ms | Allocations: 191)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 724)
+
+
+Started GET "/" for ::1 at 2020-05-01 19:59:09 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jackie.lam/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jackie.lam/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 235)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-01 19:59:21 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (4.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 34.0ms | ActiveRecord: 4.2ms | Allocations: 11766)
+
+
+Started GET "//recipes" for ::1 at 2020-05-01 20:18:16 -0400
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 1.0ms | Allocations: 1489)
+
+
+Started GET "//recipes" for ::1 at 2020-05-01 20:25:15 -0400
+Processing by RecipesController#index as */*
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.0ms | Allocations: 1486)
+
+
