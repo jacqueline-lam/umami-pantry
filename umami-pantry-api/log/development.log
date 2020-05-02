@@ -3141,3 +3141,236 @@ Processing by IngredientsController#index as */*
 Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 1.3ms | Allocations: 11710)
 
 
+Started GET "//ingredients" for ::1 at 2020-05-02 02:52:08 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (2.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 2.6ms | Allocations: 11771)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 03:28:44 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 1.5ms | Allocations: 11768)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 03:31:56 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 1.0ms | Allocations: 11710)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 03:32:50 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.7ms | Allocations: 11710)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:09:25 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 2.5ms | Allocations: 11766)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:12:20 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 16.4ms | ActiveRecord: 7.2ms | Allocations: 16738)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:12:25 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 16.7ms | ActiveRecord: 7.3ms | Allocations: 16626)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:13:03 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 3.6ms | Allocations: 16627)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:13:09 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 41ms (Views: 34.3ms | ActiveRecord: 3.9ms | Allocations: 16661)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:14:54 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 28ms (Views: 19.1ms | ActiveRecord: 5.4ms | Allocations: 14211)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-02 16:15:31 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 977]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 978]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 979]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 980]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 981]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 982]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 983]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 984]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 985]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 986]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 987]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 988]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 989]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 990]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 991]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 992]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 993]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 994]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 995]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 996]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 997]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 998]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 999]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1000]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1001]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1002]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1003]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1004]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1005]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1006]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1007]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1008]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1009]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1010]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1011]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1012]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1013]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1014]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1015]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1016]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1017]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1018]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1019]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1020]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1021]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1022]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1023]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1024]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1025]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1026]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1027]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1028]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1029]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1030]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1031]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1032]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1033]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1034]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1035]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1036]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1037]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1038]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1039]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1040]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1041]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1042]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1043]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1044]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1045]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1046]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1047]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1048]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1049]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1050]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1051]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1052]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1053]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipes"."id" = "recipe_ingredients"."recipe_id" WHERE "recipe_ingredients"."ingredient_id" = $1[0m  [["ingredient_id", 1054]]
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 206ms (Views: 172.3ms | ActiveRecord: 30.7ms | Allocations: 113604)
+
+

@@ -4,4 +4,6 @@ class Ingredient {
     this.imageUrl = imageUrl
     this.category = category
   }
+
+  // fetchAndLoadIngredients() {}
 }

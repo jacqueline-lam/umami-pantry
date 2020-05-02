@@ -7,7 +7,7 @@ class Adapter {
     this.ingredientsUrl = `${baseUrl}/ingredients`;
     this.recipesUrl = `${baseUrl}/recipes`;
   }
-  ingredients = [];
+  static ingredients = [];
   categories = [];
   recipeResults = {};
 
@@ -15,12 +15,17 @@ class Adapter {
   bindEventListeners() {
     // push ingredient_id to an array when ingredient is clicked
     const btn = document.getElementById('createRecipesBtn');
-    btn.addEventListener('click', getMatchingRecipes)
+    btn.addEventListener('click', getMatchingRecipes);
     // generate recipe results when button is clicked
   };
 
   getMatchingRecipes() {
-    console.log('find a way to get recipes!')
+    // getch request to /recipes
+    console.log(this);
+    return fetch(this.RecipesUrl)
+      .then(resp => resp.json())
+      .then(IngredientsData => console.log(data))
+      .catch(err => alert(err));
   }
 
 
@@ -33,7 +38,7 @@ class Adapter {
   getIngredients() {
     return fetch(this.ingredientsUrl)
       .then(resp => resp.json())
-      .then(data => console.log(data))
+      .then(IngredientsData => console.log(data))
       .catch(err => alert(err));
   };
 

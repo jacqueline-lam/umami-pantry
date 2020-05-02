@@ -2,7 +2,8 @@ class RecipesController < ApplicationController
   def index
     # Render json (js format used by AJAX lib)
       # convert objects from ORM to JSON and render JSON back to browser
-    render json: Recipe.all
+    recipes = Recipe.all
+    render json: recipes, except: [:created_at, :updated_at]
   end
 
   def show
