@@ -12,12 +12,16 @@ class Adapter {
   recipeResults = {};
 
   // Manage event listeners
-  bindEventListeners(){
+  bindEventListeners() {
     // push ingredient_id to an array when ingredient is clicked
     const btn = document.getElementById('createRecipesBtn');
-    debugger
+    btn.addEventListener('click', getMatchingRecipes)
     // generate recipe results when button is clicked
   };
+
+  getMatchingRecipes() {
+    console.log('find a way to get recipes!')
+  }
 
 
   // make a fetch request to ingredientsUrl
@@ -33,11 +37,11 @@ class Adapter {
       .catch(err => alert(err));
   };
 
-  renderIngredients(){
+  renderIngredients() {
     //create DOM nodes and insert data into them to render in the DOM
   };
 
-  getRecipes(){
+  getRecipes() {
     // make a fetch request to /recipes
     // populate recipe and ingredient properties with returned data
       // temporarily persisting to propetrties in container instances
@@ -48,7 +52,7 @@ class Adapter {
     .catch(err => alert(err));
   }
 
-  renderRecipes(){
+  renderRecipes() {
     //create DOM nodes and insert data into them to render in the DOM
   };
 };

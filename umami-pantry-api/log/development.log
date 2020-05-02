@@ -3120,3 +3120,24 @@ Processing by IngredientsController#index as */*
 Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 1.1ms | Allocations: 11768)
 
 
+Started GET "//ingredients" for ::1 at 2020-05-02 02:32:32 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 1.7ms | Allocations: 11768)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 02:32:33 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 1.9ms | Allocations: 11710)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 02:32:37 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 1.3ms | Allocations: 11710)
+
+
