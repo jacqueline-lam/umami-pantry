@@ -3,15 +3,24 @@
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000/') {
-    this.baseUrl = 'http://localhost:3000/'
-    this.ingredientsUrl = `${baseUrl}/ingredients`
-    this.recipesUrl = `${baseUrl}/recipes`
+    this.baseUrl = 'http://localhost:3000/';
+    this.ingredientsUrl = `${baseUrl}/ingredients`;
+    this.recipesUrl = `${baseUrl}/recipes`;
   }
-  ingredients = []
-  categories = []
-  recipeResults = {}
+  ingredients = [];
+  categories = [];
+  recipeResults = {};
 
-  // make a fetch request to recipesUrl
+  // Manage event listeners
+  bindEventListeners(){
+    // push ingredient_id to an array when ingredient is clicked
+    const btn = document.getElementById('createRecipesBtn');
+    debugger
+    // generate recipe results when button is clicked
+  };
+
+
+  // make a fetch request to ingredientsUrl
   // once we get back a resp, parse JSON from response
   // fetch return Promise and if resolved, do next then until we get a JSON representation of our ingredients
 
@@ -21,11 +30,12 @@ class Adapter {
     return fetch(this.ingredientsUrl)
       .then(resp => resp.json())
       .then(data => console.log(data))
-      .catch(err => alert(err))
-  }
-  renderIngredients(){
+      .catch(err => alert(err));
+  };
 
-  }
+  renderIngredients(){
+    //create DOM nodes and insert data into them to render in the DOM
+  };
 
   getRecipes(){
     // make a fetch request to /recipes
@@ -35,13 +45,13 @@ class Adapter {
     return fetch(this.recipesUrl)
     .then(resp => resp.json())
     .then(data => console.log(data))
-    .catch(err => alert(err))
+    .catch(err => alert(err));
   }
 
   renderRecipes(){
     //create DOM nodes and insert data into them to render in the DOM
-  }
-}
+  };
+};
 
 // call method to get particular notes from db and return it
 // const ingredients = app.getIngredients()

@@ -8,6 +8,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
+    # tell API to expect requests from these origins
     origins '*'
 
     resource '*',

@@ -3078,3 +3078,45 @@ Processing by RecipesController#index as */*
 Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.0ms | Allocations: 1486)
 
 
+Started GET "//ingredients" for ::1 at 2020-05-02 01:03:05 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (2.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 2.8ms | Allocations: 11776)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 01:56:25 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (7.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 59.7ms | ActiveRecord: 7.0ms | Allocations: 11771)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 01:56:31 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (11.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 53ms (Views: 41.0ms | ActiveRecord: 11.2ms | Allocations: 11710)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 02:04:23 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 1.8ms | Allocations: 11768)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 02:04:37 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 1.4ms | Allocations: 11710)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 02:10:45 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 1.1ms | Allocations: 11768)
+
+
