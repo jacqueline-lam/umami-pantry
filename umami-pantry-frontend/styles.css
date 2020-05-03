@@ -1,0 +1,22 @@
+div.ingredientCard {
+  /* background-color: #eeeeee;
+  height: 250px;
+  width: 300px;
+  box-shadow: 10px 10px grey;
+  padding: 10px;
+  border-radius: 10px; */
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+  display: inline-block; /*inline-grid*/
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #FF5733;
+  border-radius: 10px;
+}
+
+img.ingredientImg {
+  width: 100px;
+  height: 100px;
+}

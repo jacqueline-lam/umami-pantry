@@ -1,5 +1,8 @@
 // rename to AppContainer?
 // serves as in browser data storage system
+const ingredientBtn = document.getElementById('getIngredientsBtn');
+const ingredientsContainer = document.getElementById('ingredientsContainer');
+const categoryContainers = document.getElementsByClassName('categoryContainer');
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -11,46 +14,51 @@ class Adapter {
   categories = [];
   recipeResults = {};
 
-  ingredientBtn = document.getElementById('getIngredientsBtn');
-  ingredientsContainer = document.getElementById('ingredientsContainer');
-
   // Manage event listeners
   bindEventListeners() {
     // push ingredient_id to an array when ingredient is clicked
     // const btn = document.getElementById('createRecipesBtn');
     // btn.addEventListener('click', getMatchingRecipes);
     // generate recipe results when button is clicked
-    ingredientBtn.addEventListener('click', this.getIngredients);
+
+    // ingredientBtn.addEventListener('click', this.getIngredients);
   };
 
 
   // make a fetch request to ingredientsUrl
   getIngredients() {
-    const categories = ['Grains', 'Protein_Foods','Beans_and_Peas', 'Nuts_and_Seeds', 'Root_Vegetables', 'Dark_Green_Vegetables', 'Other_Vegetables', 'Dairy', 'Soup_and_Broth', 'Fruits', 'Sauce,_Condiments_and_Additives', 'Herb_and_Spices']
+    const categories = ['Grains', 'Protein_Foods','Beans_and_Peas', 'Nuts_and_Seeds', 'Root_Vegetables', 'Dark_Green_Vegetables', 'Other_Vegetables', 'Dairy', 'Soup_and_Broth', 'Fruits', 'Additives', 'Herb_and_Spices'];
 
     categories.forEach(category => {
     // fetch returns Promise representing what the api sent back
     // call .then on returned obj -> get resp, parse JSON rep of ingredients from resp
-      return fetch(`http://localhost:3000/ingredients?category=${category}`).then(resp => resp.json())
-        .then(ingredientsData => {
-          ingredientsData.forEach(ingredient => {
-            const i = `${ingredient.name}: ${ingredient.category}\n`;
-            console.log(`${ingredient.name}: ${ingredient.category}`);
-            ingredientsContainer.innerHTML += i;
-          });
-        }).catch(err => alert(err));
-      }
-  })
+      fetch(`http://localhost:3000/categorized_ingredients?category=${category}`)
+        .then(resp => resp.json())
+        .then(ingredientsData => this.renderIngredients(category, ingredientsData))
+        .catch(err => alert(err));
+    })
+  };
 
-  renderIngredients(ingredientsData) {
-    //create DOM nodes and insert data into them to render in the DOM
-    console.log(typeof ingredientsData);
+  // display ingredients by categories
+  renderIngredients(category, ingredientsData) {
+    //create DOM nodes, insert data into them to render in the DOM
+      // g flag of regular expression -> indicates global search and replace
+    const formattedCategory = category.toLowerCase().replace(new RegExp('_', 'g'), '-');
+    const categoryContainer = document.getElementById(formattedCategory);
+
     ingredientsData.forEach(ingredient => {
-      console.log(ingredient);
+      new Ingredient(ingredient.name, ingredient.image_url, ingredient.category);
 
+      let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
+      ingredientCard.className = 'ingredientCard'
+      const ingredientName = `<h4>${ingredient.name}</h4>`;
+      let ingredientImg = ingredient.image_url;
+      console.log(ingredientName);
+      console.log(ingredientImg);
+      // ingredientImg.className = 'ingredient-img';
+      ingredientCard.innerHTML += ingredientName;
+      ingredientCard.innerHTML += ingredientImg;
     });
-    // display ingredients by categoroes
-    // let IgredientCard = document.createElement('div #ingredient-card');
   };
 
   getRecipes() {
@@ -62,22 +70,21 @@ class Adapter {
     .then(resp => resp.json())
     .then(data => console.log(data))
     .catch(err => alert(err));
-  }
+  };
 
   renderRecipes() {
     //create DOM nodes and insert data into them to render in the DOM
   };
+
+  getMatchingRecipes() {
+    // getch request to /recipes
+    console.log(this);
+    return fetch(this.RecipesUrl)
+      .then(resp => resp.json())
+      .then(IngredientsData => console.log(data))
+      .catch(err => alert(err));
+  };
 };
-
-getMatchingRecipes() {
-  // getch request to /recipes
-  console.log(this);
-  return fetch(this.RecipesUrl)
-    .then(resp => resp.json())
-    .then(IngredientsData => console.log(data))
-    .catch(err => alert(err));
-}
-
 // call method to get particular notes from db and return it
 // const ingredients = app.getIngredients()
 
