@@ -12,7 +12,7 @@ class Ingredient < ApplicationRecord
   #   other_veg: 'Other Vegetables',
   #   dairy: 'Dairy',
   #   broth: 'Soup & Broth',
-  #   fruits: 'fruits'
+  #   fruits: 'Fruits'
   #   additives: 'Sauce, Condiments & Additives',
   #   herb_spice: 'Herb & Spices',
   # }

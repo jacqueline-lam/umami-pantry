@@ -12,9 +12,23 @@
       <h1>Umami Pantry</h1>
     </div>
 
+    <button id="getIngredientsBtn">Show all ingredients</button>
+
     <div id="ingredientsContainer">
       <!-- Display all ingredients for user selection -->
       <!-- div to wrap around each ingredient category -->
+      <div class='categoryContainer' id='grains'></div>
+      <div class='categoryContainer' id='protein'></div>
+      <div class='categoryContainer' id='beans'></div>
+      <div class='categoryContainer' id='nuts-seeds'></div>
+      <div class='categoryContainer' id='root-vegetables'></div>
+      <div class='categoryContainer' id='dark-green-veg'></div>
+      <div class='categoryContainer' id='other-veg'></div>
+      <div class='categoryContainer' id='dairy'></div>
+      <div class='categoryContainer' id='soup-broth'></div>
+      <div class='categoryContainer' id='fruits'></div>
+      <div class='categoryContainer' id='additives'></div>
+      <div class='categoryContainer' id='herb-spices'></div>
         <!-- div to wrap around each ingredient card -->
         <!-- <div class="ingredientCard" data-id="1"> -->
           <!-- <img class="ingredientImg" src="..."><p>Ingredient #1</p> -->
@@ -26,8 +40,6 @@
       <!-- Trigger fetch request -->
       <button id="createRecipesBtn">What can I cook?</button>
     </div>
-
-    <button id="getIngredientsBtn">Get me all ingredients</button>
 
     <div id="recipesContainer">
       <!-- Goal of JS: Make requests to backend to get current list of recipes -->

@@ -2,9 +2,6 @@
 // serves as in browser data storage system
 
 class Adapter {
-// here
-
-
   constructor(baseUrl='http://localhost:3000') {
     this.baseUrl = 'http://localhost:3000';
     this.ingredientsUrl = `${baseUrl}/categorized_ingredients`;
@@ -14,45 +11,36 @@ class Adapter {
   categories = [];
   recipeResults = {};
 
+  ingredientBtn = document.getElementById('getIngredientsBtn');
+  ingredientsContainer = document.getElementById('ingredientsContainer');
+
   // Manage event listeners
   bindEventListeners() {
     // push ingredient_id to an array when ingredient is clicked
     // const btn = document.getElementById('createRecipesBtn');
     // btn.addEventListener('click', getMatchingRecipes);
     // generate recipe results when button is clicked
-
-    const ingredientBtn = document.getElementById('getIngredientsBtn');
     ingredientBtn.addEventListener('click', this.getIngredients);
-
-    const ingredientsContainer = document.getElementById('ingredientsContainer');
   };
-
-  getMatchingRecipes() {
-    // getch request to /recipes
-    console.log(this);
-    return fetch(this.RecipesUrl)
-      .then(resp => resp.json())
-      .then(IngredientsData => console.log(data))
-      .catch(err => alert(err));
-  }
 
 
   // make a fetch request to ingredientsUrl
+  getIngredients() {
+    const categories = ['Grains', 'Protein_Foods','Beans_and_Peas', 'Nuts_and_Seeds', 'Root_Vegetables', 'Dark_Green_Vegetables', 'Other_Vegetables', 'Dairy', 'Soup_and_Broth', 'Fruits', 'Sauce,_Condiments_and_Additives', 'Herb_and_Spices']
 
-  // fetch returns an object that represents what the api sent back
-  // call .then on returned obj
-  getIngredients(category) {
-    // once we get back a resp, parse JSON from response
-    // fetch return Promise - if resolved, do next then until we get a JSON representation of our ingredients
-    return fetch(`http://localhost:3000/ingredients?category=${category}`).then(resp => resp.json())
-      .then(ingredientsData => {
-        ingredientsData.forEach(ingredient => {
-          const i = `${ingredient.name}: ${ingredient.category}\n`;
-          console.log(`${ingredient.name}: ${ingredient.category}`);
-          document.getElementById('ingredientsContainer').innerHTML += i;
-        });
-      }).catch(err => alert(err));
-  };
+    categories.forEach(category => {
+    // fetch returns Promise representing what the api sent back
+    // call .then on returned obj -> get resp, parse JSON rep of ingredients from resp
+      return fetch(`http://localhost:3000/ingredients?category=${category}`).then(resp => resp.json())
+        .then(ingredientsData => {
+          ingredientsData.forEach(ingredient => {
+            const i = `${ingredient.name}: ${ingredient.category}\n`;
+            console.log(`${ingredient.name}: ${ingredient.category}`);
+            ingredientsContainer.innerHTML += i;
+          });
+        }).catch(err => alert(err));
+      }
+  })
 
   renderIngredients(ingredientsData) {
     //create DOM nodes and insert data into them to render in the DOM
@@ -68,7 +56,7 @@ class Adapter {
   getRecipes() {
     // make a fetch request to /recipes
     // populate recipe and ingredient properties with returned data
-      // temporarily persisting to propetrties in container instances
+    // temporarily persisting to propetrties in container instances
     // call renderRecipes - DOM manipulation via render activities
     return fetch(this.recipesUrl)
     .then(resp => resp.json())
@@ -80,6 +68,15 @@ class Adapter {
     //create DOM nodes and insert data into them to render in the DOM
   };
 };
+
+getMatchingRecipes() {
+  // getch request to /recipes
+  console.log(this);
+  return fetch(this.RecipesUrl)
+    .then(resp => resp.json())
+    .then(IngredientsData => console.log(data))
+    .catch(err => alert(err));
+}
 
 // call method to get particular notes from db and return it
 // const ingredients = app.getIngredients()
