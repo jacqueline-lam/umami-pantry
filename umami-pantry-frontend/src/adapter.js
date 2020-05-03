@@ -51,7 +51,7 @@ class Adapter {
 
       let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
       ingredientCard.className = 'ingredientCard'
-      const ingredientName = `<h4>${ingredient.name}</h4>`;
+      const ingredientName = `<p>${ingredient.name}</p>`;
       let ingredientImg = ingredient.image_url;
       console.log(ingredientName);
       console.log(ingredientImg);

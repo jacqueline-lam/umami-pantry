@@ -1,3 +1,13 @@
+/* Fonts
+----------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+.container{
+  width: auto;
+  font-family: 'Rubik', sans-serif;
+}
+
 div.ingredientCard {
   /* background-color: #eeeeee;
   height: 250px;
@@ -7,16 +17,25 @@ div.ingredientCard {
   border-radius: 10px; */
   text-align: center;
   border: grey solid 1px;
-  padding: 1rem;
-  width: 150px;
-  height: 150px;
+  padding: 10px;
+  width: 130px;
+  height: 130px;
   display: inline-block; /*inline-grid*/
-  margin: 1rem 2rem;
+  margin: 10px;
   box-shadow: 3px 4px #FF5733;
   border-radius: 10px;
 }
 
+div.categoryContainer{
+  padding-top: 50px;
+}
+
+div.ingredientCard {
+  padding: 5px;
+  font-size: 13px;
+}
+
 img.ingredientImg {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
 }
