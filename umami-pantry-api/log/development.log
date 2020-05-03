@@ -3374,3 +3374,232 @@ Processing by IngredientsController#index as HTML
 Completed 200 OK in 206ms (Views: 172.3ms | ActiveRecord: 30.7ms | Allocations: 113604)
 
 
+Started GET "/ingredients" for ::1 at 2020-05-02 16:18:00 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 44ms (Views: 36.0ms | ActiveRecord: 4.5ms | Allocations: 14245)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 16:47:49 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 1.5ms | Allocations: 9352)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 16:50:12 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 1.6ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-02 21:12:35 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 38ms (Views: 32.7ms | ActiveRecord: 1.6ms | Allocations: 9352)
+
+
+  [1m[35m (29.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients"[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+Started GET "//ingredients" for ::1 at 2020-05-03 00:02:16 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 1.1ms | Allocations: 14087)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:02:48 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (40.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 62ms (Views: 21.2ms | ActiveRecord: 40.4ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:03:14 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (6.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 28ms (Views: 21.7ms | ActiveRecord: 6.1ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:03:28 -0400
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (15.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 30ms (Views: 14.3ms | ActiveRecord: 15.6ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:08:20 -0400
+Processing by IngredientsController#get_ingredients as */*
+Completed 204 No Content in 63690ms (ActiveRecord: 0.0ms | Allocations: 17102)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:11:00 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 96ms (Views: 57.7ms | ActiveRecord: 28.2ms | Allocations: 14267)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:11:10 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (2.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 2.9ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:11:28 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (11.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 31ms (Views: 19.1ms | ActiveRecord: 11.4ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:11:33 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (261.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 282ms (Views: 20.4ms | ActiveRecord: 261.7ms | Allocations: 9294)
+
+
+Started GET "//ingredients" for ::1 at 2020-05-03 00:12:00 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.9ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:19:04 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 1.0ms | Allocations: 9352)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:19:21 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 1.2ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:20:46 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.7ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:21:37 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.8ms | Allocations: 9297)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:23:21 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.7ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:25:29 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:25:56 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.8ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:26:08 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (4.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 4.9ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:26:16 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.7ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:26:19 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.9ms | Allocations: 9294)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:29:12 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:13:in `get_ingredients'
+Completed 200 OK in 13847ms (Views: 21.8ms | ActiveRecord: 15.5ms | Allocations: 21554)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 00:29:31 -0400
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:13:in `get_ingredients'
+Completed 200 OK in 7602ms (Views: 10.0ms | ActiveRecord: 1.1ms | Allocations: 16402)
+
+
+Started GET "/ingredients?category=Protein_Foods" for ::1 at 2020-05-03 00:35:38 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (3.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:13:in `get_ingredients'
+Completed 200 OK in 659694ms (Views: 25.8ms | ActiveRecord: 3.5ms | Allocations: 36934)
+
+
+Started GET "/ingredients?category=Protein_Foods" for ::1 at 2020-05-03 00:46:42 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 40ms (Views: 20.6ms | ActiveRecord: 10.8ms | Allocations: 7236)
+
+
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (1.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+DEPRECATION WARNING: SourceAnnotationExtractor is deprecated! Use Rails::SourceAnnotationExtractor instead. (called from <main> at /Users/jackie.lam/Projects/umami-pantry/umami-pantry-api/bin/rails:9)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]

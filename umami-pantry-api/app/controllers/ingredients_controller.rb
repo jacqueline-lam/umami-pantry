@@ -6,4 +6,10 @@ class IngredientsController < ApplicationController
     ingredients = Ingredient.all
     render json: ingredients, except: [:created_at, :updated_at]
   end
+
+  def get_ingredients
+    category = params[:category].gsub('_', ' ')
+    ingredients = Ingredient.where(category: category)
+    render json: ingredients, except: [:created_at, :updated_at]
+  end
 end

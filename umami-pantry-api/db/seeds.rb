@@ -28,15 +28,15 @@ oats = { name: "Oats", category: "Grains", image_url: '<img src="https://img.ico
 cornflakes = { name: "Cornflakes", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/cereal.png"/>' }
 flour = { name: "Flour", category: "Grains", image_url: '<img src="<img src="https://img.icons8.com/color/100/000000/flour-in-paper-packaging.png"/>' }
 
-chickpeas = { name: "Chickpeas", category: "Beans & Peas", image_url:'<img src="https://static.thenounproject.com/png/1525935-200.png"/>' }
-beans = { name: "Beans", category: "Beans & Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/heinz-beans.png"/>' }
-lentils = { name: "Lentils", category: "Beans & Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/lentil.png"/>' }
-peas = { name: "Peas", category: "Beans & Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/peas.png"/>' }
-edamames = { name: "Edamames", category: "Beans & Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/soy.png"/>' }
+chickpeas = { name: "Chickpeas", category: "Beans and Peas", image_url:'<img src="https://static.thenounproject.com/png/1525935-200.png"/>' }
+beans = { name: "Beans", category: "Beans and Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/heinz-beans.png"/>' }
+lentils = { name: "Lentils", category: "Beans and Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/lentil.png"/>' }
+peas = { name: "Peas", category: "Beans and Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/peas.png"/>' }
+edamames = { name: "Edamames", category: "Beans and Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/soy.png"/>' }
 
-pistachios = { name: "Pistachios", category: "Nuts & Seeds", image_url: '<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSItOTEgMCA1MTIgNTEyLjAwMDc4IiB3aWR0aD0iNTEycHgiPjxwYXRoIGQ9Im0xNjUuMjQyMTg4IDUxMmMtMzguNjc5Njg4IDAtNzMuMTQ4NDM4LTIwLjIyMjY1Ni05Ny4wNjY0MDctNTYuOTQ1MzEyLTI0LjQ4ODI4MS0zNy42MDE1NjMtMzcuNDMzNTkzLTkxLjUzMTI1LTM3LjQzMzU5My0xNTUuOTYwOTM4IDAtNjAuNTkzNzUgMTYuNzk2ODc0LTEzMC41ODk4NDQgNDYuMDc4MTI0LTE5Mi4wNDI5NjkgMTIuODI0MjE5LTI2LjkxNzk2OSAyNy4wOTc2NTctNTAgNDEuMjc3MzQ0LTY2Ljc1NzgxMiAxNi42OTkyMTktMTkuNzM0Mzc1IDMyLjU2MjUtMjkuNzQyMTg4IDQ3LjE0NDUzMi0yOS43NDIxODggMTQuNTc4MTI0IDAgMzAuNDQxNDA2IDEwLjAwNzgxMyA0Ny4xNDQ1MzEgMjkuNzQyMTg4IDE0LjE3NTc4MSAxNi43NTM5MDYgMjguNDQ5MjE5IDM5LjgzOTg0MyA0MS4yNzM0MzcgNjYuNzU3ODEyIDI5LjI4NTE1NiA2MS40NTMxMjUgNDYuMDc4MTI1IDEzMS40NDkyMTkgNDYuMDc4MTI1IDE5Mi4wNDI5NjkgMCA2NC40Mjk2ODgtMTIuOTQ1MzEyIDExOC4zNTkzNzUtMzcuNDMzNTkzIDE1NS45NjA5MzgtMjMuOTE0MDYzIDM2LjcyMjY1Ni01OC4zODY3MTkgNTYuOTQ1MzEyLTk3LjA2MjUgNTYuOTQ1MzEyem0wIDAiIGZpbGw9IiMwMGNkNzEiLz48cGF0aCBkPSJtMjUzLjY2MDE1NiAxMDcuMDUwNzgxYy0xMi44MjQyMTgtMjYuOTE3OTY5LTI3LjA5NzY1Ni01MC00MS4yNzM0MzctNjYuNzU3ODEyLTE2LjcwMzEyNS0xOS43MzQzNzUtMzIuNTYyNS0yOS43NDIxODgtNDcuMTQ0NTMxLTI5Ljc0MjE4OHY1MDEuNDQ5MjE5YzM4LjY3NTc4MSAwIDczLjE0ODQzNy0yMC4yMjI2NTYgOTcuMDYyNS01Ni45NDUzMTIgMjQuNDg4MjgxLTM3LjYwMTU2MyAzNy40MzM1OTMtOTEuNTMxMjUgMzcuNDMzNTkzLTE1NS45NjA5MzggMC02MC41OTM3NS0xNi43OTI5NjktMTMwLjU4OTg0NC00Ni4wNzgxMjUtMTkyLjA0Mjk2OXptMCAwIiBmaWxsPSIjMDBhYzVkIi8+PHBhdGggZD0ibTE1My44Mzk4NDQgNTExLjk5NjA5NGMtMzQuNDg0Mzc1IDAtNjcuMDI3MzQ0LTE2LjMzMjAzMi05Mi43ODkwNjMtNDYuODkwNjI1LTI5Ljc3MzQzNy0zNS4zMTY0MDctNDkuODk0NTMxLTg4LjcwMzEyNS01OC4xNzk2ODctMTU0LjM4MjgxMy02LjMxMjUtNTAuMDMxMjUtMi4xNDA2MjUtMTA4LjU4NTkzNyAxMS43NDYwOTQtMTY0Ljg3NSAxMi40NDE0MDYtNTAuNDMzNTk0IDMxLjI1LTk0LjMwNDY4NyA1MS42MDkzNzQtMTIwLjM2MzI4MSAxMi4wMTU2MjYtMTUuMzc4OTA2IDI0LjMwMDc4Mi0yMy45MTc5NjkgMzYuNTExNzE5LTI1LjM3NSA4LjE5NTMxMy0uOTgwNDY5IDE1LjYzMjgxMyA0LjgzMjAzMSAxNi42NjQwNjMgMTMuMDE1NjI1bDYwLjcxODc1IDQ4MS4zMTI1Yy41IDMuOTYwOTM4LS42MDE1NjMgNy45NjA5MzgtMy4wNTg1OTQgMTEuMTA5Mzc1LTIuNDYwOTM4IDMuMTQ4NDM3LTYuMDc0MjE5IDUuMTg3NS0xMC4wNDI5NjkgNS42NjAxNTYtNC40MTc5NjkuNTI3MzQ0LTguODE2NDA2Ljc4OTA2My0xMy4xNzk2ODcuNzg5MDYzem0wIDAiIGZpbGw9IiNmZmU1YzEiLz48cGF0aCBkPSJtMTc2LjY0MDYyNSA1MTEuOTk2MDk0Yy00LjM2NzE4NyAwLTguNzYxNzE5LS4yNjE3MTktMTMuMTc5Njg3LS43ODkwNjMtMy45Njg3NS0uNDcyNjU2LTcuNTgyMDMyLTIuNTExNzE5LTEwLjA0Mjk2OS01LjY2MDE1Ni0yLjQ1NzAzMS0zLjE0ODQzNy0zLjU1ODU5NC03LjE0ODQzNy0zLjA1ODU5NC0xMS4xMTMyODFsNjAuNzE4NzUtNDgxLjMwODU5NGMxLjAzMTI1LTguMTgzNTk0IDguNDcyNjU2LTEzLjk5MjE4OCAxNi42NjQwNjMtMTMuMDE5NTMxIDEyLjIxMDkzNyAxLjQ2MDkzNyAyNC40OTYwOTMgMTAgMzYuNTExNzE4IDI1LjM3ODkwNiAyMC4zNTU0NjkgMjYuMDU0Njg3IDM5LjE2Nzk2OSA2OS45MjU3ODEgNTEuNjA5Mzc1IDEyMC4zNTkzNzUgMTMuODg2NzE5IDU2LjI5Mjk2OSAxOC4wNTQ2ODggMTE0Ljg0NzY1NiAxMS43NDYwOTQgMTY0Ljg3NS04LjI4OTA2MyA2NS42ODM1OTQtMjguNDA2MjUgMTE5LjA3MDMxMi01OC4xNzk2ODcgMTU0LjM4NjcxOS0yNS43NTc4MTMgMzAuNTU4NTkzLTU4LjMwODU5NCA0Ni44OTA2MjUtOTIuNzg5MDYzIDQ2Ljg5MDYyNXptMCAwIiBmaWxsPSIjZmVkMWEzIi8+PC9zdmc+Cg==" />' }
-nuts = { name: "Nuts", category: "Nuts & Seeds", image_url: '<img src="https://img.icons8.com/color/100/000000/nut.png"/>' }
-seeds = { name: "Seeds", category: "Nuts & Seeds", image_url: '<img src="https://img.icons8.com/color/100/000000/paper-bag-with-seeds.png"/>' }
+pistachios = { name: "Pistachios", category: "Nuts and Seeds", image_url: '<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSItOTEgMCA1MTIgNTEyLjAwMDc4IiB3aWR0aD0iNTEycHgiPjxwYXRoIGQ9Im0xNjUuMjQyMTg4IDUxMmMtMzguNjc5Njg4IDAtNzMuMTQ4NDM4LTIwLjIyMjY1Ni05Ny4wNjY0MDctNTYuOTQ1MzEyLTI0LjQ4ODI4MS0zNy42MDE1NjMtMzcuNDMzNTkzLTkxLjUzMTI1LTM3LjQzMzU5My0xNTUuOTYwOTM4IDAtNjAuNTkzNzUgMTYuNzk2ODc0LTEzMC41ODk4NDQgNDYuMDc4MTI0LTE5Mi4wNDI5NjkgMTIuODI0MjE5LTI2LjkxNzk2OSAyNy4wOTc2NTctNTAgNDEuMjc3MzQ0LTY2Ljc1NzgxMiAxNi42OTkyMTktMTkuNzM0Mzc1IDMyLjU2MjUtMjkuNzQyMTg4IDQ3LjE0NDUzMi0yOS43NDIxODggMTQuNTc4MTI0IDAgMzAuNDQxNDA2IDEwLjAwNzgxMyA0Ny4xNDQ1MzEgMjkuNzQyMTg4IDE0LjE3NTc4MSAxNi43NTM5MDYgMjguNDQ5MjE5IDM5LjgzOTg0MyA0MS4yNzM0MzcgNjYuNzU3ODEyIDI5LjI4NTE1NiA2MS40NTMxMjUgNDYuMDc4MTI1IDEzMS40NDkyMTkgNDYuMDc4MTI1IDE5Mi4wNDI5NjkgMCA2NC40Mjk2ODgtMTIuOTQ1MzEyIDExOC4zNTkzNzUtMzcuNDMzNTkzIDE1NS45NjA5MzgtMjMuOTE0MDYzIDM2LjcyMjY1Ni01OC4zODY3MTkgNTYuOTQ1MzEyLTk3LjA2MjUgNTYuOTQ1MzEyem0wIDAiIGZpbGw9IiMwMGNkNzEiLz48cGF0aCBkPSJtMjUzLjY2MDE1NiAxMDcuMDUwNzgxYy0xMi44MjQyMTgtMjYuOTE3OTY5LTI3LjA5NzY1Ni01MC00MS4yNzM0MzctNjYuNzU3ODEyLTE2LjcwMzEyNS0xOS43MzQzNzUtMzIuNTYyNS0yOS43NDIxODgtNDcuMTQ0NTMxLTI5Ljc0MjE4OHY1MDEuNDQ5MjE5YzM4LjY3NTc4MSAwIDczLjE0ODQzNy0yMC4yMjI2NTYgOTcuMDYyNS01Ni45NDUzMTIgMjQuNDg4MjgxLTM3LjYwMTU2MyAzNy40MzM1OTMtOTEuNTMxMjUgMzcuNDMzNTkzLTE1NS45NjA5MzggMC02MC41OTM3NS0xNi43OTI5NjktMTMwLjU4OTg0NC00Ni4wNzgxMjUtMTkyLjA0Mjk2OXptMCAwIiBmaWxsPSIjMDBhYzVkIi8+PHBhdGggZD0ibTE1My44Mzk4NDQgNTExLjk5NjA5NGMtMzQuNDg0Mzc1IDAtNjcuMDI3MzQ0LTE2LjMzMjAzMi05Mi43ODkwNjMtNDYuODkwNjI1LTI5Ljc3MzQzNy0zNS4zMTY0MDctNDkuODk0NTMxLTg4LjcwMzEyNS01OC4xNzk2ODctMTU0LjM4MjgxMy02LjMxMjUtNTAuMDMxMjUtMi4xNDA2MjUtMTA4LjU4NTkzNyAxMS43NDYwOTQtMTY0Ljg3NSAxMi40NDE0MDYtNTAuNDMzNTk0IDMxLjI1LTk0LjMwNDY4NyA1MS42MDkzNzQtMTIwLjM2MzI4MSAxMi4wMTU2MjYtMTUuMzc4OTA2IDI0LjMwMDc4Mi0yMy45MTc5NjkgMzYuNTExNzE5LTI1LjM3NSA4LjE5NTMxMy0uOTgwNDY5IDE1LjYzMjgxMyA0LjgzMjAzMSAxNi42NjQwNjMgMTMuMDE1NjI1bDYwLjcxODc1IDQ4MS4zMTI1Yy41IDMuOTYwOTM4LS42MDE1NjMgNy45NjA5MzgtMy4wNTg1OTQgMTEuMTA5Mzc1LTIuNDYwOTM4IDMuMTQ4NDM3LTYuMDc0MjE5IDUuMTg3NS0xMC4wNDI5NjkgNS42NjAxNTYtNC40MTc5NjkuNTI3MzQ0LTguODE2NDA2Ljc4OTA2My0xMy4xNzk2ODcuNzg5MDYzem0wIDAiIGZpbGw9IiNmZmU1YzEiLz48cGF0aCBkPSJtMTc2LjY0MDYyNSA1MTEuOTk2MDk0Yy00LjM2NzE4NyAwLTguNzYxNzE5LS4yNjE3MTktMTMuMTc5Njg3LS43ODkwNjMtMy45Njg3NS0uNDcyNjU2LTcuNTgyMDMyLTIuNTExNzE5LTEwLjA0Mjk2OS01LjY2MDE1Ni0yLjQ1NzAzMS0zLjE0ODQzNy0zLjU1ODU5NC03LjE0ODQzNy0zLjA1ODU5NC0xMS4xMTMyODFsNjAuNzE4NzUtNDgxLjMwODU5NGMxLjAzMTI1LTguMTgzNTk0IDguNDcyNjU2LTEzLjk5MjE4OCAxNi42NjQwNjMtMTMuMDE5NTMxIDEyLjIxMDkzNyAxLjQ2MDkzNyAyNC40OTYwOTMgMTAgMzYuNTExNzE4IDI1LjM3ODkwNiAyMC4zNTU0NjkgMjYuMDU0Njg3IDM5LjE2Nzk2OSA2OS45MjU3ODEgNTEuNjA5Mzc1IDEyMC4zNTkzNzUgMTMuODg2NzE5IDU2LjI5Mjk2OSAxOC4wNTQ2ODggMTE0Ljg0NzY1NiAxMS43NDYwOTQgMTY0Ljg3NS04LjI4OTA2MyA2NS42ODM1OTQtMjguNDA2MjUgMTE5LjA3MDMxMi01OC4xNzk2ODcgMTU0LjM4NjcxOS0yNS43NTc4MTMgMzAuNTU4NTkzLTU4LjMwODU5NCA0Ni44OTA2MjUtOTIuNzg5MDYzIDQ2Ljg5MDYyNXptMCAwIiBmaWxsPSIjZmVkMWEzIi8+PC9zdmc+Cg==" />' }
+nuts = { name: "Nuts", category: "Nuts and Seeds", image_url: '<img src="https://img.icons8.com/color/100/000000/nut.png"/>' }
+seeds = { name: "Seeds", category: "Nuts and Seeds", image_url: '<img src="https://img.icons8.com/color/100/000000/paper-bag-with-seeds.png"/>' }
 
 carrot = { name: "Carrot", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/carrot.png"/>' }
 sweet_potato = { name: "Sweet Potato", category: "Root Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/sweet-potato.png"/>' }
@@ -88,18 +88,18 @@ anchovy = { name: "Anchovy", category: "Protein Foods", image_url: '<img src="ht
 dumpling = { name: "Dumpling", category: "Protein Foods", image_url: '<img src="https://img.icons8.com/color/100/000000/gyoza.png"/>' }
 tofu = { name: "Tofu", category: "Protein Foods", image_url: '<img src="https://img.icons8.com/color/100/000000/silken-tofu.png"/>' }
 
-broth = { name: "Broth", category: "Soup & Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/soup-plate.png"/>' }
-coconut_milk = { name: "Coconut Milk", category: "Soup & Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/coconut-milk.png"/>' }
-miso = {name: 'Miso', category: 'Sauce & Condiments', image_url:'<img src="https://vignette.wikia.nocookie.net/huntcook/images/c/cd/Recipes_-_Miso.png/revision/latest?cb=20160821190307"/>' }
-soy_sauce = { name: 'Soy Sauce', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png"/>' }
-olive_oil = { name: 'Olive Oil', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/olive-oil.png"/>' }
-salt = { name: 'Salt', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/salt-shaker.png"/>' }
-sugar = { name: 'Sugar', category: 'Sauce, Condiments & Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/sugar.png"/>' }
-baking_soda = { name: 'Baking Soda', category: 'Sauce, Condiments & Additives' }
-vanilla = { name: 'Vanilla', category: 'Sauce, Condiments & Additives' }
+broth = { name: "Broth", category: "Soup and Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/soup-plate.png"/>' }
+coconut_milk = { name: "Coconut Milk", category: "Soup and Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/coconut-milk.png"/>' }
+miso = {name: 'Miso', category: 'Sauce, Condiments and Additives', image_url:'<img src="https://vignette.wikia.nocookie.net/huntcook/images/c/cd/Recipes_-_Miso.png/revision/latest?cb=20160821190307"/>' }
+soy_sauce = { name: 'Soy Sauce', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png"/>' }
+olive_oil = { name: 'Olive Oil', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/olive-oil.png"/>' }
+salt = { name: 'Salt', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/salt-shaker.png"/>' }
+sugar = { name: 'Sugar', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/sugar.png"/>' }
+baking_soda = { name: 'Baking Soda', category: 'Sauce, Condiments and Additives' }
+vanilla = { name: 'Vanilla', category: 'Sauce, Condiments and Additives' }
 
-red_pepper_flakes = {name: 'Red Pepper Flakes', category: 'Herb & Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/chili-pepper.png"/>' }
-parsley = {name: 'Parsley', category: 'Herb & Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/natural-food.png"/>' }
+red_pepper_flakes = {name: 'Red Pepper Flakes', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/chili-pepper.png"/>' }
+parsley = {name: 'Parsley', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/natural-food.png"/>' }
 
 banana = { name: "Banana", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/banana.png"/>' }
 lemon = { name: "Lemon", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/citrus.png"/>' }
@@ -108,16 +108,16 @@ berries = { name: "Berries", category: "Fruits", image_url: '<img src="https://i
 raisin = { name: "Raisin", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/raisins.png"/>' }
 
 ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, cornflakes, flour,
+  egg, beef, bacon, ham, spam, chicken_turkey, salmon, canned_tuna, prawn, anchovy, dumpling, tofu,
   chickpeas, beans, lentils, peas, edamames,
   pistachios, nuts, seeds,
   carrot, sweet_potato, radish, potato, beet, onion, garlic, pumpkin_squash, ginger,
   spinach, kale, broccoli, bok_choy, mesclun,
   tomato, corn, cauliflower, avocado, brussels_sprout, green_bean, cucumber, cabbage, mushroom, scallion, zucchini, asparagus, celery, bell_pepper,
   milk, butter, cream, yogurt, parmesan,
-  egg, beef, bacon, ham, spam, chicken_turkey, salmon, canned_tuna, prawn, anchovy, dumpling, tofu,
   broth, coconut_milk, miso, soy_sauce, olive_oil,
-  red_pepper_flakes, parsley, salt, sugar, baking_soda, vanilla,
   banana, lemon, lime, berries, raisin]
+  red_pepper_flakes, parsley, salt, sugar, baking_soda, vanilla,
 
 # Store all ingredients inside a hash
 ingredients_hash = {}
