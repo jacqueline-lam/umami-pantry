@@ -13,7 +13,6 @@ class IngredientsController < ApplicationController
     if ingredients.any?
       render json: ingredients, except: [:created_at, :updated_at]
     else
-      binding.pry
       render json: { message: category + ' ingredients cannot be found.'}
 
     end
