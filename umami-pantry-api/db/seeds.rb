@@ -90,13 +90,14 @@ tofu = { name: "Tofu", category: "Protein Foods", image_url: '<img src="https://
 
 broth = { name: "Broth", category: "Soup and Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/soup-plate.png"/>' }
 coconut_milk = { name: "Coconut Milk", category: "Soup and Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/coconut-milk.png"/>' }
-miso = {name: 'Miso', category: 'Sauce, Condiments and Additives', image_url:'<img src="https://vignette.wikia.nocookie.net/huntcook/images/c/cd/Recipes_-_Miso.png/revision/latest?cb=20160821190307"/>' }
-soy_sauce = { name: 'Soy Sauce', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png"/>' }
-olive_oil = { name: 'Olive Oil', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/olive-oil.png"/>' }
-salt = { name: 'Salt', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/salt-shaker.png"/>' }
-sugar = { name: 'Sugar', category: 'Sauce, Condiments and Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/sugar.png"/>' }
-baking_soda = { name: 'Baking Soda', category: 'Sauce, Condiments and Additives' }
-vanilla = { name: 'Vanilla', category: 'Sauce, Condiments and Additives' }
+
+miso = {name: 'Miso', category: 'Additives', image_url:'<img src="https://vignette.wikia.nocookie.net/huntcook/images/c/cd/Recipes_-_Miso.png/revision/latest?cb=20160821190307"/>' }
+soy_sauce = { name: 'Soy Sauce', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png"/>' }
+olive_oil = { name: 'Olive Oil', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/olive-oil.png"/>' }
+salt = { name: 'Salt', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/salt-shaker.png"/>' }
+sugar = { name: 'Sugar', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/sugar.png"/>' }
+baking_soda = { name: 'Baking Soda', category: 'Additives' }
+vanilla = { name: 'Vanilla', category: 'Additives' }
 
 red_pepper_flakes = {name: 'Red Pepper Flakes', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/chili-pepper.png"/>' }
 parsley = {name: 'Parsley', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/natural-food.png"/>' }
@@ -115,9 +116,9 @@ ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, 
   spinach, kale, broccoli, bok_choy, mesclun,
   tomato, corn, cauliflower, avocado, brussels_sprout, green_bean, cucumber, cabbage, mushroom, scallion, zucchini, asparagus, celery, bell_pepper,
   milk, butter, cream, yogurt, parmesan,
+  banana, lemon, lime, berries, raisin,
   broth, coconut_milk, miso, soy_sauce, olive_oil,
-  banana, lemon, lime, berries, raisin]
-  red_pepper_flakes, parsley, salt, sugar, baking_soda, vanilla,
+  red_pepper_flakes, parsley, salt, sugar, baking_soda, vanilla]
 
 # Store all ingredients inside a hash
 ingredients_hash = {}

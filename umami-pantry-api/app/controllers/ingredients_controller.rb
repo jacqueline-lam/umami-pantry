@@ -10,6 +10,12 @@ class IngredientsController < ApplicationController
   def get_ingredients
     category = params[:category].gsub('_', ' ')
     ingredients = Ingredient.where(category: category)
-    render json: ingredients, except: [:created_at, :updated_at]
+    if ingredients.any?
+      render json: ingredients, except: [:created_at, :updated_at]
+    else
+      binding.pry
+      render json: { message: category + ' ingredients cannot be found.'}
+
+    end
   end
 end
