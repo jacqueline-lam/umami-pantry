@@ -4,6 +4,7 @@ const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const categoryContainers = document.getElementsByClassName('categoryContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard')
+// let addIngredient = false;
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -36,18 +37,14 @@ class Adapter {
 
     ingredientsContainer.addEventListener('click', e => {
       // console.log(ingredientCards)
-
+      console.log(e.target.parentNode)
       for (const ingredientCard of ingredientCards) {
         // if ingredientCard is clicked
-
-        if (e.target == ingredientCard ) {
-          console.log(e.target == ingredientCard)
+        if ((e.target == ingredientCard) || (e.target.parentNode == ingredientCard)) {
           this.selectIngredientHandler(ingredientCard)
-        } else {
-          // console.log(e.target)
         }
       }
-    }, false);
+    });
   };
 
   // make a fetch request to ingredientsUrl
@@ -79,8 +76,6 @@ class Adapter {
       ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
       const ingredientName = `<p>${ingredient.name}</p>`;
       let ingredientImg = ingredient.image_url;
-      console.log(ingredientName);
-      console.log(ingredientImg);
 
       ingredientCard.innerHTML += ingredientName;
       ingredientCard.innerHTML += ingredientImg;
@@ -94,7 +89,6 @@ class Adapter {
     this.selectedIngredients.push(ingredientId);
 
     // handle display changes
-
     console.log(this.selectedIngredients);
   }
 
