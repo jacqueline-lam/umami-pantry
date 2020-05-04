@@ -73,11 +73,12 @@ class Adapter {
 
   // handle ingredient(s) option
   selectIngredientHandler(ingredient) {
-    let ingredientId = event.target.dataset.ingredientId;
+    let ingredientId = ingredient.dataset.ingredientId;
 
     // if an ingredientCard is clicked, push ingredient obj into Array
     console.log(ingredientCards);
     console.log(typeof ingredientCards);
+
   }
 
   getRecipes() {

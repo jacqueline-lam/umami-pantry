@@ -19257,3 +19257,116 @@ Processing by IngredientsController#get_ingredients as */*
 Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 2290)
 
 
+Started GET "/recipes" for ::1 at 2020-05-03 22:05:31 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+Completed 200 OK in 31ms (Views: 15.2ms | ActiveRecord: 6.6ms | Allocations: 9019)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 22:05:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/ingredients"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/categorized_ingredients" for ::1 at 2020-05-03 22:06:12 -0400
+Processing by IngredientsController#get_ingredients as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 516)
+
+
+  
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Started GET "/categorized-ingredients" for ::1 at 2020-05-03 22:06:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/categorized-ingredients"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/categorized_ingredients" for ::1 at 2020-05-03 22:06:56 -0400
+Processing by IngredientsController#get_ingredients as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 493)
+
+
+  
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Started GET "/categorized_ingredients?=Grains" for ::1 at 2020-05-03 22:07:27 -0400
+Processing by IngredientsController#get_ingredients as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 492)
+
+
+  
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+app/controllers/ingredients_controller.rb:12:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 22:07:40 -0400
+Processing by IngredientsController#get_ingredients as HTML
+  Parameters: {"category"=>"Grains"}
+  [1m[36mIngredient Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 45ms (Views: 10.7ms | ActiveRecord: 7.3ms | Allocations: 9056)
+
+
+Started GET "/ingredients" for ::1 at 2020-05-03 22:08:06 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (2.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:7:in `index'
+Completed 200 OK in 45ms (Views: 30.9ms | ActiveRecord: 9.1ms | Allocations: 14142)
+
+
+Started GET "/recipes" for ::1 at 2020-05-03 22:08:46 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 11.7ms | ActiveRecord: 6.0ms | Allocations: 7855)
+
+
