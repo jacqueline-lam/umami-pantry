@@ -109,7 +109,8 @@ class Adapter {
 
     console.log("Current array IDs: " + this.selectedIngredients);
 
-    // this.getMatchingRecipes(this.selectedIngredients);
+    // Handle recipe get for selected ingredients
+    this.getMatchingRecipes(this.selectedIngredients);
   }
 
   getRecipes() {
@@ -125,7 +126,7 @@ class Adapter {
 
   // get request for all recipes that match ingredientId
   getMatchingRecipes() {
-    return fetch(`${this.recipesUrl}?ingredients=${this.selectedIngredients}`)
+    return fetch(`http://localhost:3000/get_recipes/?selected_ingredients=${this.selectedIngredients}`)
       .then(resp => resp.json())
       .then(recipesData => console.log(recipesData))
       .catch(err => alert(err));
