@@ -1,5 +1,7 @@
 class IngredientsController < ApplicationController
   def index
+    # extract work of customizing JSON data and put in in service class
+
     # Render json (js format used by AJAX lib)
       # convert objects from ORM to JSON and render JSON back to browser
     # ingredients = Ingredient.all
