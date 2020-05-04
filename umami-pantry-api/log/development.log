@@ -19402,3 +19402,23 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 93ms (Views: 0.4ms | ActiveRecord: 23.4ms | Allocations: 29195)
 
 
+Started GET "/recipes" for ::1 at 2020-05-03 23:24:24 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 42]]
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 42]]
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 43]]
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 43]]
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 44]]
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+  [1m[36mRecipeIngredient Load (1.6ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 44]]
+  ↳ app/services/recipe_serializer.rb:24:in `to_serialized_json'
+Completed 200 OK in 144ms (Views: 0.1ms | ActiveRecord: 22.8ms | Allocations: 29705)
+
+
