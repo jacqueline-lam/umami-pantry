@@ -54,7 +54,7 @@ class Adapter {
     categories.forEach(category => {
     // fetch returns Promise representing what the api sent back
     // call .then on returned obj -> get resp, parse JSON rep of ingredients from resp
-      fetch(`http://localhost:3000/categorized_ingredients?category=${category}`)
+      fetch(`${this.ingredientsUrl}?category=${category}`)
         .then(resp => resp.json())
         .then(ingredientsData => this.renderIngredients(category, ingredientsData))
         .catch(err => alert(err));
@@ -87,7 +87,7 @@ class Adapter {
     let ingredientId = ingredient.dataset.ingredientId;
     // push ingredientId into Array
     this.selectedIngredients.push(ingredientId);
-
+    this.getMatchingRecipes(this.selectedIngredients);
     // handle display changes
     console.log(this.selectedIngredients);
   }
@@ -103,17 +103,16 @@ class Adapter {
     .catch(err => alert(err));
   };
 
-  renderRecipes() {
-    //create DOM nodes and insert data into them to render in the DOM
-  };
-
   getMatchingRecipes() {
     // getch request to /recipes
-    console.log(this);
-    return fetch(this.RecipesUrl)
+    return fetch(this.recipesUrl)
       .then(resp => resp.json())
-      .then(IngredientsData => console.log(data))
+      .then(recipesData => console.log(recipesData))
       .catch(err => alert(err));
+  };
+
+  renderMathchingRecipes() {
+    //create DOM nodes and insert data into them to render in the DOM
   };
 };
 // call method to get particular notes from db and return it

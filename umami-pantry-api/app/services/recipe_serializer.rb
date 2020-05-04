@@ -8,18 +8,18 @@ class RecipeSerializer
   # handling inclusion and exclusion of attributes
   # get out data customized in JSON string
   def to_serialized_json
-    options = {
-      # include - API to send resource's data along with its associated resources' data
-      include: {
-        ingredients: {
-          only: [:name]
-        },
-        recipe_ingredients: {
-          only: [:ingredient_id, :amounts, :preparation_method]
-        }
-      },
-      except: [:created_at, :updated_at]
-    }
+    # options = {
+    #   # include - API to send resource's data along with its associated resources' data
+    #   include: {
+    #     ingredients: {
+    #       only: [:name]
+    #     },
+    #     recipe_ingredients: {
+    #       only: [:ingredient_id, :amounts, :preparation_method]
+    #     }
+    #   },
+    #   except: [:created_at, :updated_at]
+    # }
 
     # return @recipe.to_json(options)
 
