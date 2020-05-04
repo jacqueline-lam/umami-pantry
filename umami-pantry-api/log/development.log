@@ -19370,3 +19370,35 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 22ms (Views: 11.7ms | ActiveRecord: 6.0ms | Allocations: 7855)
 
 
+Started GET "/recipes" for ::1 at 2020-05-03 22:14:26 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 0.0ms | Allocations: 71904)
+
+
+  
+NameError (undefined local variable or method `recipes_to' for #<RecipesController:0x00007ff1246c75b0>
+Did you mean?  recipes
+               recipes_path
+               recipes_url):
+  
+app/controllers/recipes_controller.rb:6:in `index'
+Started GET "/recipes" for ::1 at 2020-05-03 22:15:29 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+  [1m[36mIngredient Load (6.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 42]]
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 42]]
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 43]]
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 43]]
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 44]]
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+  [1m[36mRecipeIngredient Load (0.4ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 44]]
+  ↳ app/controllers/recipes_controller.rb:6:in `index'
+Completed 200 OK in 93ms (Views: 0.4ms | ActiveRecord: 23.4ms | Allocations: 29195)
+
+

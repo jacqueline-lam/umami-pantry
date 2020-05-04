@@ -3,7 +3,10 @@ class RecipesController < ApplicationController
     # Render json (js format used by AJAX lib)
       # convert objects from ORM to JSON and render JSON back to browser
     recipes = Recipe.all
-    render json: recipes, except: [:created_at, :updated_at]
+    render json: recipes.to_json(include: {
+      ingredients: { only: [:id, :name] },
+        recipe_ingredients: { only: [:amount, :preparation_method] }
+      }, except: [:created_at, :updated_at])
   end
 
   def show
@@ -11,8 +14,8 @@ class RecipesController < ApplicationController
     if recipe
       # include - API to send a resource's data along with its associated resources' data
       render json: recipe.to_json(include: {
-        ingredients: { only: :name },
-        recipe_ingredients: { only: [:ingredient_id, :amount, :preparation_method] }
+        ingredients: { only: [:id, :name] },
+        recipe_ingredients: { only: [:amount, :preparation_method] }
       }, except: [:created_at, :updated_at])
     else
       render json: { message: 'Recipe not found.' }
