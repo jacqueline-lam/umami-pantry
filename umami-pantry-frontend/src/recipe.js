@@ -17,5 +17,11 @@ class Recipe {
     // ingredients.forEach(ingredient => {
     //   ingredient
     // })
+
+    // add k-v pair for ingredient name in recipe_ingredient hash
+    const recipeIngs = recipeIngridents.map(function (rIngredient, name, value) {
+      return Object.assign({}, rIngredient, { [name]: value })
+    })
+
   }
 }

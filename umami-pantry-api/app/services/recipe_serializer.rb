@@ -12,15 +12,34 @@ class RecipeSerializer
       # include - API to send resource's data along with its associated resources' data
       include: {
         ingredients: {
-          only: [:id, :name]
+          only: [:name]
         },
         recipe_ingredients: {
-          only: [:amount, :preparation_method]
+          only: [:ingredient_id, :amounts, :preparation_method]
         }
       },
       except: [:created_at, :updated_at]
     }
 
-    @recipe.to_json(options)
+    # return @recipe.to_json(options)
+
+    to_return = []
+    @recipe.each do |recipe|
+      recipe_hash = recipe.attributes
+
+      recipe_hash["recipe_ingredients"] = []
+      recipe.recipe_ingredients.each do |ri|
+        name = ri.ingredient.name
+        ri_hash = {
+          "name": name,
+          "amount": ri.amount,
+          "ingredient_id": ri.ingredient_id,
+          "preparation_method": ri.preparation_method,
+        }
+        recipe_hash["recipe_ingredients"] << ri_hash
+      end
+      to_return << recipe_hash
+    end
+    return to_return.to_json
   end
 end

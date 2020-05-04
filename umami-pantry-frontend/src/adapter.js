@@ -3,7 +3,7 @@
 const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const categoryContainers = document.getElementsByClassName('categoryContainer');
-const ingredientCards = document.getElementsByClassName('ingridientCard')
+const ingredientCards = document.getElementsByClassName('ingredientCard')
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -13,6 +13,7 @@ class Adapter {
   }
   static ingredients = [];
   categories = [];
+  selectedIngredients = []; // to hold ingredientIds
   recipeResults = {};
 
   // Manage event listeners
@@ -23,15 +24,30 @@ class Adapter {
     // generate recipe results when button is clicked
 
     // ingredientBtn.addEventListener('click', this.getIngredients);
+    // ingredientCards.forEach(card => {
+    //   card.addEventListener('click', e => {
+    //     console.log(e.target)
+    //     // console.log(e.target);
+    //     // if (e.target == card) {
+    //     //   this.selectIngredientHandler(card)
+    //     // }
+    //   })
+    // })
 
     ingredientsContainer.addEventListener('click', e => {
-      ingredientCards.forEach(ingredient => {
-        if (e.target == ingredient) {
-          // push ingredient into array
-          this.selectIngredientHandler(ingredient)
+      // console.log(ingredientCards)
+
+      for (const ingredientCard of ingredientCards) {
+        // if ingredientCard is clicked
+
+        if (e.target == ingredientCard ) {
+          console.log(e.target == ingredientCard)
+          this.selectIngredientHandler(ingredientCard)
+        } else {
+          // console.log(e.target)
         }
-      })
-    })
+      }
+    }, false);
   };
 
   // make a fetch request to ingredientsUrl
@@ -74,11 +90,12 @@ class Adapter {
   // handle ingredient(s) option
   selectIngredientHandler(ingredient) {
     let ingredientId = ingredient.dataset.ingredientId;
+    // push ingredientId into Array
+    this.selectedIngredients.push(ingredientId);
 
-    // if an ingredientCard is clicked, push ingredient obj into Array
-    console.log(ingredientCards);
-    console.log(typeof ingredientCards);
+    // handle display changes
 
+    console.log(this.selectedIngredients);
   }
 
   getRecipes() {
