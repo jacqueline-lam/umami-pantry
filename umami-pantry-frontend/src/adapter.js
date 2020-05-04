@@ -87,6 +87,7 @@ class Adapter {
   };
 
   // handle ingredient(s) option
+  // @param ingredient: The div DOM element
   selectIngredientHandler(ingredient) {
     let ingredientId = ingredient.dataset.ingredientId;
     var index = this.selectedIngredients.indexOf(ingredientId);
@@ -95,18 +96,20 @@ class Adapter {
     // And we're selecting it, then we add it in
     if (index === -1) {
       this.selectedIngredients.push(ingredientId);
+      ingredient.setAttribute("style", "background-color: lightgray;");
     } else {
       // If ingredient already exists in current state
     // And we're selecting it, then we should remove it
       this.selectedIngredients.splice(index, 1);
+      ingredient.setAttribute("style", "background-color: white;");
     }
     // Above logic *should* enforce uniqueness constraints
     // This just makes absolutely sure
     this.selectedIngredients.filter((v, i, a) => a.indexOf(v) === i);
 
-    // this.getMatchingRecipes(this.selectedIngredients);
-    // handle display changes
     console.log("Current array IDs: " + this.selectedIngredients);
+
+    // this.getMatchingRecipes(this.selectedIngredients);
   }
 
   getRecipes() {
