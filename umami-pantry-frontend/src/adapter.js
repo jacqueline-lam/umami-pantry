@@ -3,6 +3,7 @@
 const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const categoryContainers = document.getElementsByClassName('categoryContainer');
+const ingredientCards = document.getElementsByClassName('ingridientCard')
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -22,8 +23,16 @@ class Adapter {
     // generate recipe results when button is clicked
 
     // ingredientBtn.addEventListener('click', this.getIngredients);
-  };
 
+    ingredientsContainer.addEventListener('click', e => {
+      ingredientCards.forEach(ingredient => {
+        if (e.target == ingredient) {
+          // push ingredient into array
+          this.selectIngredientHandler(ingredient)
+        }
+      })
+    })
+  };
 
   // make a fetch request to ingredientsUrl
   getIngredients() {
@@ -51,15 +60,25 @@ class Adapter {
 
       let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
       ingredientCard.className = 'ingredientCard'
+      ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
       const ingredientName = `<p>${ingredient.name}</p>`;
       let ingredientImg = ingredient.image_url;
       console.log(ingredientName);
       console.log(ingredientImg);
-      // ingredientImg.className = 'ingredient-img';
+
       ingredientCard.innerHTML += ingredientName;
       ingredientCard.innerHTML += ingredientImg;
     });
   };
+
+  // handle ingredient(s) option
+  selectIngredientHandler(ingredient) {
+    let ingredientId = event.target.dataset.ingredientId;
+
+    // if an ingredientCard is clicked, push ingredient obj into Array
+    console.log(ingredientCards);
+    console.log(typeof ingredientCards);
+  }
 
   getRecipes() {
     // make a fetch request to /recipes

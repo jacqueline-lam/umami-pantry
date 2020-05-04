@@ -18177,3 +18177,1083 @@ Processing by IngredientsController#get_ingredients as */*
 Completed 200 OK in 53ms (Views: 4.4ms | ActiveRecord: 46.5ms | Allocations: 1976)
 
 
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 19:36:01 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Beans_and_Peas"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (10.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  Parameters: {"category"=>"Protein_Foods"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (14.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Root_Vegetables"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (15.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (20.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  [1m[36mIngredient Load (4.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  [1m[36mIngredient Load (3.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  [1m[36mIngredient Load (17.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 34ms (Views: 9.7ms | ActiveRecord: 22.5ms | Allocations: 6003)
+
+
+Completed 200 OK in 34ms (Views: 9.9ms | ActiveRecord: 21.3ms | Allocations: 7269)
+
+
+Completed 200 OK in 58ms (Views: 9.2ms | ActiveRecord: 36.8ms | Allocations: 10989)
+
+
+Completed 200 OK in 62ms (Views: 14.5ms | ActiveRecord: 31.3ms | Allocations: 12701)
+
+
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 19:36:01 -0400
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 19:36:01 -0400
+  [1m[36mIngredient Load (7.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Other_Vegetables"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 59ms (Views: 17.7ms | ActiveRecord: 32.9ms | Allocations: 12869)
+
+
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+  [1m[36mIngredient Load (3.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  Parameters: {"category"=>"Soup_and_Broth"}
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 19:36:01 -0400
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 4.5ms | Allocations: 6469)
+
+
+  [1m[36mIngredient Exists? (7.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Fruits"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 19:36:01 -0400
+  [1m[36mIngredient Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (8.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Herb_and_Spices"}
+  Parameters: {"category"=>"Additives"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (2.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  [1m[36mIngredient Load (2.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  [1m[36mIngredient Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 45ms (Views: 11.4ms | ActiveRecord: 15.8ms | Allocations: 7712)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 44ms (Views: 18.7ms | ActiveRecord: 3.9ms | Allocations: 6692)
+
+
+  [1m[36mIngredient Exists? (10.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (3.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 51ms (Views: 22.6ms | ActiveRecord: 4.2ms | Allocations: 9274)
+
+
+Completed 200 OK in 20ms (Views: 4.4ms | ActiveRecord: 9.1ms | Allocations: 5878)
+
+
+  [1m[36mIngredient Load (4.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 82ms (Views: 58.1ms | ActiveRecord: 14.2ms | Allocations: 7414)
+
+
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 19:36:01 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  [1m[36mIngredient Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.7ms | Allocations: 1986)
+
+
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 19:36:24 -0400
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 19:36:24 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 19:36:24 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 19:36:24 -0400
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 19:36:24 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Beans_and_Peas"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Root_Vegetables"}
+  [1m[36mIngredient Exists? (13.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (23.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  [1m[36mIngredient Exists? (30.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (23.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  [1m[36mIngredient Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (33.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (13.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 50ms (Views: 9.8ms | ActiveRecord: 37.2ms | Allocations: 6549)
+
+
+  [1m[36mIngredient Load (5.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+Completed 200 OK in 55ms (Views: 15.1ms | ActiveRecord: 36.8ms | Allocations: 8264)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 57ms (Views: 13.3ms | ActiveRecord: 36.8ms | Allocations: 9142)
+
+
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 19:36:24 -0400
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 19:36:24 -0400
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 19:36:24 -0400
+  [1m[36mIngredient Load (121.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 140ms (Views: 3.6ms | ActiveRecord: 123.5ms | Allocations: 9909)
+
+
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 19:36:24 -0400
+  [1m[36mIngredient Load (129.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 177ms (Views: 2.7ms | ActiveRecord: 163.1ms | Allocations: 13811)
+
+
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 19:36:24 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Fruits"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Other_Vegetables"}
+  [1m[36mIngredient Exists? (16.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Additives"}
+  [1m[36mIngredient Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  Parameters: {"category"=>"Soup_and_Broth"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 20ms (Views: 5.4ms | ActiveRecord: 4.4ms | Allocations: 4220)
+
+
+  [1m[36mIngredient Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (8.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 47ms (Views: 7.0ms | ActiveRecord: 24.3ms | Allocations: 7624)
+
+
+  [1m[36mIngredient Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (7.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 19:36:24 -0400
+  [1m[36mIngredient Load (8.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  [1m[36mIngredient Load (5.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 27ms (Views: 2.8ms | ActiveRecord: 11.9ms | Allocations: 7922)
+
+
+Completed 200 OK in 32ms (Views: 9.0ms | ActiveRecord: 12.2ms | Allocations: 8888)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 38ms (Views: 18.7ms | ActiveRecord: 12.1ms | Allocations: 11066)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Herb_and_Spices"}
+  [1m[36mIngredient Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.1ms | Allocations: 1641)
+
+
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 19:36:24 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  [1m[36mIngredient Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (45.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 55ms (Views: 4.1ms | ActiveRecord: 48.0ms | Allocations: 1966)
+
+
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 19:36:27 -0400
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 19:36:27 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 19:36:27 -0400
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 19:36:27 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 19:36:27 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Root_Vegetables"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+  Parameters: {"category"=>"Beans_and_Peas"}
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  [1m[36mIngredient Exists? (13.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (7.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (10.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (5.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (11.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (3.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 24ms (Views: 7.8ms | ActiveRecord: 10.4ms | Allocations: 4987)
+
+
+  [1m[36mIngredient Load (8.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  [1m[36mIngredient Load (4.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 33ms (Views: 7.4ms | ActiveRecord: 18.7ms | Allocations: 8236)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 19:36:27 -0400
+Completed 200 OK in 33ms (Views: 8.7ms | ActiveRecord: 16.1ms | Allocations: 8856)
+
+
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 19:36:27 -0400
+  [1m[36mIngredient Load (16.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  [1m[36mIngredient Load (9.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 50ms (Views: 17.0ms | ActiveRecord: 30.1ms | Allocations: 13024)
+
+
+Completed 200 OK in 40ms (Views: 19.6ms | ActiveRecord: 14.6ms | Allocations: 11921)
+
+
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 19:36:27 -0400
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 19:36:27 -0400
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 19:36:27 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Other_Vegetables"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Soup_and_Broth"}
+  [1m[36mIngredient Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (10.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  Parameters: {"category"=>"Fruits"}
+  [1m[36mIngredient Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Additives"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 3.6ms | Allocations: 2772)
+
+
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 19:36:27 -0400
+  [1m[36mIngredient Load (12.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 27ms (Views: 2.3ms | ActiveRecord: 18.6ms | Allocations: 6205)
+
+
+  [1m[36mIngredient Exists? (24.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (27.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 46ms (Views: 3.3ms | ActiveRecord: 30.2ms | Allocations: 8748)
+
+
+  [1m[36mIngredient Load (56.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 79ms (Views: 9.4ms | ActiveRecord: 67.0ms | Allocations: 11819)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Herb_and_Spices"}
+  [1m[36mIngredient Load (47.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 78ms (Views: 2.9ms | ActiveRecord: 72.3ms | Allocations: 10428)
+
+
+  [1m[36mIngredient Exists? (19.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 27ms (Views: 3.4ms | ActiveRecord: 19.5ms | Allocations: 3290)
+
+
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 19:36:28 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  [1m[36mIngredient Exists? (121.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (2.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 130ms (Views: 4.5ms | ActiveRecord: 123.2ms | Allocations: 1973)
+
+
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 19:47:16 -0400
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 19:47:16 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 19:47:16 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 19:47:16 -0400
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 19:47:16 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Beans_and_Peas"}
+  [1m[36mIngredient Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 4.8ms | Allocations: 6912)
+
+
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  [1m[36mIngredient Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  Parameters: {"category"=>"Protein_Foods"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 19:47:16 -0400
+  [1m[36mIngredient Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Other_Vegetables"}
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (2.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 60ms (Views: 54.2ms | ActiveRecord: 4.1ms | Allocations: 3416)
+
+
+Completed 200 OK in 90ms (Views: 60.3ms | ActiveRecord: 5.8ms | Allocations: 9883)
+
+
+  [1m[36mIngredient Load (3.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  [1m[36mIngredient Load (8.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 19:47:17 -0400
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 19:47:17 -0400
+  [1m[36mIngredient Exists? (19.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 111ms (Views: 85.2ms | ActiveRecord: 9.5ms | Allocations: 11692)
+
+
+Completed 200 OK in 87ms (Views: 25.4ms | ActiveRecord: 12.4ms | Allocations: 8752)
+
+
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Soup_and_Broth"}
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 19:47:17 -0400
+  Parameters: {"category"=>"Dairy"}
+  [1m[36mIngredient Load (17.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 19:47:17 -0400
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Additives"}
+Completed 200 OK in 70ms (Views: 12.5ms | ActiveRecord: 37.7ms | Allocations: 13013)
+
+
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Fruits"}
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 19:47:17 -0400
+  [1m[36mIngredient Exists? (6.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (5.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  [1m[36mIngredient Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 40ms (Views: 15.0ms | ActiveRecord: 10.4ms | Allocations: 7915)
+
+
+  Parameters: {"category"=>"Herb_and_Spices"}
+  [1m[36mIngredient Load (2.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  [1m[36mIngredient Load (12.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (5.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+Completed 200 OK in 33ms (Views: 12.0ms | ActiveRecord: 9.4ms | Allocations: 5927)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 31ms (Views: 9.7ms | ActiveRecord: 8.4ms | Allocations: 6342)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 56ms (Views: 22.1ms | ActiveRecord: 17.3ms | Allocations: 12435)
+
+
+  [1m[36mIngredient Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (28.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 137ms (Views: 87.5ms | ActiveRecord: 31.1ms | Allocations: 6203)
+
+
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 19:47:17 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Root_Vegetables"}
+  [1m[36mIngredient Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 2290)
+
+
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 19:47:52 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 19:47:53 -0400
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 19:47:53 -0400
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 19:47:53 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 19:47:53 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+  [1m[36mIngredient Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (10.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+Completed 200 OK in 120ms (Views: 104.1ms | ActiveRecord: 11.6ms | Allocations: 3725)
+
+
+  Parameters: {"category"=>"Beans_and_Peas"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Root_Vegetables"}
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 19:47:53 -0400
+  [1m[36mIngredient Exists? (7.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (13.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (2.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  Parameters: {"category"=>"Other_Vegetables"}
+Completed 200 OK in 36ms (Views: 17.4ms | ActiveRecord: 4.7ms | Allocations: 5002)
+
+
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 19:47:53 -0400
+  [1m[36mIngredient Load (28.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 61ms (Views: 7.8ms | ActiveRecord: 41.8ms | Allocations: 7089)
+
+
+  [1m[36mIngredient Load (33.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  [1m[36mIngredient Exists? (25.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (53.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 19:47:53 -0400
+Completed 200 OK in 293ms (Views: 221.8ms | ActiveRecord: 56.0ms | Allocations: 9891)
+
+
+  [1m[36mIngredient Load (37.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 276ms (Views: 9.1ms | ActiveRecord: 63.1ms | Allocations: 8864)
+
+
+Completed 200 OK in 265ms (Views: 207.7ms | ActiveRecord: 40.7ms | Allocations: 8813)
+
+
+  [1m[36mIngredient Exists? (7.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 19:47:53 -0400
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 19:47:53 -0400
+Processing by IngredientsController#get_ingredients as */*
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 19:47:53 -0400
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  Parameters: {"category"=>"Soup_and_Broth"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Fruits"}
+  [1m[36mIngredient Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Additives"}
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  Parameters: {"category"=>"Herb_and_Spices"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (4.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (2.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+Completed 200 OK in 64ms (Views: 8.7ms | ActiveRecord: 8.9ms | Allocations: 7990)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (2.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+Completed 200 OK in 23ms (Views: 13.2ms | ActiveRecord: 3.5ms | Allocations: 5182)
+
+
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+Completed 200 OK in 29ms (Views: 9.4ms | ActiveRecord: 8.5ms | Allocations: 6575)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 30ms (Views: 5.9ms | ActiveRecord: 5.6ms | Allocations: 7536)
+
+
+  [1m[36mIngredient Load (10.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 33ms (Views: 2.3ms | ActiveRecord: 10.9ms | Allocations: 7946)
+
+
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 19:47:53 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+  [1m[36mIngredient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 2734)
+
+
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 20:03:37 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 20:03:37 -0400
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 20:03:37 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 20:03:37 -0400
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 20:03:37 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Beans_and_Peas"}
+  [1m[36mIngredient Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  [1m[36mIngredient Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 4.3ms | Allocations: 8411)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 20:03:37 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+  [1m[36mIngredient Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (3.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (152.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (6.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+Processing by IngredientsController#get_ingredients as */*
+Completed 200 OK in 187ms (Views: 28.3ms | ActiveRecord: 151.8ms | Allocations: 8681)
+
+
+  [1m[36mIngredient Load (4.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  Parameters: {"category"=>"Other_Vegetables"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 20:03:37 -0400
+Completed 200 OK in 194ms (Views: 33.2ms | ActiveRecord: 154.4ms | Allocations: 11621)
+
+
+  [1m[36mIngredient Exists? (6.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (4.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+  [1m[36mIngredient Load (2.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 64ms (Views: 6.3ms | ActiveRecord: 8.3ms | Allocations: 6946)
+
+
+Completed 200 OK in 59ms (Views: 35.4ms | ActiveRecord: 21.7ms | Allocations: 7613)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 247ms (Views: 64.9ms | ActiveRecord: 158.7ms | Allocations: 14207)
+
+
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 20:03:37 -0400
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 20:03:37 -0400
+  [1m[36mIngredient Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 20:03:37 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Additives"}
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 20:03:37 -0400
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Soup_and_Broth"}
+  [1m[36mIngredient Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Load (1.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  [1m[36mIngredient Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 28ms (Views: 14.1ms | ActiveRecord: 5.4ms | Allocations: 8463)
+
+
+  Parameters: {"category"=>"Herb_and_Spices"}
+  Parameters: {"category"=>"Fruits"}
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 36ms (Views: 29.3ms | ActiveRecord: 2.7ms | Allocations: 5474)
+
+
+  [1m[36mIngredient Exists? (18.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (4.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 37ms (Views: 20.1ms | ActiveRecord: 7.4ms | Allocations: 6190)
+
+
+  [1m[36mIngredient Exists? (18.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 30ms (Views: 6.4ms | ActiveRecord: 18.7ms | Allocations: 4869)
+
+
+  [1m[36mIngredient Load (1.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 31ms (Views: 3.5ms | ActiveRecord: 20.2ms | Allocations: 5828)
+
+
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 20:03:37 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Root_Vegetables"}
+  [1m[36mIngredient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 2290)
+
+
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 20:04:41 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 20:04:41 -0400
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 20:04:41 -0400
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 20:04:41 -0400
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 20:04:41 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+  [1m[36mIngredient Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Beans_and_Peas"}
+  [1m[36mIngredient Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  Parameters: {"category"=>"Root_Vegetables"}
+  [1m[36mIngredient Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (12.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 21ms (Views: 4.5ms | ActiveRecord: 14.6ms | Allocations: 5420)
+
+
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 20:04:41 -0400
+  [1m[36mIngredient Load (88.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 93ms (Views: 2.4ms | ActiveRecord: 88.9ms | Allocations: 6179)
+
+
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 20:04:41 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+  [1m[36mIngredient Exists? (99.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 105ms (Views: 3.6ms | ActiveRecord: 99.7ms | Allocations: 7820)
+
+
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 20:04:41 -0400
+  [1m[36mIngredient Load (133.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 140ms (Views: 4.6ms | ActiveRecord: 133.8ms | Allocations: 9845)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Other_Vegetables"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+  [1m[36mIngredient Exists? (58.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Soup_and_Broth"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 20:04:41 -0400
+  [1m[36mIngredient Exists? (40.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (99.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 164ms (Views: 3.1ms | ActiveRecord: 158.4ms | Allocations: 9663)
+
+
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 20:04:41 -0400
+  [1m[36mIngredient Load (106.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 118ms (Views: 3.7ms | ActiveRecord: 109.9ms | Allocations: 6269)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Fruits"}
+  [1m[36mIngredient Exists? (117.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Additives"}
+  [1m[36mIngredient Load (4.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 128ms (Views: 2.3ms | ActiveRecord: 122.0ms | Allocations: 8063)
+
+
+  [1m[36mIngredient Load (92.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 153ms (Views: 16.3ms | ActiveRecord: 132.9ms | Allocations: 12641)
+
+
+  [1m[36mIngredient Load (14.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  [1m[36mIngredient Exists? (13.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 31ms (Views: 9.7ms | ActiveRecord: 16.4ms | Allocations: 7524)
+
+
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 20:04:41 -0400
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 30ms (Views: 4.2ms | ActiveRecord: 13.6ms | Allocations: 7633)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Herb_and_Spices"}
+  [1m[36mIngredient Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 1.0ms | Allocations: 1641)
+
+
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 20:04:41 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  [1m[36mIngredient Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 5.1ms | Allocations: 1752)
+
+
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 20:25:26 -0400
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 20:25:26 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 20:25:26 -0400
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 20:25:26 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 20:25:26 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Beans_and_Peas"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  [1m[36mIngredient Exists? (8.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+  Parameters: {"category"=>"Root_Vegetables"}
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  Parameters: {"category"=>"Protein_Foods"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (4.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (2.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 5.0ms | Allocations: 5300)
+
+
+  [1m[36mIngredient Load (6.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 38ms (Views: 20.2ms | ActiveRecord: 10.6ms | Allocations: 8535)
+
+
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 20:25:27 -0400
+Completed 200 OK in 48ms (Views: 14.3ms | ActiveRecord: 10.1ms | Allocations: 9902)
+
+
+  [1m[36mIngredient Load (5.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 20:25:27 -0400
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 45ms (Views: 30.0ms | ActiveRecord: 11.8ms | Allocations: 10821)
+
+
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 20:25:27 -0400
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 20:25:27 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Other_Vegetables"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Fruits"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Soup_and_Broth"}
+  [1m[36mIngredient Exists? (61.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (24.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (120.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (30.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 257ms (Views: 102.8ms | ActiveRecord: 144.9ms | Allocations: 16652)
+
+
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (5.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 20:25:27 -0400
+  [1m[36mIngredient Load (16.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 153ms (Views: 3.4ms | ActiveRecord: 77.9ms | Allocations: 6900)
+
+
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 20:25:27 -0400
+  [1m[36mIngredient Load (22.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 242ms (Views: 128.4ms | ActiveRecord: 53.8ms | Allocations: 8409)
+
+
+  [1m[36mIngredient Load (46.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (95.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+Completed 200 OK in 162ms (Views: 105.0ms | ActiveRecord: 51.6ms | Allocations: 8878)
+
+
+Completed 200 OK in 256ms (Views: 63.2ms | ActiveRecord: 120.7ms | Allocations: 12379)
+
+
+  Parameters: {"category"=>"Additives"}
+  Parameters: {"category"=>"Herb_and_Spices"}
+  [1m[36mIngredient Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (1.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 3.3ms | Allocations: 3554)
+
+
+Completed 200 OK in 110ms (Views: 106.6ms | ActiveRecord: 1.9ms | Allocations: 3654)
+
+
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 20:25:27 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  [1m[36mIngredient Exists? (16.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (5.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 26ms (Views: 3.0ms | ActiveRecord: 21.5ms | Allocations: 1976)
+
+
+Started GET "/categorized_ingredients?category=Grains" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Protein_Foods" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Dark_Green_Vegetables" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Nuts_and_Seeds" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Beans_and_Peas" for ::1 at 2020-05-03 20:26:05 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Grains"}
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Protein_Foods"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Nuts_and_Seeds"}
+  Parameters: {"category"=>"Dark_Green_Vegetables"}
+  Parameters: {"category"=>"Beans_and_Peas"}
+  [1m[36mIngredient Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dark Green Vegetables"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Protein Foods"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (10.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Nuts and Seeds"], ["LIMIT", 1]]
+  [1m[36mIngredient Exists? (16.2ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Grains"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Beans and Peas"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Nuts and Seeds"]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Protein Foods"]]
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Grains"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dark Green Vegetables"]]
+Completed 200 OK in 69ms (Views: 15.1ms | ActiveRecord: 4.2ms | Allocations: 7473)
+
+
+Completed 200 OK in 65ms (Views: 15.9ms | ActiveRecord: 10.8ms | Allocations: 5625)
+
+
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 77ms (Views: 21.6ms | ActiveRecord: 17.3ms | Allocations: 10434)
+
+
+Completed 200 OK in 92ms (Views: 38.7ms | ActiveRecord: 4.1ms | Allocations: 9726)
+
+
+Started GET "/categorized_ingredients?category=Dairy" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Other_Vegetables" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Soup_and_Broth" for ::1 at 2020-05-03 20:26:05 -0400
+Started GET "/categorized_ingredients?category=Fruits" for ::1 at 2020-05-03 20:26:05 -0400
+  [1m[36mIngredient Load (61.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Beans and Peas"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 189ms (Views: 109.6ms | ActiveRecord: 64.1ms | Allocations: 12406)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Dairy"}
+Started GET "/categorized_ingredients?category=Additives" for ::1 at 2020-05-03 20:26:05 -0400
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Soup_and_Broth"}
+  Parameters: {"category"=>"Other_Vegetables"}
+Processing by IngredientsController#get_ingredients as */*
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Additives"}
+  [1m[36mIngredient Exists? (18.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Dairy"], ["LIMIT", 1]]
+  Parameters: {"category"=>"Fruits"}
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (9.1ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Soup and Broth"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Exists? (9.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Additives"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (5.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Additives"]]
+  [1m[36mIngredient Load (14.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Dairy"]]
+  [1m[36mIngredient Exists? (14.6ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Fruits"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (13.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Soup and Broth"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+  [1m[36mIngredient Exists? (19.9ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Other Vegetables"], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 8.1ms | ActiveRecord: 22.1ms | Allocations: 5031)
+
+
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+Completed 200 OK in 226ms (Views: 13.6ms | ActiveRecord: 32.5ms | Allocations: 8306)
+
+
+Completed 200 OK in 30ms (Views: 13.5ms | ActiveRecord: 15.0ms | Allocations: 5465)
+
+
+Started GET "/categorized_ingredients?category=Herb_and_Spices" for ::1 at 2020-05-03 20:26:05 -0400
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (2.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Fruits"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 69ms (Views: 4.1ms | ActiveRecord: 16.6ms | Allocations: 8366)
+
+
+  [1m[36mIngredient Load (52.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Other Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 129ms (Views: 6.9ms | ActiveRecord: 72.3ms | Allocations: 11722)
+
+
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Herb_and_Spices"}
+  [1m[36mIngredient Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Herb and Spices"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (12.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Herb and Spices"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 20ms (Views: 2.4ms | ActiveRecord: 14.8ms | Allocations: 1829)
+
+
+Started GET "/categorized_ingredients?category=Root_Vegetables" for ::1 at 2020-05-03 20:26:05 -0400
+Processing by IngredientsController#get_ingredients as */*
+  Parameters: {"category"=>"Root_Vegetables"}
+  [1m[36mIngredient Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ingredients" WHERE "ingredients"."category" = $1 LIMIT $2[0m  [["category", "Root Vegetables"], ["LIMIT", 1]]
+  ↳ app/controllers/ingredients_controller.rb:14:in `get_ingredients'
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."category" = $1[0m  [["category", "Root Vegetables"]]
+  ↳ app/controllers/ingredients_controller.rb:15:in `get_ingredients'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 2290)
+
+
