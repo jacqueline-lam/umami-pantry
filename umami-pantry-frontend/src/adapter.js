@@ -14,7 +14,7 @@ class Adapter {
   }
   static ingredients = [];
   categories = [];
-  selectedIngredients = []; // to hold ingredientIds
+  selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
   recipeResults = {};
 
   // Manage event listeners
@@ -37,7 +37,7 @@ class Adapter {
 
     ingredientsContainer.addEventListener('click', e => {
       // console.log(ingredientCards)
-      console.log(e.target.parentNode)
+      // console.log(e.target.parentNode)
       for (const ingredientCard of ingredientCards) {
         // if ingredientCard is clicked
         if ((e.target == ingredientCard) || (e.target.parentNode == ingredientCard)) {
@@ -46,6 +46,10 @@ class Adapter {
       }
     });
   };
+
+  isSelected(ingredientId) {
+    return this.selectedIngredients.includes(ingredientId);
+  }
 
   // make a fetch request to ingredientsUrl
   getIngredients() {
@@ -85,11 +89,24 @@ class Adapter {
   // handle ingredient(s) option
   selectIngredientHandler(ingredient) {
     let ingredientId = ingredient.dataset.ingredientId;
-    // push ingredientId into Array
-    this.selectedIngredients.push(ingredientId);
-    this.getMatchingRecipes(this.selectedIngredients);
+    var index = this.selectedIngredients.indexOf(ingredientId);
+
+    // Ingredient does not exist in current state
+    // And we're selecting it, then we add it in
+    if (index === -1) {
+      this.selectedIngredients.push(ingredientId);
+    } else {
+      // If ingredient already exists in current state
+    // And we're selecting it, then we should remove it
+      this.selectedIngredients.splice(index, 1);
+    }
+    // Above logic *should* enforce uniqueness constraints
+    // This just makes absolutely sure
+    this.selectedIngredients.filter((v, i, a) => a.indexOf(v) === i);
+
+    // this.getMatchingRecipes(this.selectedIngredients);
     // handle display changes
-    console.log(this.selectedIngredients);
+    console.log("Current array IDs: " + this.selectedIngredients);
   }
 
   getRecipes() {

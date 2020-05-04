@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
       # convert objects from ORM to JSON and render JSON back to browser
     # recipes = Recipe.all
     ingredientIds = params[:ingredients]
-    binding.pry
+    # binding.pry
     # matching_recipes = Recipe.where
     # ingredientIds.map {|id|}
 
