@@ -20,7 +20,6 @@ class RecipeSerializer
     #   },
     #   except: [:created_at, :updated_at]
     # }
-
     # return @recipe.to_json(options)
 
     to_return = []

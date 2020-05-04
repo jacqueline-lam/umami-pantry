@@ -103,9 +103,9 @@ class Adapter {
     .catch(err => alert(err));
   };
 
+  // get request for all recipes that match ingredientId
   getMatchingRecipes() {
-    // getch request to /recipes
-    return fetch(this.recipesUrl)
+    return fetch(`${this.recipesUrl}?ingredients=${this.selectedIngredients}`)
       .then(resp => resp.json())
       .then(recipesData => console.log(recipesData))
       .catch(err => alert(err));
