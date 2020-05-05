@@ -5,6 +5,8 @@
   <title>Umami Pantry</title>
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -14,7 +16,7 @@
       <h1>Umami Pantry</h1>
     </div>
 
-    <button id="getIngredientsBtn">Show all ingredients</button>
+    <button type="button" class="btn btn-primary id="getIngredientsBtn">Show all ingredients</button><br><br>
 
     <div id="ingredientsContainer">
       <h4>Select the available ingredients in your pantry:</h4>
@@ -47,6 +49,7 @@
     <div id="recipesContainer">
       <h1>Matching Recipes:</h1>
       <i>Stop saying 'IDK what to cook'!</i>
+
       <!-- Goal of JS: Make requests to backend to get current list of recipes -->
       <!-- Add our Recipes -->
       <!-- <div class="card" data-id="1"><p>Recipe #1</p>
@@ -65,7 +68,7 @@
     <script type="application/javascript" src="src/adapter.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-
+    <script src="bootstrap.min.js"></script>
   </div>
 </body>
 </html>
