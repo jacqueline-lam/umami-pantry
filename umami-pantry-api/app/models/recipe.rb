@@ -11,6 +11,6 @@ class Recipe < ApplicationRecord
   def self.filter_by_ingredients(ingredientsArray)
     ingredientsArray.map { |selected_ingredient|
       self.joins(:recipe_ingredients).where('ingredient_id = ?', selected_ingredient)
-    }
+    }.flatten.uniq
   end
 end
