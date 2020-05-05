@@ -9,8 +9,8 @@ const ingredientCards = document.getElementsByClassName('ingredientCard')
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
     this.baseUrl = 'http://localhost:3000';
-    this.ingredientsUrl = `${baseUrl}/categorized_ingredients`;
-    this.recipesUrl = `${baseUrl}/recipes`;
+    this.ingredientsUrl = `${baseUrl}/get_ingredients`;
+    this.recipesUrl = `${baseUrl}/get_recipes`;
   }
   static ingredients = [];
   categories = [];
@@ -105,7 +105,7 @@ class Adapter {
     }
     // Above logic *should* enforce uniqueness constraints
     // This just makes absolutely sure
-    this.selectedIngredients.filter((v, i, a) => a.indexOf(v) === i);
+    this.selectedIngredients.filter((ing, i, arr) => arr.indexOf(ing) === i);
 
     console.log("Current array IDs: " + this.selectedIngredients);
 
@@ -126,7 +126,8 @@ class Adapter {
 
   // get request for all recipes that match ingredientId
   getMatchingRecipes() {
-    return fetch(`http://localhost:3000/get_recipes/?selected_ingredients=${this.selectedIngredients}`)
+    // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
+    return fetch(`${this.recipesUrl}/?selected_ingredients=${this.selectedIngredients}`)
       .then(resp => resp.json())
       .then(recipesData => console.log(recipesData))
       .catch(err => alert(err));
