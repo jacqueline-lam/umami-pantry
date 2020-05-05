@@ -15,7 +15,7 @@ class Adapter {
   static ingredients = [];
   categories = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
-  recipeResults = {};
+  recipeResults = [];
 
   // Manage event listeners
   bindEventListeners() {
@@ -47,9 +47,9 @@ class Adapter {
     });
   };
 
-  isSelected(ingredientId) {
-    return this.selectedIngredients.includes(ingredientId);
-  }
+  // isSelected(ingredientId) {
+  //   return this.selectedIngredients.includes(ingredientId);
+  // }
 
   // make a fetch request to ingredientsUrl
   getIngredients() {
@@ -129,13 +129,44 @@ class Adapter {
     // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
     return fetch(`${this.recipesUrl}/?selected_ingredients=${this.selectedIngredients}`)
       .then(resp => resp.json())
-      .then(recipesData => console.log(recipesData))
+      .then(recipesData => this.renderMathchingRecipes(recipesData))
       .catch(err => alert(err));
+
   };
 
-  renderMathchingRecipes() {
+  renderMathchingRecipes(recipesData) {
     //create DOM nodes and insert data into them to render in the DOM
-  };
+    console.log(recipesData)
+    if (recipesData.length > 0) {
+      recipesData.forEach(recipe => {
+        // render recipe if recipeCard is not displayed yet
+        if (!this.recipeResults.includes(recipe.id)) {
+          let recipeCard = recipesContainer.appendChild(document.createElement('div'));
+          recipeCard.className = 'recipeCard'
+          recipeCard.setAttribute('data-recipe-id', recipe.id)
+          let recipeImg = recipe.image_url;
+          const recipeName = `<h3>${recipe.name}</h3>`;
+          recipeCard.innerHTML += recipeImg;
+          recipeCard.innerHTML += recipeName;
+          this.recipeResults.push(recipe.id)
+        }
+
+        // if (!this.selectedIngredients.includes()
+        //   // how to remove recipeCard when the ingredient is unselected?
+        // }
+
+        // image full bleed
+        // Category in gray
+        // <h1>recipe.name</h1>
+        // ingredients' name
+        // recipeCard.addEventListener('click', renderPopUpRecipe)
+      })
+    }
+  }
+
+  renderPopUpRecipe() {
+
+  }
 };
 // call method to get particular notes from db and return it
 // const ingredients = app.getIngredients()

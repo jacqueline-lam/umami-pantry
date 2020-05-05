@@ -35,6 +35,16 @@ div.ingredientCard {
   font-size: 13px;
 }
 
+div.recipeCard {
+  height: 278px;
+  margin-bottom: 22px;
+  margin: 10px;
+  width: 235px;
+}
+img div.recipeCard {
+  width:100%
+}
+
 img.ingredientImg {
   width: 60px;
   height: 60px;
