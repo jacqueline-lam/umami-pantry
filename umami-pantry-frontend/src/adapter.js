@@ -148,6 +148,9 @@ class Adapter {
           const recipeName = `<h3>${recipe.name}</h3>`;
           recipeCard.innerHTML += recipeImg;
           recipeCard.innerHTML += recipeName;
+          let ingredientsSpan = document.createElement('span')
+          ingredientsSpan.innerText = recipe.category
+          recipeCard.appendChild(ingredientsSpan);
           this.recipeResults.push(recipe.id)
         }
 
