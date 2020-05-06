@@ -40,14 +40,7 @@ class Adapter {
 
     let clearIngredientsBtn = document.getElementById('removeIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
-    // () => {
-    //   this.selectedIngredients = [];
-    //   Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
-    //   while (recipesNode.firstChild) {
-    //     recipesNode.removeChild(recipesNode.lastChild);
-    //   }
-    // }
-    // );
+
   };
 
   // isSelected(ingredientId) {
