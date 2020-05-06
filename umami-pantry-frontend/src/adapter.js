@@ -1,4 +1,3 @@
-// rename to AppContainer?
 // serves as in browser data storage system
 const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
@@ -15,7 +14,6 @@ class Adapter {
   static ingredients = [];
   categories = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
-  recipeResults = [];
 
   // Manage event listeners
   bindEventListeners() {
@@ -78,11 +76,13 @@ class Adapter {
       let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
       ingredientCard.className = 'ingredientCard'
       ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
-      const ingredientName = `<p>${ingredient.name}</p>`;
-      let ingredientImg = ingredient.image_url;
 
-      ingredientCard.innerHTML += ingredientName;
-      ingredientCard.innerHTML += ingredientImg;
+      const p = document.createElement('p');
+      p.innerText = ingredient.name
+      ingredientCard.appendChild(p);
+
+      const img = ingredient.image_url;
+      ingredientCard.innerHTML += img;
     });
   };
 
@@ -129,42 +129,44 @@ class Adapter {
     // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
     return fetch(`${this.recipesUrl}/?selected_ingredients=${this.selectedIngredients}`)
       .then(resp => resp.json())
-      .then(recipesData => this.renderMathchingRecipes(recipesData))
-      .catch(err => alert(err));
-
+      .then(recipesData => this.renderMatchingRecipes(recipesData))
+      .catch(err => console.log(err));
   };
 
-  renderMathchingRecipes(recipesData) {
-    //create DOM nodes and insert data into them to render in the DOM
-    console.log(recipesData)
-    if (recipesData.length > 0) {
-      recipesData.forEach(recipe => {
-        // render recipe if recipeCard is not displayed yet
-        if (!this.recipeResults.includes(recipe.id)) {
-          let recipeCard = recipesContainer.appendChild(document.createElement('div'));
-          recipeCard.className = 'recipeCard'
-          recipeCard.setAttribute('data-recipe-id', recipe.id)
-          let recipeImg = recipe.image_url;
-          const recipeName = `<h3>${recipe.name}</h3>`;
-          recipeCard.innerHTML += recipeImg;
-          recipeCard.innerHTML += recipeName;
-          let ingredientsSpan = document.createElement('span')
-          ingredientsSpan.innerText = recipe.category
-          recipeCard.appendChild(ingredientsSpan);
-          this.recipeResults.push(recipe.id)
-        }
+  renderMatchingRecipes(recipesData) {
+    // const recipeCards = document.querySelectorAll('div.recipeCard')
+    // var cards = document.querySelectorAll('.recipeCard)');
+    // for (var i = 0; i < cards.length; i++) {
+    //     cards[i].parentNode.removeChild(cards[i]);
+    // }
 
-        // if (!this.selectedIngredients.includes()
-        //   // how to remove recipeCard when the ingredient is unselected?
-        // }
-
-        // image full bleed
-        // Category in gray
-        // <h1>recipe.name</h1>
-        // ingredients' name
-        // recipeCard.addEventListener('click', renderPopUpRecipe)
-      })
+    // Reload recipe cards when a new ingredient is chosen
+    const recipesNode = document.getElementById("recipeCards");
+    while (recipesNode.firstChild) {
+      recipesNode.removeChild(recipesNode.lastChild);
     }
+
+    if (recipesData.length === 0) {
+      const p = document.createElement('p')
+      p.innerText = 'No recipes are found for this combination of ingredients'
+      recipeCards.appendChild(p)
+    }
+    //create DOM nodes and insert data into them to render in the DOM
+    recipesData.forEach(recipe => {
+      // render recipe if recipeCard is not displayed yet
+      let recipeCard = recipeCards.appendChild(document.createElement('div'));
+      recipeCard.className = 'recipeCard'
+      recipeCard.setAttribute('data-recipe-id', recipe.id)
+
+      let recipeImg = recipe.image_url;
+      const recipeName = `<h3>${recipe.name}</h3>`;
+      recipeCard.innerHTML += recipeImg;
+      recipeCard.innerHTML += recipeName;
+      let ingredientsSpan = document.createElement('span')
+      ingredientsSpan.innerText = recipe.category
+      recipeCard.appendChild(ingredientsSpan);
+      // recipeCard.addEventListener('click', renderPopUpRecipe)
+    })
   }
 
   renderPopUpRecipe() {

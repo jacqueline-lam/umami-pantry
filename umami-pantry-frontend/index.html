@@ -38,27 +38,26 @@
         <!-- <div class="ingredientCard" data-id="1"> -->
           <!-- <img class="ingredientImg" src="..."><p>Ingredient #1</p> -->
         <!-- </div> -->
-
-    </div>
-
-    <div id="createRecipeResults">
-      <!-- Trigger fetch request -->
-      <button id="createRecipesBtn">What can I cook?</button>
+      <button id="removeIngredientsBtn">Clear All Ingredients</button>
     </div>
 
     <div id="recipesContainer">
       <h1>Matching Recipes:</h1>
       <i>Stop saying 'IDK what to cook'!</i>
 
-      <!-- Goal of JS: Make requests to backend to get current list of recipes -->
-      <!-- Add our Recipes -->
-      <!-- <div class="card" data-id="1"><p>Recipe #1</p>
-        <button data-trainer-id="1">Add Pokemon</button>
-        <ul>
-          <li>${reciepe_ingredient.amount} ${ingredient.name} <button class="release" data-recipe-id="???">Release</button></li>
-        </ul>
-      </div> -->
+      <div id="recipeCards">
+        <!-- Goal of JS: Make requests to backend to get current list of recipes -->
+        <!-- Add our Recipes -->
+        <!-- <div class="card" data-id="1"><p>Recipe #1</p>
+          <button data-trainer-id="1">Add Pokemon</button>
+          <ul>
+            <li>${reciepe_ingredient.amount} ${ingredient.name} <button class="release" data-recipe-id="???">Release</button></li>
+          </ul>
+        </div> -->
+      </div>
+
     </div>
+
 
     <!-- Link JS file to HTML -->
     <!-- index.js relies on adapter.js so it needs to be read first - stored in memory -->
@@ -68,7 +67,7 @@
     <script type="application/javascript" src="src/adapter.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-    <script src="bootstrap.min.js"></script>
+    <!-- <script src="bootstrap.min.js"></script> -->
   </div>
 </body>
 </html>
