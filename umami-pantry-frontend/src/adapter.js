@@ -77,12 +77,12 @@ class Adapter {
       ingredientCard.className = 'ingredientCard'
       ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
 
+      const img = ingredient.image_url;
+      ingredientCard.innerHTML += img;
+
       const p = document.createElement('p');
       p.innerText = ingredient.name
       ingredientCard.appendChild(p);
-
-      const img = ingredient.image_url;
-      ingredientCard.innerHTML += img;
     });
   };
 

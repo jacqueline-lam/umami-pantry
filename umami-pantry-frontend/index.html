@@ -3,11 +3,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umami Pantry</title>
+  <link rel="icon"type="image/png" href="icon.png"
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 
@@ -22,23 +23,24 @@
       <h4>Select the available ingredients in your pantry:</h4>
       <!-- Display all ingredients for user selection -->
       <!-- div to wrap around each ingredient category -->
-      <div class='categoryContainer' id='grains'><h2>Grains</h2></div>
-      <div class='categoryContainer' id='protein-foods'><h2>Protein Foods</h2></div>
-      <div class='categoryContainer' id='beans-and-peas'><h2>Beans and Peas</h2></div>
-      <div class='categoryContainer' id='nuts-and-seeds'><h2>Nuts & Seeds</h2></div>
-      <div class='categoryContainer' id='root-vegetables'><h2>Root Vegetables</h2></div>
-      <div class='categoryContainer' id='dark-green-vegetables'><h2>Dark Green Vegetables</h2></div>
-      <div class='categoryContainer' id='other-vegetables'><h2>Other Vegetabeles</h2></div>
-      <div class='categoryContainer' id='dairy'><h2>Dairy</h2></div>
-      <div class='categoryContainer' id='soup-and-broth'><h2>Soup & Broth</h2></div>
-      <div class='categoryContainer' id='fruits'><h2>Fruits</h2></div>
-      <div class='categoryContainer' id='additives'><h2>Sauce, Condiments & Additives</h2></div>
-      <div class='categoryContainer' id='herb-and-spices'><h2>Herbs & Spices</h2></div>
+      <div class='categoryContainer' id='grains'><h3>Grains</h3></div>
+      <div class='categoryContainer' id='protein-foods'><h3>Protein Foods</h3></div>
+      <div class='categoryContainer' id='beans-and-peas'><h3>Beans and Peas</h3></div>
+      <div class='categoryContainer' id='nuts-and-seeds'><h3>Nuts & Seeds</h3></div>
+      <div class='categoryContainer' id='root-vegetables'><h3>Root Vegetables</h3></div>
+      <div class='categoryContainer' id='dark-green-vegetables'><h3>Dark Green Vegetables</h3></div>
+      <div class='categoryContainer' id='other-vegetables'><h3>Other Vegetabeles</h3></div>
+      <div class='categoryContainer' id='dairy'><h3>Dairy</h3></div>
+      <div class='categoryContainer' id='soup-and-broth'><h3>Soup & Broth</h3></div>
+      <div class='categoryContainer' id='fruits'><h3>Fruits</h3></div>
+      <div class='categoryContainer' id='additives'><h3>Sauce, Condiments & Additives</h3></div>
+      <div class='categoryContainer' id='herb-and-spices'><h3>Herbs & Spices</h3></div>
         <!-- div to wrap around each ingredient card -->
         <!-- <div class="ingredientCard" data-id="1"> -->
           <!-- <img class="ingredientImg" src="..."><p>Ingredient #1</p> -->
         <!-- </div> -->
-      <button id="removeIngredientsBtn">Clear All Ingredients</button>
+      <button type="button" id="removeIngredientsBtn" class="btn btn-outline-warning btn-lg btn-block">Clear All Ingredients</button>
+
     </div>
 
     <div id="recipesContainer">
@@ -107,7 +109,6 @@
 
       <!-- end of test -->
     </div>
-
 
     <!-- Link JS file to HTML -->
     <!-- index.js relies on adapter.js so it needs to be read first - stored in memory -->
