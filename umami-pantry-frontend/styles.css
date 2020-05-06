@@ -41,7 +41,18 @@ div.recipeCard {
   margin: 10px;
   width: 235px;
 }
-img div.recipeCard {
+
+div.card.mb-3 {
+  /* width: 50%; */
+  /* height: auto; */
+  display: inline-grid; /*inline-grid*/
+  float: left;
+  margin: 5px;
+  max-width: 300px;
+
+}
+
+img div.recipeCards {
   width: auto;
 }
 
