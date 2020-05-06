@@ -8,6 +8,7 @@
 .container{
   width: auto;
   font-family: 'Rubik', sans-serif;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -80,6 +81,15 @@ div.recipeCard img {
   height: 200px;
   width: 100%;
   display: block;
+}
+
+div.recipeCard a {
+  color: black;
+  font-weight: 400;
+}
+
+div.recipeCard a:hover {
+  color: blue;
 }
 
 div.card.mb-3 {

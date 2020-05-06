@@ -3,7 +3,8 @@ const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const categoryContainers = document.getElementsByClassName('categoryContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard')
-// let addIngredient = false;
+const recipesNode = document.getElementById("recipeCards");
+// const
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -12,16 +13,10 @@ class Adapter {
     this.recipesUrl = `${baseUrl}/get_recipes`;
   }
   static ingredients = [];
-  categories = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
 
   // Manage event listeners
   bindEventListeners() {
-    // push ingredient_id to an array when ingredient is clicked
-    // const btn = document.getElementById('createRecipesBtn');
-    // btn.addEventListener('click', getMatchingRecipes);
-    // generate recipe results when button is clicked
-
     // ingredientBtn.addEventListener('click', this.getIngredients);
     // ingredientCards.forEach(card => {
     //   card.addEventListener('click', e => {
@@ -33,9 +28,8 @@ class Adapter {
     //   })
     // })
 
+    // eventlistener for ingredient card
     ingredientsContainer.addEventListener('click', e => {
-      // console.log(ingredientCards)
-      // console.log(e.target.parentNode)
       for (const ingredientCard of ingredientCards) {
         // if ingredientCard is clicked
         if ((e.target == ingredientCard) || (e.target.parentNode == ingredientCard)) {
@@ -43,6 +37,17 @@ class Adapter {
         }
       }
     });
+
+    let clearIngredientsBtn = document.getElementById('removeIngredientsBtn')
+    clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
+    // () => {
+    //   this.selectedIngredients = [];
+    //   Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
+    //   while (recipesNode.firstChild) {
+    //     recipesNode.removeChild(recipesNode.lastChild);
+    //   }
+    // }
+    // );
   };
 
   // isSelected(ingredientId) {
@@ -113,6 +118,23 @@ class Adapter {
     this.getMatchingRecipes(this.selectedIngredients);
   }
 
+  unselectIngredientsHandler() {
+    this.selectedIngredients.splice(0, this.selectedIngredients.length);
+    Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
+    while (recipesNode.firstChild) {
+      recipesNode.removeChild(recipesNode.lastChild);
+    }
+    console.log(this.selectedIngredients);
+
+    // this.selectedIngredients.forEach(ingredient => {
+    //   console.log(ingredient)
+    // })
+    // for (const ingredient of this.selectedIngredients) {
+    //   console.log(ingredient)
+    //   // this.selectIngredientHandler(ingredient);
+    // };
+  };
+
   getRecipes() {
     // make a fetch request to /recipes
     // populate recipe and ingredient properties with returned data
@@ -135,7 +157,7 @@ class Adapter {
 
   renderMatchingRecipes(recipesData) {
     // Reload recipe cards when a new ingredient is chosen
-    const recipesNode = document.getElementById("recipeCards");
+
     while (recipesNode.firstChild) {
       recipesNode.removeChild(recipesNode.lastChild);
     }
@@ -163,15 +185,15 @@ class Adapter {
       a.textContent = recipe.name;
       h3.appendChild(a);
 
+      // Recipe image
+      let recipeImg = recipe.image_url;
+      recipeCard.innerHTML += recipeImg;
+
       //Recipe Category
       let categoryDiv = recipeCard.appendChild(document.createElement('div'))
       categoryDiv.className = 'card-body'
       // categoryDiv.innerHTML = `<h6 class="card-subtitle text muted">${recipe.category}</h6>`
       categoryDiv.innerHTML = `<h5><span class="badge badge-dark">${recipe.category}</span></h5>`
-
-      // Recipe image
-      let recipeImg = recipe.image_url;
-      recipeCard.innerHTML += recipeImg;
 
       // Recipe ingredients
       let ul = document.createElement('ul');
