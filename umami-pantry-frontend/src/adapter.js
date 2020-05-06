@@ -134,12 +134,6 @@ class Adapter {
   };
 
   renderMatchingRecipes(recipesData) {
-    // const recipeCards = document.querySelectorAll('div.recipeCard')
-    // var cards = document.querySelectorAll('.recipeCard)');
-    // for (var i = 0; i < cards.length; i++) {
-    //     cards[i].parentNode.removeChild(cards[i]);
-    // }
-
     // Reload recipe cards when a new ingredient is chosen
     const recipesNode = document.getElementById("recipeCards");
     while (recipesNode.firstChild) {
@@ -155,16 +149,47 @@ class Adapter {
     recipesData.forEach(recipe => {
       // render recipe if recipeCard is not displayed yet
       let recipeCard = recipeCards.appendChild(document.createElement('div'));
-      recipeCard.className = 'recipeCard'
+      recipeCard.classList.add('recipeCard', 'card', 'mb-3')
       recipeCard.setAttribute('data-recipe-id', recipe.id)
 
+      // Recipe name with link
+      let h3 = document.createElement('h3')
+      h3.className = 'card-header';
+      recipeCard.appendChild(h3);
+
+      let a = document.createElement('a');
+      let aHref = `${this.baseUrl}/recipes/${recipe.id}`;
+      a.setAttribute('href', aHref);
+      a.textContent = recipe.name;
+      h3.appendChild(a);
+
+      //Recipe Category
+      let categoryDiv = recipeCard.appendChild(document.createElement('div'))
+      categoryDiv.className = 'card-body'
+      // categoryDiv.innerHTML = `<h6 class="card-subtitle text muted">${recipe.category}</h6>`
+      categoryDiv.innerHTML = `<h5><span class="badge badge-dark">${recipe.category}</span></h5>`
+
+      // Recipe image
       let recipeImg = recipe.image_url;
-      const recipeName = `<h3>${recipe.name}</h3>`;
       recipeCard.innerHTML += recipeImg;
-      recipeCard.innerHTML += recipeName;
-      let ingredientsSpan = document.createElement('span')
-      ingredientsSpan.innerText = recipe.category
-      recipeCard.appendChild(ingredientsSpan);
+
+      // Recipe ingredients
+      let ul = document.createElement('ul');
+      ul.classList.add( 'list-group', 'list-group-flush');
+      for (const ingredient of recipe.recipe_ingredients) {
+        let li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerText = ingredient['name'];
+        ul.appendChild(li);
+      }
+
+      // recipeCard.innerHTML += recipeImg;
+      // recipeCard.innerHTML += recipeName;
+      // let ingredientsSpan = document.createElement('span')
+      // ingredientsSpan.innerText = recipe.category
+      // recipeCard.appendChild(ingredientsSpan);
+
+      recipeCard.appendChild(ul);
       // recipeCard.addEventListener('click', renderPopUpRecipe)
     })
   }
