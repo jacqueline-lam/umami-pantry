@@ -2,12 +2,8 @@ class RecipesController < ApplicationController
   def index
     # Render json (js format used by AJAX lib)
       # convert objects from ORM to JSON and render JSON back to browser
-    # recipes = Recipe.all
-    ingredientIds = params[:ingredients]
-    # binding.pry
-    # matching_recipes = Recipe.where
-    # ingredientIds.map {|id|}
-
+    recipes = Recipe.all
+    render json: recipes, include: [:ingredients], except: [:created_at, :updated_at]
     # render json: RecipeSerializer.new(recipes).to_serialized_json
   end
 
@@ -18,7 +14,7 @@ class RecipesController < ApplicationController
     recipes = Recipe.filter_by_ingredients(selected_ingredients)
 
     # if recipes.any?
-    render json: RecipeSerializer.new(recipes).to_serialized_json
+    render json: RecipeSerializer.new(recipes).instances_to_serialized_json
     # else
     #   render json: { message: 'No recipes found for this combination of ingredients.'}
     # end
@@ -28,7 +24,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.find_by(id: params[:id])
     if recipe
       # include - API to send a resource's data along with its associated resources' data
-      render json: RecipeSerializer.new(recipe).to_serialized_json
+      render json: RecipeSerializer.new(recipe).instance_to_serialized_json
     else
       render json: { message: 'Recipe not found.' }
     end
