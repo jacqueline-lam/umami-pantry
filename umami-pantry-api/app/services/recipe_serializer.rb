@@ -7,16 +7,20 @@ class RecipeSerializer
   # call to_json on this instance variable
   # handling inclusion and exclusion of attributes
   # get out data customized in JSON string
-
   def instance_to_serialized_json
-    render_json(@recipe_collection)
+    return get_recipe_hash(@recipe_collection).to_json
   end
 
   def instances_to_serialized_json
-    @recipe_collection.each { |recipe| render_json(recipe) }
+    to_return = []
+    @recipe_collection.each do|recipe|
+      recipe_hash = get_recipe_hash(recipe)
+      to_return << recipe_hash
+    end
+    return to_return.to_json
   end
 
-  def render_json(recipe)
+  def get_recipe_hash(recipe)
     # options = {
     #   # include - API to send resource's data along with its associated resources' data
     #   include: {
@@ -30,8 +34,6 @@ class RecipeSerializer
     #   except: [:created_at, :updated_at]
     # }
     # return @recipe.to_json(options)
-
-    to_return = []
     recipe_hash = recipe.attributes
 
     recipe_hash["recipe_ingredients"] = []
@@ -45,7 +47,6 @@ class RecipeSerializer
       }
       recipe_hash["recipe_ingredients"] << ri_hash
     end
-    to_return << recipe_hash
-    return to_return.to_json
+    return recipe_hash
   end
 end

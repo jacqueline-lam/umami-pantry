@@ -8,3 +8,5 @@ class Ingredient {
   static all = []
   // fetchAndLoadIngredients() {}
 }
+
+// console.log(Ingredient.all)

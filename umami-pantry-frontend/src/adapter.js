@@ -4,6 +4,7 @@ const ingredientsContainer = document.getElementById('ingredientsContainer');
 const categoryContainers = document.getElementsByClassName('categoryContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard')
 const recipesNode = document.getElementById("recipeCards");
+const recipeCards = document.getElementsByClassName('recipeCard')
 // const
 
 class Adapter {
@@ -42,17 +43,24 @@ class Adapter {
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
 
     //eventlistener for recipe card
-    let recipeTitle = document.getElementById('h3.card-header');
     recipesNode.addEventListener('click', e => {
-      console.log(e.target);
-      console.log(recipeTitle);
-      if (e.target == recipeTitle) {
-        console.log(recipeTitle.dataset.recipeId)
+      for (const recipeCard of recipeCards) {
+        if ((e.target === recipeCard) || (recipeCard.hasChildNodes(e.target))) {
+          this.renderRecipe(recipeCard)
+        }
       }
     })
+    // let recipeTitle = document.getElementById('h3.card-header');
+    // recipesNode.addEventListener('click', e => {
+    //   console.log(e.target);
+    //   console.log(recipeTitle);
 
-    // recipe.addEventListener
-
+    //  let recipeId = recipeTitle.dataset.recipeId
+    //   if (e.target == recipeTitle) {
+    //     console.log(recipeTitle.dataset.recipeId)
+    //     renderRecipe(recipeId);
+    //   }
+    // })
   };
 
   // isSelected(ingredientId) {
@@ -140,18 +148,10 @@ class Adapter {
     // };
   };
 
-  getRecipes() {
-    // make a fetch request to /recipes
-    // populate recipe and ingredient properties with returned data
-    // temporarily persisting to propetrties in container instances
-    // call renderRecipes - DOM manipulation via render activities
-    return fetch(this.recipesUrl)
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .catch(err => alert(err));
-  };
-
   // get request for all recipes that match ingredientId
+  // populate recipe + associated properties with returned data
+  // temporarily persisting to propetrties in container instances
+  // call renderMatchingRecipes - DOM manipulation via render activities
   getMatchingRecipes() {
     // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
     return fetch(`${this.recipesUrl}/?selected_ingredients=${this.selectedIngredients}`)
@@ -170,12 +170,12 @@ class Adapter {
     if (recipesData.length === 0) {
       const p = document.createElement('p')
       p.innerText = 'No recipes are found for this combination of ingredients'
-      recipeCards.appendChild(p)
+      recipesNode.appendChild(p)
     }
     //create DOM nodes and insert data into them to render in the DOM
     recipesData.forEach(recipe => {
       // render recipe if recipeCard is not displayed yet
-      let recipeCard = recipeCards.appendChild(document.createElement('div'));
+      let recipeCard = recipesNode.appendChild(document.createElement('div'));
       recipeCard.classList.add('recipeCard', 'card', 'mb-3')
       recipeCard.setAttribute('data-recipe-id', recipe.id)
 
@@ -215,14 +215,12 @@ class Adapter {
       // let ingredientsSpan = document.createElement('span')
       // ingredientsSpan.innerText = recipe.category
       // recipeCard.appendChild(ingredientsSpan);
-
       recipeCard.appendChild(ul);
-      // recipeCard.addEventListener('click', renderPopUpRecipe)
     })
   }
 
-  renderPopUpRecipe() {
-
+  renderRecipe(recipeCard) {
+    console.log(recipeCard)
   }
 };
 // call method to get particular notes from db and return it
