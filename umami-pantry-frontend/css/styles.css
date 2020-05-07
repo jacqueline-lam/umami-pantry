@@ -78,7 +78,7 @@ div.recipeCard {
 
 div.recipeCard img {
   /* width: auto; */
-  height: 200px;
+  height: auto;
   width: 100%;
   display: block;
 }

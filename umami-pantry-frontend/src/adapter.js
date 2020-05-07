@@ -37,9 +37,21 @@ class Adapter {
         }
       }
     });
-
+    // eventlistener for 'Clear All Ingredients' btn
     let clearIngredientsBtn = document.getElementById('removeIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
+
+    //eventlistener for recipe card
+    let recipeTitle = document.getElementById('h3.card-header');
+    recipesNode.addEventListener('click', e => {
+      console.log(e.target);
+      console.log(recipeTitle);
+      if (e.target == recipeTitle) {
+        console.log(recipeTitle.dataset.recipeId)
+      }
+    })
+
+    // recipe.addEventListener
 
   };
 
