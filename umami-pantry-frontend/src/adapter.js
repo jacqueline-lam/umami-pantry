@@ -242,53 +242,59 @@ class Adapter {
 
   getSingleRecipe(recipeId){
     console.log("Got recipe ID: " + recipeId);
-    // return fetch(`${this.recipeUrl}/${recipeId}`)
-    //   .then(resp => resp.json())
-    //   .then(recipeData => this.renderSelectedRecipe(recipeData))
-    //   .catch(err => console.log(err));
+    return fetch(`${this.recipeUrl}/${recipeId}`)
+      .then(resp => resp.json())
+      .then(recipeData => this.renderSelectedRecipe(recipeData))
+      .catch(err => console.log(err));
   };
 
-  // renderSelectedRecipe(recipe) {
-  //   let recipeDiv = document.getElementById('selectedRecipe');
-  //   // let h1 = document.createElement('h1')
-  //   // h1.innerText = 'Selected Recipe:'
+  renderSelectedRecipe(recipe) {
+    let recipeDiv = document.getElementById('selectedRecipe');
+    // let h1 = document.createElement('h1')
+    // h1.innerText = 'Selected Recipe:'
 
-  //   let heading = document.createElement('div')
-  //   heading.id = 'recipeHeading'
-  //   let h2 = document.createElement('h2')
-  //   heading.appendChild(h2)
-  //   heading.innerHTML += recipe.image_url
+    let heading = document.createElement('div')
+    heading.id = 'recipeHeading'
+    heading.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`
+    recipeDiv.appendChild(heading);
 
-  //   // Recipe time, ingredients list
-  //   let row = document.createElement('div')
-  //   row.className = 'row'
-  //   let col1 = document.createElement('div')
-  //   col1.className = 'col-4'
-  //   col1.innerHTML += `<li><ul>Servings: ${recipe.servings.toString()}<ul><ul>Total Time: ${recipe.time.toString()}</li>`
+    // // Recipe time, ingredients list
+    let row = document.createElement('div')
+    row.className = 'row'
+    let col1 = document.createElement('div')
+    col1.className = 'col-4'
+    col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()}</li></ul><h3>Ingredients</h3>`
 
-  //   let ingredientsTable = document.createElement('table')
-  //   ingredientsTable.classList.add('table', 'table-hover');
-  //   ingredinetsTable
+    let ingredientsTable = document.createElement('table')
+    ingredientsTable.classList.add('table', 'table-hover');
 
-  //   let tbody = document.createElement('tbody')
-  //   recipe.recipe_ingredients.forEach(ingredient => {
-  //     let tr = document.createElement('tr')
-  //     let th = `<th scope="row">${ingredient.amount}</th>`
-  //     let td = `${ingredient.name}, ${preparation_method}`
-  //     tr.innerText = th + td
-  //     tbody.appendChild(tr)
-  //   })
-  //   col11.appendChild(tbody)
+    let tbody = document.createElement('tbody')
+    recipe.recipe_ingredients.forEach(ingredient => {
+      let tr = document.createElement('tr')
+      let td1 = document.createElement('td')
+      let td2 = document.createElement('td')
+      td1.textContent = ingredient.amount
+      td2.textContent = `${ingredient.name}, ${ingredient.preparation_method}`
+      tr.append(td1, td2)
+      // let td1 = `<td>${ingredient.amount}</td>`
+      // let td2 = `<td>${ingredient.name}, ${ingredient.preparation_method}</td>`
+      // tr.innerText = td1 + td2
+      tbody.appendChild(tr)
+    })
+    ingredientsTable.appendChild(tbody);
+    col1.appendChild(ingredientsTable);
+    row.appendChild(col1)
+    recipeDiv.appendChild(row)
 
-  //   // Recipe Directions
-  //   let col2 = document.createElement('div')
-  //   col2.className = 'col-8'
-  //   col2.innerHTML += `<h3>Directions</h3>`
-  //   // <li><ol></ol></li>
+    // Recipe Directions
+    let col2 = document.createElement('div')
+    col2.className = 'col-8'
+    col2.innerHTML += `<h3>Directions</h3><hr>${recipe.directions}`
 
-  //   recipeDiv.append(h2, col1, col2)
+
+    // <li><ol></ol></li>
+    row.appendChild(col2)
+  };
 };
 // call method to get particular notes from db and return it
 // const ingredients = app.getIngredients()
-
-

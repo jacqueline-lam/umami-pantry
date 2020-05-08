@@ -102,6 +102,10 @@ div.card.mb-3 {
 }
 
 
+div.selectedRecipe {
+  display: inline-block;
+
+}
 
 /* Footnote
 ----------------------------------------------------*/

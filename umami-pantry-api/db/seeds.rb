@@ -136,7 +136,7 @@ recipe_data = [
   {
     name: 'Five-Ingredient Creamy Miso Pasta',
     category: 'Japanese',
-    directions: "<li><ol>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</ol><ol>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes. Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</ol><ol>Divide among shallow bowls and sprinkle with nori or furikake, if using.</ol></li>",
+    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</li><li>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes.</li><li>Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</li><li>Divide among shallow bowls and sprinkle with nori or furikake, if using</li></ol>",
     image_url: '<img src="https://static01.nyt.com/images/2020/04/17/dining/17help/aw-miso-pasta-articleLarge.jpg"/>',
     servings: 4,
     time: 25,
@@ -164,7 +164,7 @@ recipe_data = [
   {
     name: 'Aglio e Olio (aka 🧄🧀🍝)',
     category: 'Italian',
-    directions: "<li><ol>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1 cup pasta water, then drain the pasta.</ol><ol>Add the oil, garlic and red pepper flakes into a large deep pan set over medium-high heat, and cook until the garlic is translucent and golden, 2 to 3 minutes. Add the parsley to the pan, and turn off the heat.</ol><ol>Cool the oil for a couple of minutes, add 1/2 cup of the pasta cooking water, and reduce over high heat by about half.</ol><ol>Add the pasta, and stir vigorously as it continues to cook. Add the reserved pasta water a bit at a time as necessary to finish cooking the pasta, and develop the thickened sauce.</ol><ol>Add the parmesan and toss well. Season with salt, and serve.</ol></li>",
+    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1 cup pasta water, then drain the pasta.</li><li>Add the oil, garlic and red pepper flakes into a large deep pan set over medium-high heat, and cook until the garlic is translucent and golden, 2 to 3 minutes. Add the parsley to the pan, and turn off the heat.</li><li>Cool the oil for a couple of minutes, add 1/2 cup of the pasta cooking water, and reduce over high heat by about half.</li><li>Add the pasta, and stir vigorously as it continues to cook. Add the reserved pasta water a bit at a time as necessary to finish cooking the pasta, and develop the thickened sauce.</li><li>Add the parmesan and toss well. Season with salt, and serve.</li></ol>",
     image_url: '<img src="https://static01.nyt.com/images/2015/03/22/magazine/22eat5pepperoncini/22eat5pepperoncini-articleLarge.jpg"/>',
     servings: 4,
     time: 20,
@@ -204,7 +204,7 @@ recipe_data = [
   {
     name: 'Banana bread (because everyone is baking)',
     category: 'Pastries',
-    directions: "<li><ol>Remove odd pots and pans from oven</ol><ol>Preheat oven to 350º / 180º.</ol><ol>Cream together butter and sugar.</ol><ol>Add eggs and crushed bananas. Combine well</ol><ol>Sift together flour, soda and salt. Add to creamed mixture. Add vanilla.</ol><ol>Mix just until combined. Do not overmix.</ol><ol>Pour into greased and floured loaf pan.</ol><ol>Bake at 350º / 180º for 55 minutes.</ol><ol>Keeps well, refrigerated.</ol></li>",
+    directions: "<ol><li>Remove odd pots and pans from oven</li><li>Preheat oven to 350º / 180º.</li><li>Cream together butter and sugar.</li><li>Add eggs and crushed bananas. Combine well</li><li>Sift together flour, soda and salt. Add to creamed mixture. Add vanilla.</li><li>Mix just until combined. Do not overmix.</li><li>Pour into greased and floured loaf pan.</li><li>Bake at 350º / 180º for 55 minutes.</li><li>Keeps well, refrigerated.</li></ol>",
     image_url: '<img src="https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_721,h_406/v1/img/recipes/28/86/wBZxNua1T8yfDwbfo9Fz_0S9A9315.jpg"/>',
     servings: 10,
     time: 65,
