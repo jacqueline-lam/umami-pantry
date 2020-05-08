@@ -146,14 +146,6 @@ class Adapter {
       recipesNode.removeChild(recipesNode.lastChild);
     }
     console.log(this.selectedIngredients);
-
-    // this.selectedIngredients.forEach(ingredient => {
-    //   console.log(ingredient)
-    // })
-    // for (const ingredient of this.selectedIngredients) {
-    //   console.log(ingredient)
-    //   // this.selectIngredientHandler(ingredient);
-    // };
   };
 
   // get request for all recipes that match ingredientId
@@ -294,10 +286,15 @@ class Adapter {
     let col2 = document.createElement('div')
     col2.className = 'col-8'
     col2.innerHTML += `<h3>Directions</h3><hr>${recipe.directions}`
-
-
-    // <li><ol></ol></li>
     row.appendChild(col2)
+
+    //Back to results
+    const returnBtn = document.createElement('button')
+    returnBtn.id = "matchingRecipesBtn"
+    returnBtn.classList.add('btn', 'btn-outline-danger', 'btn-lg')
+    returnBtn.textContent = 'Return to Matching Recipes'
+    // returnbtn.addEventListener('click', this.displayMatchingRecipes.bind(app));
+    recipeDiv.appendChild(returnBtn);
   };
 };
 // call method to get particular notes from db and return it
