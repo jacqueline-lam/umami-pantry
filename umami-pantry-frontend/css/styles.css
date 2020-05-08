@@ -104,7 +104,11 @@ div.card.mb-3 {
 
 div.selectedRecipe {
   display: inline-block;
+}
 
+div.col-8 li {
+  margin-bottom: 30px;
+  font-size: 130%;
 }
 
 /* Footnote

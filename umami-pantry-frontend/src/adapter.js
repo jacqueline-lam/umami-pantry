@@ -232,6 +232,8 @@ class Adapter {
           selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
         }
         this.getSingleRecipe(selectedRecipeId);
+        const recipeContainer = document.getElementById('recipesContainer')
+        recipeContainer.style.display = 'none'
       });
       // recipeCard.children[0].children[0].addEventListener('click', e => {
       //   const selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
@@ -274,7 +276,9 @@ class Adapter {
       let td1 = document.createElement('td')
       let td2 = document.createElement('td')
       td1.textContent = ingredient.amount
-      td2.textContent = `${ingredient.name}, ${ingredient.preparation_method}`
+      td2.textContent = `${ingredient.name}`
+      ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : ""
+      td2.innerText
       tr.append(td1, td2)
       // let td1 = `<td>${ingredient.amount}</td>`
       // let td2 = `<td>${ingredient.name}, ${ingredient.preparation_method}</td>`
