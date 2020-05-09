@@ -187,6 +187,7 @@ class Adapter {
   }
 
   unselectIngredientsHandler() {
+    //empty selectedIngredients array
     this.selectedIngredients.splice(0, this.selectedIngredients.length);
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
     while (recipesNode.firstChild) {
@@ -200,13 +201,13 @@ class Adapter {
   // temporarily persisting to propetrties in container instances
   // call renderMatchingRecipes - DOM manipulation via render activities
   getMatchingRecipes() {
-      let matchingRecipes = []
+    let matchingRecipes = []
     // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
     return fetch(`${this.findRecipesUrl}/?selected_ingredients=${this.selectedIngredients}`)
       .then(resp => resp.json())
       .then(recipesData => {
         recipesData.forEach(recipe => {
-          matchingRecipes.push(new Recipe(recipe));
+          recipe instanceof Recipe ? "" : matchingRecipes.push(new Recipe(recipe));
         })
         this.renderMatchingRecipes(matchingRecipes);
       })
@@ -316,7 +317,8 @@ class Adapter {
       let td2 = document.createElement('td')
 
       ingredient.amount ? (td1.innerHTML += `<b>${ingredient.amount}</b>`) : ""
-      td2.textContent = `${ingredient.name}`
+      td2.textContent = ingredient.name
+      td2.id = ingredient.id
       ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : ""
       tr.append(td1, td2)
       // let td1 = `<td>${ingredient.amount}</td>`
@@ -358,12 +360,18 @@ class Adapter {
   };
 
   editRecipeInredientHandler(recipeId){
-    this.renderAddSubIngredientForm();
+    this.renderAddSubIngredientForm(recipeId);
     // RecipeIngredient.new();
   }
 
-  renderAddSubIngredientForm() {
+  renderAddSubIngredientForm(recipeId) {
+    // let recipe = R
+    let formDiv = docuemnt.getElementById('subIngredientForm')
+    formDiv.style.display = 'block';
 
+    let ogIngredientSelect = document.getElementById('ogIngredient')
+
+    ogIngredientSelect.append(option)
     `Replace ingredient: _____ with...`
     `Ingredient: <select>`
     `New amount:`

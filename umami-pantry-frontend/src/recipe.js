@@ -9,7 +9,11 @@ class Recipe {
     this.time = recipe.time
     this.directions = recipe.directions
     this.ingredients = recipe.recipe_ingredients
+    this.constructor.all.push(this)
   }
+
+  static all = []
+
   saveIngredients(ingredients){
     // for (const hash of ingredients){
       // hash.

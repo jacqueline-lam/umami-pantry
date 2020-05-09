@@ -25,6 +25,7 @@ button.btn {
 /* Ingredients */
 
 div#ingredientsContainer {
+  margin-top: 30px;
   margin-bottom: 100px;
 }
 
@@ -111,15 +112,9 @@ div.col-8 li {
   font-size: 130%;
 }
 
-/* Form search bar bootstrap */
-.select2-container .select2-selection--single{
-  height:34px !important;
+div#subIngredientForm {
+  margin: 30px 0px;
 }
-.select2-container--default .select2-selection--single{
-       border: 1px solid #ccc !important;
-   border-radius: 0px !important;
-}
-
 
 /* Footnote
 ----------------------------------------------------*/
