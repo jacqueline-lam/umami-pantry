@@ -2,11 +2,12 @@
 const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const categoryContainers = document.getElementsByClassName('categoryContainer');
-const ingredientCards = document.getElementsByClassName('ingredientCard')
+const ingredientCards = document.getElementsByClassName('ingredientCard');
+const recipesContainer = document.getElementById('recipesContainer');
 const recipesNode = document.getElementById("recipeCards");
-const recipeCards = document.getElementsByClassName('recipeCard')
-const returnToRecipesBtn = document.getElementById('returnToRecipesBtn')
-const addSubIngredientBtn = document.getElementById('substitutIngredientBtn')
+const recipeCards = document.getElementsByClassName('recipeCard');
+const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
+const selectedRecipeDiv = document.getElementById('selectedRecipe');
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -45,7 +46,16 @@ class Adapter {
     let clearIngredientsBtn = document.getElementById('removeIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
 
-    // addSubIngredientBtn.addEventListener('click', this.editRecipeInredientHandler)
+    // eventlistener for 'Add A Subsitute Ingredient' btn
+    // addSubIngredientBtn.addEventListener('click', this.editRecipeInredientHandler);
+
+    // eventlistener for Return to Matching Recipes Btn
+    selectedRecipeDiv.addEventListener('click', e => {
+      const returnBtn = document.getElementById('returnToRecipesBtn')
+      if (e.target === returnBtn) {
+        this.displayMatchingRecipes();
+      }
+    })
   };
 
   // isSelected(ingredientId) {
@@ -258,8 +268,7 @@ class Adapter {
           selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
         }
         this.getSingleRecipe(selectedRecipeId);
-        const recipeContainer = document.getElementById('recipesContainer')
-        recipeContainer.style.display = 'none'
+        recipesContainer.style.display = 'none'
       });
       // recipeCard.children[0].children[0].addEventListener('click', e => {
       //   const selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
@@ -280,6 +289,7 @@ class Adapter {
     let recipeDiv = document.getElementById('selectedRecipe');
     // let h1 = document.createElement('h1')
     // h1.innerText = 'Selected Recipe:'
+    recipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
 
     let heading = document.createElement('div')
     heading.id = 'recipeHeading'
@@ -339,8 +349,17 @@ class Adapter {
     recipeDiv.appendChild(returnBtn);
   };
 
-  editRecipeInredientHandler(){
+  // editRecipeInredientHandler(){
+  //   this.renderAddSubIngredientForm();
+  //   RecipeIngredient.new()
+  // }
 
-  //  RecipeIngredient.new()
+  // renderAddSubIngredientForm() {
+
+  // }
+
+  displayMatchingRecipes(){
+    selectedRecipeDiv.innerHTML = ''
+    recipesContainer.style.display = 'block';
   }
 };
