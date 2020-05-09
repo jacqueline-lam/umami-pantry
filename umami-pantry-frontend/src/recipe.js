@@ -29,4 +29,8 @@ class Recipe {
     })
 
   }
+
+  static findById(id) {
+    return Recipe.all.find(recipe => recipe.id === id)
+  }
 }

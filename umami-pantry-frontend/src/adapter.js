@@ -54,10 +54,10 @@ class Adapter {
       if (e.target === returnBtn) {
         this.displayMatchingRecipes();
       } else if (e.target === addSubIngredientBtn){ // Add A Subsitute Ingredient Btn
-        let recipeId = selectedRecipeDiv.dataset.recipeId
-        this.editRecipeInredientHandler(recipeId);;
-      }
-    })
+        let recipeId = parseInt(selectedRecipeDiv.dataset.recipeId, 10);
+        this.editRecipeInredientHandler(recipeId);
+      };
+    });
   };
 
   // isSelected(ingredientId) {
@@ -207,8 +207,10 @@ class Adapter {
       .then(resp => resp.json())
       .then(recipesData => {
         recipesData.forEach(recipe => {
+          // DEBUG - Recipe class has repeated recipe instances
           recipe instanceof Recipe ? "" : matchingRecipes.push(new Recipe(recipe));
         })
+
         this.renderMatchingRecipes(matchingRecipes);
       })
       .catch(err => console.log(err));
@@ -354,6 +356,7 @@ class Adapter {
     recipeDiv.appendChild(returnBtn);
   };
 
+
   displayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
     recipesContainer.style.display = 'block';
@@ -365,16 +368,21 @@ class Adapter {
   }
 
   renderAddSubIngredientForm(recipeId) {
-    // let recipe = R
-    let formDiv = docuemnt.getElementById('subIngredientForm')
+    let formDiv = document.getElementById('subIngredientForm')
     formDiv.style.display = 'block';
 
-    let ogIngredientSelect = document.getElementById('ogIngredient')
+    let ogIngredientSelect = document.getElementById('ogIngredient');
+    let recipe = Recipe.findById(recipeId);
 
-    ogIngredientSelect.append(option)
-    `Replace ingredient: _____ with...`
-    `Ingredient: <select>`
-    `New amount:`
-    `Preparation method (leave blank if none): ______`
+    recipe.ingredients.forEach(ingredient => {
+      let option = `<option value=${ingredient.id}>${ingredient.name}</option>`
+      ogIngredientSelect.innerHTML += option
+    })
+
+    // ogIngredientSelect.append(option)
+    // `Replace ingredient: _____ with...`
+    // `Ingredient: <select>`
+    // `New amount:`
+    // `Preparation method (leave blank if none): ______`
   }
 };
