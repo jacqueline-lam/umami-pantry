@@ -314,10 +314,10 @@ class Adapter {
       let tr = document.createElement('tr')
       let td1 = document.createElement('td')
       let td2 = document.createElement('td')
-      td1.innerHTML = `<b>${ingredient.amount}</b>`
+
+      ingredient.amount ? (td1.innerHTML += `<b>${ingredient.amount}</b>`) : ""
       td2.textContent = `${ingredient.name}`
       ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : ""
-      td2.innerText
       tr.append(td1, td2)
       // let td1 = `<td>${ingredient.amount}</td>`
       // let td2 = `<td>${ingredient.name}, ${ingredient.preparation_method}</td>`

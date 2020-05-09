@@ -6,6 +6,10 @@
   <link rel="icon"type="image/png" alt="Umami pantry icon" href="icon.png">
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -61,6 +65,64 @@
     </div>
 
     <div id="selectedRecipe"></div>
+
+    <div id="subIngredientForm">
+      <h3>Add substitution ingredient</h3>
+      <form>
+       <!-- <fieldset> -->
+        <div class="form-row">
+          <div class="form-group">
+            <!-- <label for="ingredientId">Substution ingredient</label>
+            <select class="form-control" id="ingredientId">
+              ingredients.forEach(ing => {
+                `<option value=${ing.id}>${ing.name}</option>`
+              })
+            </select> -->
+            <label for="subIngredient">Substutution Ingredient</label>
+            <select id="subIngredient" class="form-control selectpicker">
+              <option value="" disabled selected>Choose substitution ingredient</option>
+              <optgroup label="category1">
+                <option value="1">Mustard</option>
+                <option value="2">Ketchup</option>
+                <option value="3">Relish</option>
+              </optgroup>
+              <optgroup label="category2">
+                <option value="4">Tent</option>
+                <option value="5">Flashlight</option>
+                <option value="6">Toilet Paper</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <label class="mdb-main-label">Label example</label>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <!-- <label for="amount" class="col-form-label col-sm-2">Amount</label> -->
+              <input type="text" class="form-control" name="amount" id="subIngredientAmount" placeholder="Amount">
+            </div>
+            <div class="form-group col-md-4">
+              <select class="custom-select">
+                <option selected="">Unit (optional)</option>
+                <option value="">n/a</option>
+                <option value="1">cup</option>
+                <option value="2">tablespoon</option>
+                <option value="3">teaspoon</option>
+                <option value="4">ounce</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
+            <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
+          </div>
+
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        <!-- </fieldset> -->
+      </form>
+    </div>
+
+
     <!-- Link JS file to HTML -->
     <!-- index.js relies on adapter.js so it needs to be read first - stored in memory -->
     <!-- DOM is loaded before scripts -->
