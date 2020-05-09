@@ -363,10 +363,10 @@ class Adapter {
   }
 
   renderAddSubIngredientForm() {
+
     `Replace ingredient: _____ with...`
     `Ingredient: <select>`
     `New amount:`
     `Preparation method (leave blank if none): ______`
-
   }
 };
