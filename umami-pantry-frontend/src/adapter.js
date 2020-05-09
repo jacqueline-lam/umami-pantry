@@ -6,7 +6,7 @@ const ingredientCards = document.getElementsByClassName('ingredientCard');
 const recipesContainer = document.getElementById('recipesContainer');
 const recipesNode = document.getElementById("recipeCards");
 const recipeCards = document.getElementsByClassName('recipeCard');
-const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
+// const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
 const selectedRecipeDiv = document.getElementById('selectedRecipe');
 
 class Adapter {
@@ -46,14 +46,16 @@ class Adapter {
     let clearIngredientsBtn = document.getElementById('removeIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
 
-    // eventlistener for 'Add A Subsitute Ingredient' btn
-    // addSubIngredientBtn.addEventListener('click', this.editRecipeInredientHandler);
-
-    // eventlistener for Return to Matching Recipes Btn
+    // eventlistener for Selected Recipe Div
     selectedRecipeDiv.addEventListener('click', e => {
-      const returnBtn = document.getElementById('returnToRecipesBtn')
+      const returnBtn = document.getElementById('returnToRecipesBtn');
+      const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
+      // Return to Matching Recipes Btn
       if (e.target === returnBtn) {
         this.displayMatchingRecipes();
+      } else if (e.target === addSubIngredientBtn){ // Add A Subsitute Ingredient Btn
+        let recipeId = selectedRecipeDiv.dataset.recipeId
+        this.editRecipeInredientHandler(recipeId);;
       }
     })
   };
@@ -290,6 +292,7 @@ class Adapter {
     // let h1 = document.createElement('h1')
     // h1.innerText = 'Selected Recipe:'
     recipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
+    recipeDiv.dataset.recipeId = recipe.id
 
     let heading = document.createElement('div')
     heading.id = 'recipeHeading'
@@ -349,17 +352,21 @@ class Adapter {
     recipeDiv.appendChild(returnBtn);
   };
 
-  // editRecipeInredientHandler(){
-  //   this.renderAddSubIngredientForm();
-  //   RecipeIngredient.new()
-  // }
-
-  // renderAddSubIngredientForm() {
-
-  // }
-
   displayMatchingRecipes(){
-    selectedRecipeDiv.innerHTML = ''
+    selectedRecipeDiv.innerHTML = '';
     recipesContainer.style.display = 'block';
+  };
+
+  editRecipeInredientHandler(recipeId){
+    this.renderAddSubIngredientForm();
+    // RecipeIngredient.new();
+  }
+
+  renderAddSubIngredientForm() {
+    `Replace ingredient: _____ with...`
+    `Ingredient: <select>`
+    `New amount:`
+    `Preparation method (leave blank if none): ______`
+
   }
 };
