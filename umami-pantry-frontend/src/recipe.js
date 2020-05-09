@@ -1,13 +1,14 @@
 class Recipe {
-  constructor(name, imageUrl, category, serving, time, directions, ingredients, recipe_ingredients){
-    this.name = name
-    this.imageUrl = imageUrl
-    this.category = category
-    this.serving = serving
-    this.time = time
-    this.directions = directions
-    this.ingredients = this.saveIngredients(ingredients)
-
+  constructor(recipe) {
+    // name, imageUrl, category, serving, time, directions, ingredients
+    this.id = recipe.id
+    this.name = recipe.name
+    this.imageUrl = recipe.image_url
+    this.category = recipe.category
+    this.serving = recipe.servings
+    this.time = recipe.time
+    this.directions = recipe.directions
+    this.ingredients = recipe.recipe_ingredients
   }
   saveIngredients(ingredients){
     // for (const hash of ingredients){

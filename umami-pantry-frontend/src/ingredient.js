@@ -1,8 +1,9 @@
 class Ingredient {
-  constructor(name, imageUrl, category) {
+  constructor(id, name, category, imageUrl) {
+    this.id = id
     this.name = name
-    this.imageUrl = imageUrl
     this.category = category
+    this.imageUrl = imageUrl
     this.constructor.all.push(this)
   }
   static all = []
