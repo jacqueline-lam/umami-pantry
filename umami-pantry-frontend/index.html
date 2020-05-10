@@ -73,25 +73,13 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="ogIngredient">Replace Ingredient</label>
-            <select id="ogIngredientSelect" class="form-control selectpicker" required>
+            <select id="ogIngredientSelect" class="form-control selectpicker formInput" required>
               <option value="" disabled selected>Ingredient to replace</option>
-              <!-- <option value=>Mustard</option>
-              <option value="2">Ketchup</option>
-              <option value="3">Relish</option>
-              <option value="4">Tent</option>
-              <option value="5">Flashlight</option>
-              <option value="6">Toilet Paper</option> -->
             </select>
           </div>
-            <!-- <label for="ingredientId">Substution ingredient</label>
-            <select class="form-control" id="ingredientId">
-              ingredients.forEach(ing => {
-                `<option value=${ing.id}>${ing.name}</option>`
-              })
-            </select> -->
           <div class="form-group col-md-6">
             <label for="subIngredient">Substitute Ingredient</label>
-            <select id="subIngredientSelect" class="form-control selectpicker">
+            <select id="subIngredientSelect" class="form-control selectpicker formInput" required>
               <option value="" disabled selected>Choose substitute ingredient</option>
             </select>
           </div>
@@ -100,25 +88,25 @@
         <label class="mdb-main-label">Substitute Ingredient Details (optional)</label>
           <div class="form-row">
             <div class="form-group col-md-8">
-              <!-- <label for="amount" class="col-form-label col-sm-2">Amount</label> -->
-              <input type="text" class="form-control" name="amount" id="subIngredientAmount" placeholder="Amount">
+              <input type="text" class="form-control formInput" name="amount" id="subIngredientAmount" placeholder="Amount" value="">
             </div>
             <div class="form-group col-md-4">
-              <select class="custom-select">
+              <select class="custom-select formInput">
                 <option selected="">Unit (optional)</option>
-                <option value="1">cup</option>
-                <option value="2">tablespoon</option>
-                <option value="3">teaspoon</option>
-                <option value="4">ounce</option>
-                <option value="5">pound</option>
+                <option value="cup">cup</option>
+                <option value="tablespoon">tablespoon</option>
+                <option value="teaspoon">teaspoon</option>
+                <option value="ounce">ounce</option>
+                <option value="pound">pound</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
+            <input type="text" class="form-control formInput" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
             <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
           </div>
 
+          <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
           <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
       </form>

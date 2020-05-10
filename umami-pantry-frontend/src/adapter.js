@@ -16,12 +16,14 @@ class Adapter {
     this.ingredientsUrl = `${baseUrl}/ingredients`;
     this.findRecipesUrl = `${baseUrl}/get_recipes`;
     this.recipeUrl = `${baseUrl}/recipes/`
+    this.recipeIngredientsUrl = `${baseUrl}/recipe_ingredients`
   }
   static ingredients = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
   // matchingRecipes = {};
+  formInputs = document.querySelectorAll('.formInput');
 
-  // Manage event listeners
+  // Event delegation / Manage event listeners
   bindEventListeners() {
     // ingredientBtn.addEventListener('click', this.getIngredients);
     // ingredientCards.forEach(card => {
@@ -63,7 +65,7 @@ class Adapter {
     //eventlistener for substitute ingredient submit btn
     formDiv.addEventListener('submit', e => {
       e.preventDefault;
-      postSubIngredient(e.target);
+      this.handleSubmitForm(e.target);
     })
     // const submitSubIngredientBtn = document.getElementById('submitSubIngredientBtn')
     // submitSubIngredientBtn.addEventListener('click', this.)
@@ -398,7 +400,6 @@ class Adapter {
     subIngredientOptions.forEach(ingredient => {
       let option = `<option value=${ingredient.id}>${ingredient.name}</option>`
       let optGroup = document.getElementById(ingredient.category)
-      // debugger
       if (!optGroup) {
         optGroup = document.createElement('optgroup')
         optGroup.setAttribute('label', ingredient.category)
@@ -407,5 +408,37 @@ class Adapter {
       }
       optGroup.innerHTML += option
     })
+
+    let recipeIdHiddenInput = document.getElementById('recipeId')
+    recipeIdHiddenInput.setAttribute('value', recipeId)
+  }
+
+  // Add a substitute ingredient (recipe ingredient object)
+  handleSubmitForm(submittedForm) {
+    let newRecipeIngredient = {
+      recipe_id: this.formInputs[5].value,
+      substituted_ingredient_id: parseInt(this.formInputs[0].value, 10),
+      ingredient_id: parseInt(this.formInputs[1].value, 10),
+      amount: `${this.formInputs[2].value} ${this.formInputs[3].value}`,
+      preparation_method: this.formInputs[4].value,
+    }
+    this.postSubIngredient(newRecipeIngredient)
+  }
+
+  postSubIngredient(newRecipeIngredientObj) {
+    let configObj = {
+      method: 'POST',
+      headers: { // indicate format of data being sent and acceoted in return
+        'Content-Type': 'application/json',
+        'Accept': "application/json"
+      },
+     // data must be sent as text between client and server
+     // convert objects to strings
+      body: JSON.stringify(formData)
+    }
+
+    fetch(recipeIngredientsUrl, configObj)
+      .then(res => res.json())
+      .then(recipeIngredientData => this.renderSelectedRecipe(recipeIngredientData))
   }
 };
