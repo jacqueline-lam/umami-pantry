@@ -73,7 +73,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="ogIngredient">Replace Ingredient</label>
-            <select id="ogIngredient" class="form-control selectpicker" required>
+            <select id="ogIngredientSelect" class="form-control selectpicker" required>
               <option value="" disabled selected>Ingredient to replace</option>
               <!-- <option value=>Mustard</option>
               <option value="2">Ketchup</option>
@@ -91,19 +91,8 @@
             </select> -->
           <div class="form-group col-md-6">
             <label for="subIngredient">Substitute Ingredient</label>
-            <select id="subIngredient" class="form-control selectpicker">
+            <select id="subIngredientSelect" class="form-control selectpicker">
               <option value="" disabled selected>Choose substitute ingredient</option>
-
-              <optgroup label=category.name>
-                <option value="1">Mustard</option>
-                <option value="2">Ketchup</option>
-                <option value="3">Relish</option>
-              </optgroup>
-              <optgroup label="category2">
-                <option value="4">Tent</option>
-                <option value="5">Flashlight</option>
-                <option value="6">Toilet Paper</option>
-              </optgroup>
             </select>
           </div>
         </div>
@@ -130,7 +119,7 @@
             <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
       </form>
     </div>

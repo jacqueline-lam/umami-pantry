@@ -8,6 +8,7 @@ const recipesNode = document.getElementById("recipeCards");
 const recipeCards = document.getElementsByClassName('recipeCard');
 // const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
 const selectedRecipeDiv = document.getElementById('selectedRecipe');
+const formDiv = document.getElementById('subIngredientForm')
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -58,6 +59,14 @@ class Adapter {
         this.editRecipeInredientHandler(recipeId);
       };
     });
+
+    //eventlistener for substitute ingredient submit btn
+    formDiv.addEventListener('submit', e => {
+      e.preventDefault;
+      postSubIngredient(e.target);
+    })
+    // const submitSubIngredientBtn = document.getElementById('submitSubIngredientBtn')
+    // submitSubIngredientBtn.addEventListener('click', this.)
   };
 
   // isSelected(ingredientId) {
@@ -368,21 +377,35 @@ class Adapter {
   }
 
   renderAddSubIngredientForm(recipeId) {
-    let formDiv = document.getElementById('subIngredientForm')
     formDiv.style.display = 'block';
+    let recipeIngredientIds = [];
 
-    let ogIngredientSelect = document.getElementById('ogIngredient');
+    let ogIngredientSelect = document.getElementById('ogIngredientSelect');
     let recipe = Recipe.findById(recipeId);
 
     recipe.ingredients.forEach(ingredient => {
       let option = `<option value=${ingredient.id}>${ingredient.name}</option>`
       ogIngredientSelect.innerHTML += option
+      recipeIngredientIds.push(ingredient.id)
     })
 
-    // ogIngredientSelect.append(option)
-    // `Replace ingredient: _____ with...`
-    // `Ingredient: <select>`
-    // `New amount:`
-    // `Preparation method (leave blank if none): ______`
+    let subIngredientSelect = document.getElementById('subIngredientSelect');
+    // filter out existing recipe ingredients
+    const subIngredientOptions = Ingredient.all.filter(ing => !recipeIngredientIds.includes(ing.id))
+    // optgroup: group by ing categroy
+
+    // add all options into select tag
+    subIngredientOptions.forEach(ingredient => {
+      let option = `<option value=${ingredient.id}>${ingredient.name}</option>`
+      let optGroup = document.getElementById(ingredient.category)
+      // debugger
+      if (!optGroup) {
+        optGroup = document.createElement('optgroup')
+        optGroup.setAttribute('label', ingredient.category)
+        optGroup.id= ingredient.category
+        subIngredientSelect.appendChild(optGroup)
+      }
+      optGroup.innerHTML += option
+    })
   }
 };
