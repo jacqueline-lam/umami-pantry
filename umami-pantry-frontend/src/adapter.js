@@ -65,7 +65,7 @@ class Adapter {
     //eventlistener for substitute ingredient submit btn
     formDiv.addEventListener('submit', e => {
       e.preventDefault;
-      this.handleSubmitForm(e.target);
+      this.handleSubmitForm();
     })
     // const submitSubIngredientBtn = document.getElementById('submitSubIngredientBtn')
     // submitSubIngredientBtn.addEventListener('click', this.)
@@ -414,31 +414,58 @@ class Adapter {
   }
 
   // Add a substitute ingredient (recipe ingredient object)
-  handleSubmitForm(submittedForm) {
-    let newRecipeIngredient = {
-      recipe_id: this.formInputs[5].value,
-      substituted_ingredient_id: parseInt(this.formInputs[0].value, 10),
-      ingredient_id: parseInt(this.formInputs[1].value, 10),
-      amount: `${this.formInputs[2].value} ${this.formInputs[3].value}`,
-      preparation_method: this.formInputs[4].value,
+  handleSubmitForm() {
+    let formData = {
+      recipe_ingredient: {
+        recipe_id: parseInt(this.formInputs[5].value),
+        substituted_ingredient_id: parseInt(this.formInputs[0].value, 10),
+        ingredient_id: parseInt(this.formInputs[1].value, 10),
+        amount_q: this.formInputs[2].value,
+        amount_unit: this.formInputs[3].value,
+        preparation_method: this.formInputs[4].value,
+      }
     }
-    this.postSubIngredient(newRecipeIngredient)
+    this.postSubIngredient(formData)
   }
 
-  postSubIngredient(newRecipeIngredientObj) {
+  postSubIngredient(recipeIngredientObj) {
     let configObj = {
       method: 'POST',
+      mode: 'cors',
+      // credentials: 'include',
       headers: { // indicate format of data being sent and acceoted in return
         'Content-Type': 'application/json',
         'Accept': "application/json"
       },
      // data must be sent as text between client and server
      // convert objects to strings
-      body: JSON.stringify(formData)
+      body: JSON.stringify(recipeIngredientObj)
     }
 
-    fetch(recipeIngredientsUrl, configObj)
-      .then(res => res.json())
-      .then(recipeIngredientData => this.renderSelectedRecipe(recipeIngredientData))
+    let url = 'http://localhost:3000/recipe_ingredient/new';
+    debugger;
+
+    fetch(url, configObj
+    //   {
+    //   method: 'post',
+    //   credentials: 'include',
+    //   body: JSON.stringify(recipeIngredientObj)
+    // }
+    ).then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      ChromeSamples.log('Created Gisri_paramt:', data.html_url);
+    }).catch(err => alert(err.message));
+
+    // fetch(url, configObj)
+    //   .then(res => {
+    //     debugger
+    //   })
+    //   .then(riData => this.idk(riData))
+    //   .catch(err => alert(err))
+  }
+
+  idk(riData) {
+    debugger
   }
 };

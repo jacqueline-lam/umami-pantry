@@ -106,6 +106,7 @@
             <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
           </div>
 
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
           <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
