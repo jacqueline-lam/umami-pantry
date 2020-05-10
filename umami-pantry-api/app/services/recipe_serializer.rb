@@ -44,7 +44,7 @@ class RecipeSerializer
         "name": name,
         "amount": ri.amount,
         "preparation_method": ri.preparation_method,
-        "substituted_ingredient_id"= ri.substituted_ingredient_id
+        "substituted_ingredient_id": ri.substituted_ingredient_id,
       }
       recipe_hash["recipe_ingredients"] << ri_hash
     end
