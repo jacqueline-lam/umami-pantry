@@ -40,10 +40,11 @@ class RecipeSerializer
     recipe.recipe_ingredients.each do |ri|
       name = ri.ingredient.name
       ri_hash = {
+        "id": ri.ingredient_id,
         "name": name,
         "amount": ri.amount,
-        "id": ri.ingredient_id,
         "preparation_method": ri.preparation_method,
+        "substituted_ingredient_id"= ri.substituted_ingredient_id
       }
       recipe_hash["recipe_ingredients"] << ri_hash
     end

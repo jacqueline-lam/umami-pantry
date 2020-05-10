@@ -6,7 +6,7 @@ class IngredientsController < ApplicationController
       # convert objects from ORM to JSON and render JSON back to browser
     # ingredients = Ingredient.all
     ingredients = Ingredient.all
-    render json: ingredients, except: [:created_at, :updated_at]
+    render json: ingredients
   end
 
   # render JSON to include ingrdients of specific category
@@ -14,7 +14,7 @@ class IngredientsController < ApplicationController
     category = params[:category].gsub('_', ' ')
     ingredients = Ingredient.where(category: category)
     if ingredients.any?
-      render json: ingredients, except: [:created_at, :updated_at]
+      render json: ingredients
     else
       render json: { message: category + ' ingredients cannot be found.'}
     end
