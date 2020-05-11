@@ -247,16 +247,15 @@ class Adapter {
   };
 
   renderSelectedRecipe(recipe) {
-    let recipeDiv = document.getElementById('selectedRecipe');
-    // let h1 = document.createElement('h1')
-    // h1.innerText = 'Selected Recipe:'
-    recipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
-    recipeDiv.dataset.recipeId = recipe.id
+    formDiv.style.display = 'none';
+
+    selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
+    selectedRecipeDiv.dataset.recipeId = recipe.id
 
     let heading = document.createElement('div')
     heading.id = 'recipeHeading'
     heading.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`
-    recipeDiv.appendChild(heading);
+    selectedRecipeDiv.appendChild(heading);
 
     // // Recipe time, ingredients list
     let row = document.createElement('div')
@@ -297,7 +296,7 @@ class Adapter {
     ingredientsTable.appendChild(tbody);
     col1.appendChild(ingredientsTable);
     row.appendChild(col1);
-    recipeDiv.appendChild(row);
+    selectedRecipeDiv.appendChild(row);
 
     // add underline to substituted ingredient
     subIngredientsArray.forEach(newIngObj => {
@@ -322,16 +321,14 @@ class Adapter {
     subIngBtn.id = "substitutIngredientBtn"
     subIngBtn.classList.add('btn', 'btn-outline-primary', 'btn-lg')
     subIngBtn.textContent = 'Add a Substitute Ingredient'
-    // subIngBtn.addEventListener('click', this.displayMatchingRecipes.bind(app));
-    recipeDiv.appendChild(subIngBtn);
+    selectedRecipeDiv.appendChild(subIngBtn);
 
     //Back to results
     const returnBtn = document.createElement('button')
     returnBtn.id = "returnToRecipesBtn"
     returnBtn.classList.add('btn', 'btn-outline-danger', 'btn-lg')
     returnBtn.textContent = 'Return to Matching Recipes'
-    // returnbtn.addEventListener('click', this.displayMatchingRecipes.bind(app));
-    recipeDiv.appendChild(returnBtn);
+    selectedRecipeDiv.appendChild(returnBtn);
   };
 
   displayMatchingRecipes(){
@@ -413,7 +410,6 @@ class Adapter {
     fetch(url, configObj)
       .then(resp => resp.json())
       .then(data => {
-        // console.log(data)
         this.renderSelectedRecipe(data)
       })
       .catch(err=> alert(err))
