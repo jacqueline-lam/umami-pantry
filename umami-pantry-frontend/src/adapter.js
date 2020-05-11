@@ -67,8 +67,6 @@ class Adapter {
       e.preventDefault;
       this.handleSubmitForm();
     })
-    // const submitSubIngredientBtn = document.getElementById('submitSubIngredientBtn')
-    // submitSubIngredientBtn.addEventListener('click', this.)
   };
 
   // isSelected(ingredientId) {
@@ -92,16 +90,6 @@ class Adapter {
         })
         .catch(err => alert(err));
     })
-      // fetch(`${this.ingredientsUrl}`)
-      //   .then(resp => resp.json())
-      //   .then(ingredientsData => {
-      //     ingredientsData.forEach(ingredient => {
-      //       let newIngredient = new Ingredient(ingredient.name, ingredient.image_url, ingredient.category);
-      //       Adapter.ingredients.push(newIngredient);
-      //     });
-      //     this.renderIngredients();
-      //   })
-      //   .catch(err => alert(err));
   };
 
   // display ingredients by categories
@@ -124,50 +112,6 @@ class Adapter {
       p.innerText = ingredient.name
       ingredientCard.appendChild(p);
     });
-
-    // Adapter.ingredients.forEach(ingredient => {
-    //   // append ingredient based on it category
-    //   switch(ingredient.category) {
-    //     case 'Grains':
-    //       grainsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Protein Foods':
-    //       proteinsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Beans and Peas':
-    //       beansDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Nuts and Seeds':
-    //       nutsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Root Vegetables':
-    //       rootsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Dark Green Vegetables':
-    //       dgVegsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Other Vegetables':
-    //       otherVegsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Dairy':
-    //       dairysDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Soup and Broth':
-    //       soupsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Fruits':
-    //       fruitsDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Additives':
-    //       additivesDiv.appendChild(ingredientCard);
-    //       break;
-    //     case 'Herb and Spices':
-    //       herbsDiv.appendChild(ingredientCard);
-    //       break;
-    //     default:
-    //       //code block
-    //   }
-    // })
   };
 
   // handle ingredient(s) option
@@ -286,10 +230,6 @@ class Adapter {
         this.getSingleRecipe(selectedRecipeId);
         recipesContainer.style.display = 'none'
       });
-      // recipeCard.children[0].children[0].addEventListener('click', e => {
-      //   const selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
-      //   this.getSingleRecipe(selectedRecipeId);
-      // });
     })
   }
 
@@ -324,25 +264,47 @@ class Adapter {
     ingredientsTable.classList.add('table', 'table-hover');
 
     let tbody = document.createElement('tbody')
+    let subIngredientsArray = []
     recipe.recipe_ingredients.forEach(ingredient => {
       let tr = document.createElement('tr')
-      let td1 = document.createElement('td')
-      let td2 = document.createElement('td')
+      tr.dataset.ingredientId = ingredient.id
 
+      let td1 = document.createElement('td')
       ingredient.amount ? (td1.innerHTML += `<b>${ingredient.amount}</b>`) : ""
+
+      let td2 = document.createElement('td')
       td2.textContent = ingredient.name
-      td2.id = ingredient.id
       ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : ""
       tr.append(td1, td2)
-      // let td1 = `<td>${ingredient.amount}</td>`
-      // let td2 = `<td>${ingredient.name}, ${ingredient.preparation_method}</td>`
-      // tr.innerText = td1 + td2
+
+      // check for substitute ingredient
+      if (!!ingredient.substituted_ingredient_id) {
+        let newIngObj = {
+          ogIngId: ingredient.substituted_ingredient_id,
+          newIngTr: tr
+        }
+        subIngredientsArray.push(newIngObj);
+        return;
+      }
       tbody.appendChild(tr)
     })
+
     ingredientsTable.appendChild(tbody);
     col1.appendChild(ingredientsTable);
-    row.appendChild(col1)
-    recipeDiv.appendChild(row)
+    row.appendChild(col1);
+    recipeDiv.appendChild(row);
+
+    // add underline to substituted ingredient
+    subIngredientsArray.forEach(newIngObj => {
+      let ogIngredientTr = document.querySelector(`tr[data-ingredient-id="${newIngObj['ogIngId']}"]`);
+      ogIngredientTr.style.textDecoration = 'wavy underline #FF5733';
+
+      // let subIngredientTr = document.createElement('tr');
+      let subIngredientTr = newIngObj["newIngTr"];
+      subIngredientTr.style.color = '#FF5733';
+
+      ogIngredientTr.insertAdjacentElement('afterend',subIngredientTr)
+    });
 
     // Recipe Directions
     let col2 = document.createElement('div')
@@ -366,7 +328,6 @@ class Adapter {
     // returnbtn.addEventListener('click', this.displayMatchingRecipes.bind(app));
     recipeDiv.appendChild(returnBtn);
   };
-
 
   displayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
@@ -417,12 +378,11 @@ class Adapter {
   handleSubmitForm() {
     let formData = {
       recipe_ingredient: {
-        recipe_id: parseInt(this.formInputs[5].value),
+        recipe_id: parseInt(this.formInputs[4].value),
         substituted_ingredient_id: parseInt(this.formInputs[0].value, 10),
         ingredient_id: parseInt(this.formInputs[1].value, 10),
-        amount_q: this.formInputs[2].value,
-        amount_unit: this.formInputs[3].value,
-        preparation_method: this.formInputs[4].value,
+        amount: this.formInputs[2].value,
+        preparation_method: this.formInputs[3].value,
       }
     }
     this.postSubIngredient(formData)
@@ -442,30 +402,14 @@ class Adapter {
       body: JSON.stringify(recipeIngredientObj)
     }
 
-    let url = 'http://localhost:3000/recipe_ingredient/new';
-    debugger;
+    let url = 'http://localhost:3000/recipe_ingredients/';
 
-    fetch(url, configObj
-    //   {
-    //   method: 'post',
-    //   credentials: 'include',
-    //   body: JSON.stringify(recipeIngredientObj)
-    // }
-    ).then(function(response) {
-      return response.json();
-    }).then(function(data) {
-      ChromeSamples.log('Created Gisri_paramt:', data.html_url);
-    }).catch(err => alert(err.message));
-
-    // fetch(url, configObj)
-    //   .then(res => {
-    //     debugger
-    //   })
-    //   .then(riData => this.idk(riData))
-    //   .catch(err => alert(err))
-  }
-
-  idk(riData) {
-    debugger
+    fetch(url, configObj)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data)
+        // this.renderSelectedRecipe(data)
+      })
+      .catch(err=> console.log(err))
   }
 };

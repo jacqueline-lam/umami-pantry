@@ -87,23 +87,24 @@
 
         <label class="mdb-main-label">Substitute Ingredient Details (optional)</label>
           <div class="form-row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control formInput" name="amount" id="subIngredientAmount" placeholder="Amount" value="">
+              <small id="amount" class="form-text text-muted">e.g. 1 cup, tbsp, ounce, pound, etc.</small>
             </div>
-            <div class="form-group col-md-4">
+            <!-- <div class="form-group col-md-4">
               <select class="custom-select formInput">
-                <option selected="">Unit (optional)</option>
+                <option value="" selected>Unit (optional)</option>
                 <option value="cup">cup</option>
                 <option value="tablespoon">tablespoon</option>
                 <option value="teaspoon">teaspoon</option>
                 <option value="ounce">ounce</option>
                 <option value="pound">pound</option>
               </select>
+            </div> -->
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control formInput" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
+              <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
             </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control formInput" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
-            <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
           </div>
 
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

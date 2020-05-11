@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get '/get_ingredients', to: 'ingredients#get_ingredients'
   get '/get_recipes', to: 'recipes#get_recipes'
-  post '/recipe_ingredient/new', to: 'recipe_ingredients#new'
+  # post '/recipe_ingredient/new', to: 'recipe_ingredients#new'
 end
