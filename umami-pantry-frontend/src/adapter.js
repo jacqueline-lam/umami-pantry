@@ -206,10 +206,10 @@ class Adapter {
       recipeCard.innerHTML += recipeImg;
 
       //Recipe Category
-      let categoryDiv = recipeCard.appendChild(document.createElement('div'))
-      categoryDiv.className = 'card-body'
+      let categoryDiv = recipeCard.appendChild(document.createElement('div'));
+      categoryDiv.className = 'card-body';
       // categoryDiv.innerHTML = `<h6 class="card-subtitle text muted">${recipe.category}</h6>`
-      categoryDiv.innerHTML = `<h5><span class="badge badge-dark">${recipe.category}</span></h5>`
+      categoryDiv.innerHTML = `<h5><span class="badge badge-dark">${recipe.category}</span></h5>`;
 
       // Recipe ingredients
       let ul = document.createElement('ul');
@@ -217,21 +217,26 @@ class Adapter {
       for (const ingredient of recipe.ingredients) {
         let li = document.createElement('li');
         li.className = 'list-group-item';
+        li.setAttribute('data-ingredient-id', ingredient.id);
         li.innerText = ingredient['name'];
+        // display substitute ingredients in red
+        if (!!ingredient.substituted_ingredient_id) {
+          li.style.color = "#FF5733"
+        };
         ul.appendChild(li);
       }
       recipeCard.appendChild(ul);
 
       recipeCard.children[0].addEventListener('click', e => {
-        let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id')
+        let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id');
         if (!selectedRecipeId) {
-          selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
-        }
+          selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id')
+        };
         this.getSingleRecipe(selectedRecipeId);
-        recipesContainer.style.display = 'none'
+        recipesContainer.style.display = 'none';
       });
-    })
-  }
+    });
+  };
 
   getSingleRecipe(recipeId){
     console.log("Got recipe ID: " + recipeId);
@@ -282,12 +287,12 @@ class Adapter {
         let newIngObj = {
           ogIngId: ingredient.substituted_ingredient_id,
           newIngTr: tr
-        }
+        };
         subIngredientsArray.push(newIngObj);
         return;
-      }
-      tbody.appendChild(tr)
-    })
+      };
+      tbody.appendChild(tr);
+    });
 
     ingredientsTable.appendChild(tbody);
     col1.appendChild(ingredientsTable);
