@@ -64,7 +64,7 @@ class Adapter {
 
     //eventlistener for substitute ingredient submit btn
     formDiv.addEventListener('submit', e => {
-      e.preventDefault;
+      e.preventDefault();
       this.handleSubmitForm();
     })
   };
@@ -376,8 +376,8 @@ class Adapter {
       optGroup.innerHTML += option
     })
 
-    // let recipeIdHiddenInput = document.getElementById('recipeId')
-    // recipeIdHiddenInput.setAttribute('value', recipeId)
+    let recipeIdHiddenInput = document.getElementById('recipeId')
+    recipeIdHiddenInput.setAttribute('value', recipeId)
   }
 
   // Add a substitute ingredient (recipe ingredient object)
@@ -408,12 +408,14 @@ class Adapter {
       body: JSON.stringify(recipeIngredientObj)
     }
 
-    fetch(this.recipeIngredientsUrl, configObj)
+    const url = 'http://localhost:3000/recipe_ingredients';
+
+    fetch(url, configObj)
       .then(resp => resp.json())
       .then(data => {
-        console.log(data)
-        // this.renderSelectedRecipe(data)
+        // console.log(data)
+        this.renderSelectedRecipe(data)
       })
-      .catch(err=> console.log(err))
+      .catch(err=> alert(err))
   }
 };

@@ -4,6 +4,9 @@ class RecipeSerializer
     @recipe_collection = recipe_object
   end
 
+  # def update(recipe_object)
+  #   RecipeSerializer.find(recipe_collection)
+  # end
   # call to_json on this instance variable
   # handling inclusion and exclusion of attributes
   # get out data customized in JSON string

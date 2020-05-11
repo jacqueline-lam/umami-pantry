@@ -1,12 +1,12 @@
 class RecipeIngredientsController < ApplicationController
   def create
-    binding.pry
-    new_ri = RecipeIngredient.new(ri_params)
+    recipe = Recipe.find_by(id: ri_params[:recipe_id])
+    new_ri = recipe.recipe_ingredients.build(ri_params)
 
     if new_ri.save
-      render json: new_ri
+      render json: RecipeSerializer.new(recipe).instance_to_serialized_json
     else
-      render json: { message: 'Failed to create substitute ingredient.'}
+      render json: { message: 'Failed to add substitute ingredient to recipe.'}
     end
   end
 
