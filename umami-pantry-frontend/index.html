@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umami Pantry</title>
-  <link rel="icon"type="image/png" alt="Umami pantry icon" href="icon.png">
+  <link rel="icon"type="image/png" alt="Umami pantry icon" href="images/icon.png">
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -16,6 +16,10 @@
 </head>
 <body>
 
+  <div id="welcome">
+    <img src="images/umami-pantry.gif" alt="umami-pantry">
+  </div>
+
   <div class ="container">
     <div id="header">
       <h1>Umami Pantry</h1>
@@ -24,7 +28,7 @@
     <!-- <button type="button" class="btn btn-primary id="getIngredientsBtn">Show all ingredients</button><br><br> -->
 
     <div id="ingredientsContainer">
-      <h4>Select the available ingredients in your pantry:</h4>
+      <h4>Select the available ingredients in your pantry:</h4><br>
       <!-- Display all ingredients for user selection -->
       <!-- div to wrap around each ingredient category -->
       <div class='categoryContainer' id='grains'><h3>Grains</h3></div>
@@ -50,7 +54,8 @@
 
     <div id="recipesContainer">
       <h1>Matching Recipes:</h1><br>
-      <i>Stop saying 'IDK what to cook'!</i>
+      <i>Stop saying 'IDK what to cook'...</i>
+      <h4>Scroll up and select some ingredients in your pantry!</h4>
 
       <div id="recipeCards">
         <!-- Goal of JS: Make requests to backend to get current list of recipes -->
@@ -108,7 +113,7 @@
           </div>
 
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
+          <!-- <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput"> -->
           <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
       </form>

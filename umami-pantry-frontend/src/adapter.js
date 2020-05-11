@@ -58,7 +58,7 @@ class Adapter {
         this.displayMatchingRecipes();
       } else if (e.target === addSubIngredientBtn){ // Add A Subsitute Ingredient Btn
         let recipeId = parseInt(selectedRecipeDiv.dataset.recipeId, 10);
-        this.editRecipeInredientHandler(recipeId);
+        this.createRecipeIngredientHandler(recipeId);
       };
     });
 
@@ -337,9 +337,10 @@ class Adapter {
   displayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
     recipesContainer.style.display = 'block';
+    subIngredientForm.style.display = 'none';
   };
 
-  editRecipeInredientHandler(recipeId){
+  createRecipeIngredientHandler(recipeId){
     this.renderAddSubIngredientForm(recipeId);
     // RecipeIngredient.new();
   }
@@ -375,8 +376,8 @@ class Adapter {
       optGroup.innerHTML += option
     })
 
-    let recipeIdHiddenInput = document.getElementById('recipeId')
-    recipeIdHiddenInput.setAttribute('value', recipeId)
+    // let recipeIdHiddenInput = document.getElementById('recipeId')
+    // recipeIdHiddenInput.setAttribute('value', recipeId)
   }
 
   // Add a substitute ingredient (recipe ingredient object)
@@ -407,9 +408,7 @@ class Adapter {
       body: JSON.stringify(recipeIngredientObj)
     }
 
-    let url = 'http://localhost:3000/recipe_ingredients/';
-
-    fetch(url, configObj)
+    fetch(this.recipeIngredientsUrl, configObj)
       .then(resp => resp.json())
       .then(data => {
         console.log(data)

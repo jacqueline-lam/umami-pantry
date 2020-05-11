@@ -6,10 +6,38 @@
 /* Container
 ----------------------------------------------------*/
 .container{
-  width: auto;
   font-family: 'Rubik', sans-serif;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
+
+#welcome img {
+  /* background: url('images/umami-pantry.gif'); */
+  /* height: 100vh; */
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* #welcome {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+#welcome img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+} */
+
 
 h1 {
   /* color: #93E0F4; 67D4C5; 67C6D4;*/
@@ -31,6 +59,10 @@ div#ingredientsContainer {
 
 div.categoryContainer{
   padding-bottom: 40px;
+}
+
+div#recipesContainer h4{
+  padding-bottom: 0.5em;
 }
 
 div.ingredientCard {
@@ -69,14 +101,6 @@ img.ingredientImg {
 }
 
 /* Recipe */
-
-div.recipeCard {
-  /* height: 278px;
-  margin-bottom: 22px;
-  margin: 10px;
-  max-width: 350px; */
-}
-
 div.recipeCard img {
   /* width: auto; */
   height: auto;
@@ -90,7 +114,7 @@ div.recipeCard a {
 }
 
 div.recipeCard a:hover {
-  color: blue;
+  color: #67D4B8;
 }
 
 div.card.mb-3 {
@@ -102,9 +126,20 @@ div.card.mb-3 {
   max-width: 300px;
 }
 
-
+/* Selected Ingredient */
 div #selectedRecipe {
   display: inline-block;
+}
+
+div #selectedRecipe h2 {
+  padding-top: 0.5em;
+  font-weight: bolder;
+}
+
+#selectedRecipe img {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 div.col-8 li {
@@ -116,6 +151,7 @@ div #selectedRecipe .btn {
 }
 
 div#subIngredientForm {
+  display: none;
   margin: 30px 0px;
 }
 
