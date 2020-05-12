@@ -144,15 +144,27 @@ div #selectedRecipe h2 {
   font-weight: bolder;
 }
 
-#selectedRecipe img {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
+#selectedRecipe h2 {
+  text-transform: uppercase;
 }
 
-div.col-8 li {
+#selectedRecipe img {
+  display: block;
+  /* margin-top: 1em;
+  margin-bottom: 1em; */
+  /* offset border over image */
+  outline:4px solid lightgray;
+  outline-offset:-100px;
+  border:10px solid transparent;
+  border-width:150px 50px 50px 150px;
+  margin:-75px 0 0 -75px;
+}
+
+}
+
+div.col-8 ol {
   margin-bottom: 30px;
-  font-size: 130%;
+  font-size: 5em;
 }
 
 button#returnToRecipesBtn {
