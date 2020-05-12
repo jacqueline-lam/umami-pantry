@@ -62,7 +62,7 @@
 
     <div id="selectedRecipeContainer">
       <div id="selectedRecipe"></div>
-      <button id="substitutIngredientBtn" class="btn btn-outline-primary btn-lg">Add a Substitute Ingredient</button>
+      <button id="substitutIngredientBtn" class="btn btn-outline-danger btn-lg">Add a Substitute Ingredient</button>
 
       <!-- ADD A SUBSTITUTE INGREDIENT FORM -->
       <div id="subIngredientForm">
@@ -101,7 +101,7 @@
 
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
-            <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
+            <button id="submitSubIngredientBtn" type="submit" class="btn btn-danger">Submit</button>
           </fieldset>
         </form>
       </div>

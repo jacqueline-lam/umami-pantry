@@ -136,7 +136,7 @@ recipe_data = [
   {
     name: 'Five-Ingredient Creamy Miso Pasta',
     category: 'Japanese',
-    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</li><li>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes.</li><li>Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</li><li>Divide among shallow bowls and sprinkle with nori or furikake, if using</li></ol>",
+    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</li><li>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes.</li><li>Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</li><li>Divide among shallow bowls and sprinkle with nori or furikake, if using any.</li></ol>",
     image_url: '<img src="https://static01.nyt.com/images/2020/04/17/dining/17help/aw-miso-pasta-articleLarge.jpg"/>',
     servings: 4,
     time: 25,

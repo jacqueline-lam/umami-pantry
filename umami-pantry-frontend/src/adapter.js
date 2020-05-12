@@ -225,8 +225,8 @@ class Adapter {
         li.innerText = ingredient['name'];
         // display substitute ingredients in red
         if (!!ingredient.substituted_ingredient_id) {
-          li.style.color = "#FF5733"
-        };
+          li.classList.add('subIngredient');
+        }
         ul.appendChild(li);
       }
       recipeCard.appendChild(ul);
@@ -236,10 +236,10 @@ class Adapter {
         if (!selectedRecipeId) {
           selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id')
         };
-        this.getSingleRecipe(selectedRecipeId);
         recipesContainer.style.display = 'none';
         ingredientsContainer.style.display = 'none';
         formDiv.style.display = 'none';
+        this.getSingleRecipe(selectedRecipeId);
       });
     });
   };
@@ -248,8 +248,8 @@ class Adapter {
     console.log("Got recipe ID: " + recipeId);
     return fetch(`${this.recipeUrl}/${recipeId}`)
       .then(resp => resp.json())
-      .then(recipeData => this.renderSelectedRecipe(recipeData))
-      .catch(err => console.log(err));
+      .then(recipeData => (this.renderSelectedRecipe(recipeData)))
+      .catch(err => console.log(err))
   };
 
   renderSelectedRecipe(recipe) {
@@ -306,11 +306,11 @@ class Adapter {
     // add underline to substituted ingredient
     subIngredientsArray.forEach(newIngObj => {
       let ogIngredientTr = document.querySelector(`tr[data-ingredient-id="${newIngObj['ogIngId']}"]`);
-      ogIngredientTr.style.textDecoration = 'wavy underline #FF5733';
+      ogIngredientTr.className = 'ogIngredient';
 
       // let subIngredientTr = document.createElement('tr');
       let subIngredientTr = newIngObj["newIngTr"];
-      subIngredientTr.style.color = '#FF5733';
+      subIngredientTr.className = 'subIngredient';
 
       ogIngredientTr.insertAdjacentElement('afterend',subIngredientTr)
     });
@@ -323,19 +323,10 @@ class Adapter {
 
     // Add substitute ingredient
     addSubIngredientBtn.style.display = 'inline-block';
-    // const subIngBtn = document.createElement('button')
-    // subIngBtn.id = "substitutIngredientBtn"
-    // subIngBtn.classList.add('btn', 'btn-outline-primary', 'btn-lg')
-    // subIngBtn.textContent = 'Add a Substitute Ingredient'
-    // selectedRecipeDiv.appendChild(subIngBtn);
 
     //Back to results
     returnBtn.style.display = 'inline-block';
-    // const returnBtn = document.createElement('button')
-    // returnBtn.id = "returnToRecipesBtn"
-    // returnBtn.classList.add('btn', 'btn-outline-danger', 'btn-lg')
-    // returnBtn.textContent = 'Return to Matching Recipes'
-    // selectedRecipeDiv.appendChild(returnBtn);
+
   };
 
   displayMatchingRecipes(){
