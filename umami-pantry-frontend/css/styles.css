@@ -20,24 +20,12 @@
   margin-right: auto;
 }
 
-/* #welcome {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+div#header h1 {
+  font-size: 400%;
+  font-weight: 200;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #FF5733 65%);
+  /* margin-bottom: 2%; */
 }
-#welcome img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
-} */
-
 
 h1 {
   /* color: #93E0F4; 67D4C5; 67C6D4;*/
@@ -74,25 +62,32 @@ div.ingredientCard {
   border-radius: 10px; */
   text-align: center;
   border: grey solid 1px;
-  padding: 10px;
-  width: 110px;
-  height: 110px;
+  padding: 5px;
+  width: 120px;
+  height: 120px;
   display: inline-block; /*inline-grid*/
   margin: 7px;
   box-shadow: 3px 4px #FF5733;
   border-radius: 10px;
 }
 
-
+/*
 div.ingredientCard {
   padding: 5px 5px;
   font-size: 12px;
-}
+} */
+
 div.ingredientCard p {
+  text-align: center;
   padding-top: 3px;
   margin-bottom: 0.5px;
   font-weight: bold;
+  /* border: 1px solid transparent; */
+  width: 110px;
+  overflow: hidden;
+  white-space: nowrap;
 }
+
 
 img.ingredientImg {
   width: 60px;
@@ -146,7 +141,12 @@ div.col-8 li {
   margin-bottom: 30px;
   font-size: 130%;
 }
-div #selectedRecipe .btn {
+button#returnToRecipesBtn {
+  display: none;
+}
+
+button#substitutIngredientBtn{
+  display: none;
   margin-right: 20px;
 }
 

@@ -7,8 +7,11 @@ const recipesContainer = document.getElementById('recipesContainer');
 const recipesNode = document.getElementById("recipeCards");
 const recipeCards = document.getElementsByClassName('recipeCard');
 // const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
+const selectedRecipeContainer = document.getElementById('selectedRecipeContainer');
 const selectedRecipeDiv = document.getElementById('selectedRecipe');
 const formDiv = document.getElementById('subIngredientForm')
+const returnBtn = document.getElementById('returnToRecipesBtn');
+const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -46,23 +49,24 @@ class Adapter {
       }
     });
     // eventlistener for 'Clear All Ingredients' btn
-    let clearIngredientsBtn = document.getElementById('removeIngredientsBtn')
+    let clearIngredientsBtn = document.getElementById('clearIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
 
     // eventlistener for Selected Recipe Div
-    selectedRecipeDiv.addEventListener('click', e => {
-      const returnBtn = document.getElementById('returnToRecipesBtn');
-      const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
+    selectedRecipeContainer.addEventListener('click', e => {
       // Return to Matching Recipes Btn
       if (e.target === returnBtn) {
+        returnBtn.style.display = 'none';
+        addSubIngredientBtn.style.display = 'none';
         this.displayMatchingRecipes();
       } else if (e.target === addSubIngredientBtn){ // Add A Subsitute Ingredient Btn
-        let recipeId = parseInt(selectedRecipeDiv.dataset.recipeId, 10);
+        let recipeId = parseInt(selectedRecipeContainer.dataset.recipeId, 10);
+        addSubIngredientBtn.style.display = 'none';
         this.createRecipeIngredientHandler(recipeId);
       };
     });
 
-    //eventlistener for substitute ingredient submit btn
+    //eventlistener for Substitute Ingredient Submit btn
     formDiv.addEventListener('submit', e => {
       e.preventDefault();
       this.handleSubmitForm();
@@ -234,6 +238,8 @@ class Adapter {
         };
         this.getSingleRecipe(selectedRecipeId);
         recipesContainer.style.display = 'none';
+        ingredientsContainer.style.display = 'none';
+        formDiv.style.display = 'none';
       });
     });
   };
@@ -247,10 +253,9 @@ class Adapter {
   };
 
   renderSelectedRecipe(recipe) {
-    formDiv.style.display = 'none';
+    selectedRecipeContainer.dataset.recipeId = recipe.id
 
     selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
-    selectedRecipeDiv.dataset.recipeId = recipe.id
 
     let heading = document.createElement('div')
     heading.id = 'recipeHeading'
@@ -317,18 +322,20 @@ class Adapter {
     row.appendChild(col2)
 
     // Add substitute ingredient
-    const subIngBtn = document.createElement('button')
-    subIngBtn.id = "substitutIngredientBtn"
-    subIngBtn.classList.add('btn', 'btn-outline-primary', 'btn-lg')
-    subIngBtn.textContent = 'Add a Substitute Ingredient'
-    selectedRecipeDiv.appendChild(subIngBtn);
+    addSubIngredientBtn.style.display = 'inline-block';
+    // const subIngBtn = document.createElement('button')
+    // subIngBtn.id = "substitutIngredientBtn"
+    // subIngBtn.classList.add('btn', 'btn-outline-primary', 'btn-lg')
+    // subIngBtn.textContent = 'Add a Substitute Ingredient'
+    // selectedRecipeDiv.appendChild(subIngBtn);
 
     //Back to results
-    const returnBtn = document.createElement('button')
-    returnBtn.id = "returnToRecipesBtn"
-    returnBtn.classList.add('btn', 'btn-outline-danger', 'btn-lg')
-    returnBtn.textContent = 'Return to Matching Recipes'
-    selectedRecipeDiv.appendChild(returnBtn);
+    returnBtn.style.display = 'inline-block';
+    // const returnBtn = document.createElement('button')
+    // returnBtn.id = "returnToRecipesBtn"
+    // returnBtn.classList.add('btn', 'btn-outline-danger', 'btn-lg')
+    // returnBtn.textContent = 'Return to Matching Recipes'
+    // selectedRecipeDiv.appendChild(returnBtn);
   };
 
   displayMatchingRecipes(){

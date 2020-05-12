@@ -48,8 +48,7 @@
           d" data-id="1"> -->
           <!-- <img class="ingredientImg" src="..."><p>Ingredient #1</p> -->
         <!-- </div> -->
-      <button type="button" id="removeIngredientsBtn" class="btn btn-outline-danger btn-lg btn-block">Clear All Ingredients</button>
-
+      <button type="button" id="clearIngredientsBtn" class="btn btn-outline-danger btn-lg btn-block">Clear All Ingredients</button>
     </div>
 
     <div id="recipesContainer">
@@ -57,68 +56,58 @@
       <i>Stop saying 'IDK what to cook'...</i>
       <h4>Scroll up and select some ingredients in your pantry!</h4>
 
-      <div id="recipeCards">
-        <!-- Goal of JS: Make requests to backend to get current list of recipes -->
-        <!-- Add our Recipes -->
-        <!-- <div class="card" data-id="1"><p>Recipe #1</p>
-          <button data-trainer-id="1">Add Pokemon</button>
-          <ul>
-            <li>${reciepe_ingredient.amount} ${ingredient.name} <button class="release" data-recipe-id="???">Release</button></li>
-          </ul>
-        </div> -->
+      <!-- ALL MATCHING RECIPES -->
+      <div id="recipeCards"></div>
+    </div>
+
+    <div id="selectedRecipeContainer">
+      <div id="selectedRecipe"></div>
+      <button id="substitutIngredientBtn" class="btn btn-outline-primary btn-lg">Add a Substitute Ingredient</button>
+
+      <!-- ADD A SUBSTITUTE INGREDIENT FORM -->
+      <div id="subIngredientForm">
+        <h3>Add a Substitute Ingredient</h3>
+        <form id="createSubIngredientForm">
+          <fieldset>
+            <div class="form-row">
+              <!-- Ingredient to be Replaced -->
+              <div class="form-group col-md-6">
+                <label for="ogIngredient">Replace Ingredient</label>
+                <select id="ogIngredientSelect" class="form-control selectpicker formInput" required>
+                  <option value="" disabled selected>Ingredient to replace</option>
+                </select>
+              </div>
+              <!-- New Substitute Ingredient -->
+              <div class="form-group col-md-6">
+                <label for="subIngredient">Substitute Ingredient</label>
+                <select id="subIngredientSelect" class="form-control selectpicker formInput" required>
+                  <option value="" disabled selected>Choose substitute ingredient</option>
+                </select>
+              </div>
+            </div>
+            <label class="mdb-main-label">Substitute Ingredient Details (optional)</label>
+            <div class="form-row">
+              <!-- Subsititute Ingredient Amount  -->
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control formInput" name="amount" id="subIngredientAmount" placeholder="Amount" value="">
+                <small id="amount" class="form-text text-muted">e.g. 1 cup, tbsp, ounce, pound, etc.</small>
+              </div>
+              <!-- Subsititute Ingredient Amount  -->
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control formInput" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
+                <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
+              </div>
+            </div>
+
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
+            <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
+          </fieldset>
+        </form>
       </div>
+      <!-- Back to Matching Recipes Btn -->
+      <button id="returnToRecipesBtn" class="btn btn-outline-danger btn-lg">Return to Matching Recipes</button>
     </div>
-
-    <div id="selectedRecipe"></div>
-
-    <div id="subIngredientForm">
-      <h3>Add a Substitute Ingredient</h3>
-      <form id="createSubIngredientForm">
-       <fieldset>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="ogIngredient">Replace Ingredient</label>
-            <select id="ogIngredientSelect" class="form-control selectpicker formInput" required>
-              <option value="" disabled selected>Ingredient to replace</option>
-            </select>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="subIngredient">Substitute Ingredient</label>
-            <select id="subIngredientSelect" class="form-control selectpicker formInput" required>
-              <option value="" disabled selected>Choose substitute ingredient</option>
-            </select>
-          </div>
-        </div>
-
-        <label class="mdb-main-label">Substitute Ingredient Details (optional)</label>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input type="text" class="form-control formInput" name="amount" id="subIngredientAmount" placeholder="Amount" value="">
-              <small id="amount" class="form-text text-muted">e.g. 1 cup, tbsp, ounce, pound, etc.</small>
-            </div>
-            <!-- <div class="form-group col-md-4">
-              <select class="custom-select formInput">
-                <option value="" selected>Unit (optional)</option>
-                <option value="cup">cup</option>
-                <option value="tablespoon">tablespoon</option>
-                <option value="teaspoon">teaspoon</option>
-                <option value="ounce">ounce</option>
-                <option value="pound">pound</option>
-              </select>
-            </div> -->
-            <div class="form-group col-md-6">
-              <input type="text" class="form-control formInput" id="subIngredientPrepMethod" aria-describedby="methodHelp" placeholder="Preparation method (leave blank if none)">
-              <small id="method" class="form-text text-muted">e.g. chopped, grated, thinly sliced, diced, etc.</small>
-            </div>
-          </div>
-
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
-          <button id="submitSubIngredientBtn" type="submit" class="btn btn-primary">Submit</button>
-        </fieldset>
-      </form>
-    </div>
-
 
     <!-- Link JS file to HTML -->
     <!-- index.js relies on adapter.js so it needs to be read first - stored in memory -->
