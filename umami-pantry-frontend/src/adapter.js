@@ -5,13 +5,14 @@ const categoryContainers = document.getElementsByClassName('categoryContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard');
 const recipesContainer = document.getElementById('recipesContainer');
 const recipesNode = document.getElementById("recipeCards");
-const recipeCards = document.getElementsByClassName('recipeCard');
+// const recipeCards = document.getElementsByClassName('recipeCard');
 // const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
 const selectedRecipeContainer = document.getElementById('selectedRecipeContainer');
 const selectedRecipeDiv = document.getElementById('selectedRecipe');
 const formDiv = document.getElementById('subIngredientForm')
 const returnBtn = document.getElementById('returnToRecipesBtn');
 const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
+let renderedSIForm = false;
 
 class Adapter {
   constructor(baseUrl='http://localhost:3000') {
@@ -61,9 +62,10 @@ class Adapter {
         addSubIngredientBtn.style.display = 'none';
         this.displayMatchingRecipes();
       } else if (e.target === addSubIngredientBtn){ // Add A Subsitute Ingredient Btn
-        let recipeId = parseInt(selectedRecipeContainer.dataset.recipeId, 10);
         addSubIngredientBtn.style.display = 'none';
-        this.createRecipeIngredientHandler(recipeId);
+        let recipeId = parseInt(selectedRecipeContainer.dataset.recipeId, 10);
+        this.renderAddSubIngredientForm(recipeId);
+        renderedSIForm = true;
       };
     });
 
@@ -336,20 +338,20 @@ class Adapter {
     subIngredientForm.style.display = 'none';
   };
 
-  createRecipeIngredientHandler(recipeId){
-    this.renderAddSubIngredientForm(recipeId);
-    // RecipeIngredient.new();
-  }
-
   renderAddSubIngredientForm(recipeId) {
+    if (!!renderedSIForm) {
+      let existingOptions =  Array.from(document.getElementsByClassName('options'));
+      existingOptions.map(option => option.parentNode.removeChild(option));
+    }
     formDiv.style.display = 'block';
+
     let recipeIngredientIds = [];
 
     let ogIngredientSelect = document.getElementById('ogIngredientSelect');
     let recipe = Recipe.findById(recipeId);
 
     recipe.ingredients.forEach(ingredient => {
-      let option = `<option value=${ingredient.id}>${ingredient.name}</option>`
+      let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`
       ogIngredientSelect.innerHTML += option
       recipeIngredientIds.push(ingredient.id)
     })
@@ -361,11 +363,12 @@ class Adapter {
 
     // add all options into select tag
     subIngredientOptions.forEach(ingredient => {
-      let option = `<option value=${ingredient.id}>${ingredient.name}</option>`
+      let option = `<option class="options" value=${ingredient.id}>${ingredient.name}</option>`
       let optGroup = document.getElementById(ingredient.category)
       if (!optGroup) {
         optGroup = document.createElement('optgroup')
         optGroup.setAttribute('label', ingredient.category)
+        // optGroup.className = options
         optGroup.id= ingredient.category
         subIngredientSelect.appendChild(optGroup)
       }
