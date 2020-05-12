@@ -265,13 +265,14 @@ class Adapter {
     heading.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`
     selectedRecipeDiv.appendChild(heading);
 
-    // // Recipe time, ingredients list
+    // Recipe time, servings
     let row = document.createElement('div')
     row.className = 'row'
     let col1 = document.createElement('div')
     col1.className = 'col-4'
     col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()}</li></ul><h3>Ingredients</h3>`
 
+    // Ingredient List
     let ingredientsTable = document.createElement('table')
     ingredientsTable.classList.add('table', 'table-hover');
 
@@ -306,7 +307,7 @@ class Adapter {
     row.appendChild(col1);
     selectedRecipeDiv.appendChild(row);
 
-    // add underline to substituted ingredient
+    // add styling to substituted ingredient
     subIngredientsArray.forEach(newIngObj => {
       let ogIngredientTr = document.querySelector(`tr[data-ingredient-id="${newIngObj['ogIngId']}"]`);
       ogIngredientTr.className = 'ogIngredient';
@@ -351,9 +352,12 @@ class Adapter {
     let recipe = Recipe.findById(recipeId);
 
     recipe.ingredients.forEach(ingredient => {
-      let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`
-      ogIngredientSelect.innerHTML += option
-      recipeIngredientIds.push(ingredient.id)
+      // don't allow substitute ingredient to be rendered
+      if (!ingredient.substituted_ingredient_id) {
+        let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`
+        ogIngredientSelect.innerHTML += option
+        recipeIngredientIds.push(ingredient.id)
+      }
     })
 
     let subIngredientSelect = document.getElementById('subIngredientSelect');
