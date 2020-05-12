@@ -39,7 +39,7 @@ class Adapter {
     //   })
     // })
 
-    // eventlistener for ingredient card
+    // eventlistener for Ingredient Card
     ingredientsContainer.addEventListener('click', e => {
       for (const ingredientCard of ingredientCards) {
         // if ingredientCard is clicked
@@ -48,7 +48,7 @@ class Adapter {
         }
       }
     });
-    // eventlistener for 'Clear All Ingredients' btn
+    // eventlistener for 'Clear All Ingredients' Button
     let clearIngredientsBtn = document.getElementById('clearIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
 
@@ -56,6 +56,7 @@ class Adapter {
     selectedRecipeContainer.addEventListener('click', e => {
       // Return to Matching Recipes Btn
       if (e.target === returnBtn) {
+        ingredientsContainer.style.display = 'block';
         returnBtn.style.display = 'none';
         addSubIngredientBtn.style.display = 'none';
         this.displayMatchingRecipes();
