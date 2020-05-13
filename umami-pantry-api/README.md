@@ -1,3 +1,35 @@
+
+-----
+* Pantry Recipes packed with a punch of umami
+* Simple pantry ingredients
+* Relatively easy-to-subsitute ingredients
+* Freestyle Cooking
+* The world is your oyster, cook creatively with ingredients
+* tons of overripe bananas but no baking poweder? A half-cup of yogurt and a teaspoon of baking soda. reduce the liquid ingredients by ½ cup to keep everything proportional
+* Self-quarantine recipes - what to cook when you're stuck at home
+
+    - To add nouns to your world, create models in rails
+    - To show your nouns, you'll need:
+        1. A controller action to send the data
+        2. A fetch request to ask for the data
+        3. Some JavaScript code to handle DOM-rendering
+    - To make your page respond to the user, you'll need event listeners
+    - To keep your code clean, you should use JavaScript classes
+    - To organize your code, you can use multiple JavaScript files (don't forget to add `<script>` tags for each one!)
+
+    ## TO DO:
+   [x] render form for new substituion ingredient (create /recipe_ingredients)
+    * validation for form inputs
+    [x]] post request to API
+    [x] update db; create new recipe_ingredient instance
+    [x] send data in JSON and manipulate DOM to display updated ingredients on matchingRecipes and selected Recipe
+
+    * add indepdendent scrolling panes for ingredients (L) vs recipes (R)
+    * move JS logic into separate JS objects and files
+
+
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
