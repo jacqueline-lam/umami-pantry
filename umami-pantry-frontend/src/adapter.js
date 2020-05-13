@@ -1,7 +1,6 @@
 // serves as in browser data storage system
 const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
-const categoryContainers = document.getElementsByClassName('categoryContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard');
 const recipesContainer = document.getElementById('recipesContainer');
 const recipesNode = document.getElementById("recipeCards");
@@ -169,10 +168,11 @@ class Adapter {
       .then(resp => resp.json())
       .then(recipesData => {
         recipesData.forEach(recipe => {
-          // DEBUG - Recipe class has repeated recipe instances
-          recipe instanceof Recipe ? "" : matchingRecipes.push(new Recipe(recipe));
+          // recipe instanceof Recipe ? "" : matchingRecipes.push(new Recipe(recipe));
+          let r = Recipe.findById(recipe.id)
+          r = r || new Recipe(recipe)
+          matchingRecipes.push(r);
         })
-
         this.renderMatchingRecipes(matchingRecipes);
       })
       .catch(err => console.log(err));
