@@ -1,5 +1,5 @@
 # Umami Pantry
-This is a single page application that shows different matching recipes for different pantry ingredients. It is designed to encourage freestyle homecooking with easy-to-substitute ingredients.
+This is a single page application that shows matching recipes for different pantry ingredients. It is designed to encourage freestyle homecooking with easy-to-substitute ingredients.
 
 The app is composed of backend rails API and front-end modular JS clients, which use asynchronous Javascript to make HTTP requests to the API to get/ post data and render them to the user interface.
 
