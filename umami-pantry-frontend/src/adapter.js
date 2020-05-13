@@ -247,6 +247,7 @@ class Adapter {
     });
   };
 
+  // SINGLE RECIPE
   getSingleRecipe(recipeId){
     console.log("Got recipe ID: " + recipeId);
     return fetch(`${this.recipeUrl}/${recipeId}`)

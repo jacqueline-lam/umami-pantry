@@ -139,7 +139,7 @@ div #selectedRecipeContainer {
 }
 
 div #selectedRecipe {
-  display: inline-block;
+  display: block;
   margin-bottom: 3%;
 }
 
@@ -150,22 +150,38 @@ div#directions.col-8 li{
   padding-bottom: 0.5em;
 }
 
-#selectedRecipe h2 {
-  text-transform: uppercase;
-  padding-top: 0.5em;
+#recipeHeading h2 {
   font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #selectedRecipe img {
   display: block;
-  /* margin-top: 1em;
-  margin-bottom: 1em; */
-  /* offset border over image */
-  outline:4px solid lightgray;
+  /* outline:4px solid lightgray;
   outline-offset:-100px;
   border:10px solid transparent;
   border-width:150px 50px 50px 150px;
-  margin:-75px 0 0 -75px;
+  margin:-75px 0 0 -75px; */
+
+  height: 40%;
+  max-height: auto;
+  width: auto;
+  box-shadow:
+    20px -20px 0 -5px white,
+    20px -20px 0 0 black;
+  transition: box-shadow ease-in 150ms;
+}
+
+/* #selecterRecipe img:hover {
+  box-shadow:
+    5px -5px 0 -5px white,
+    5px -5px 0 0 black;
+} */
+
+div.row {
+  margin-top: 2%;
 }
 
 button#returnToRecipesBtn {
