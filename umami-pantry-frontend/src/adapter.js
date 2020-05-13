@@ -307,7 +307,7 @@ class Adapter {
     row.appendChild(col1);
     selectedRecipeDiv.appendChild(row);
 
-    // add styling to substituted ingredient
+    // add styling to og vs. substituted ingredient
     subIngredientsArray.forEach(newIngObj => {
       let ogIngredientTr = document.querySelector(`tr[data-ingredient-id="${newIngObj['ogIngId']}"]`);
       ogIngredientTr.className = 'ogIngredient';
@@ -321,7 +321,8 @@ class Adapter {
 
     // Recipe Directions
     let col2 = document.createElement('div')
-    col2.className = 'col-8'
+    col2.classList.add('col-8');
+    col2.id = 'directions'
     col2.innerHTML += `<h3>Directions</h3><hr>${recipe.directions}`
     row.appendChild(col2)
 
