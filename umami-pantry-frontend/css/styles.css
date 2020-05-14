@@ -98,6 +98,10 @@ img.ingredientImg {
 
 /* Matching Recipes
 ----------------------------------------------------*/
+div.recipeCard {
+  /* float:left; */
+}
+
 div.recipeCard img {
   /* width: auto; */
   height: auto;
@@ -114,13 +118,13 @@ div.recipeCard a:hover {
   color: #3fb099;
 }
 
-div.card.mb-3 {
+div.card {
   /* width: 50%; */
   /* height: auto; */
-  display: inline-grid;
-  float: left;
-  margin: 10px;
-  max-width: 300px;
+  /* display: inline-grid; */
+  /* float: left; */
+  /* margin-right: 5%; */
+  /* max-width: 33%; */
 }
 
 .ogIngredient{

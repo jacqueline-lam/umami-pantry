@@ -23,7 +23,6 @@ class Adapter {
   }
   static ingredients = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
-  // matchingRecipes = {};
   formInputs = document.querySelectorAll('.formInput');
 
   // Event delegation / Manage event listeners
@@ -133,7 +132,7 @@ class Adapter {
       ingredient.setAttribute("style", "background-color: lightgray;");
     } else {
       // If ingredient already exists in current state
-    // And we're selecting it, then we should remove it
+      // And we're selecting it, then we should remove it
       this.selectedIngredients.splice(index, 1);
       ingredient.setAttribute("style", "background-color: white;");
     }
@@ -194,7 +193,7 @@ class Adapter {
     matchingRecipes.forEach(recipe => {
       // render recipe if recipeCard is not displayed yet
       let recipeCard = recipesNode.appendChild(document.createElement('div'));
-      recipeCard.classList.add('recipeCard', 'card', 'mb-3')
+      recipeCard.classList.add('recipeCard', 'card')
       recipeCard.setAttribute('data-recipe-id', recipe.id)
 
       // Recipe name with link
@@ -279,7 +278,7 @@ class Adapter {
 
     let tbody = document.createElement('tbody')
     let subIngredientsArray = []
-    recipe.recipe_ingredients.forEach(ingredient => {
+    recipe.ingredients.forEach(ingredient => {
       let tr = document.createElement('tr')
       tr.dataset.ingredientId = ingredient.id
 
@@ -337,8 +336,9 @@ class Adapter {
 
   displayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
-    recipesContainer.style.display = 'block';
     subIngredientForm.style.display = 'none';
+    this.getMatchingRecipes();
+    recipesContainer.style.display = 'block';
   };
 
   renderAddSubIngredientForm(recipeId) {
@@ -397,6 +397,7 @@ class Adapter {
       }
     }
     this.postSubIngredient(formData)
+    formDiv.style.display = 'none';
   }
 
   postSubIngredient(recipeIngredientObj) {
@@ -417,8 +418,13 @@ class Adapter {
 
     fetch(url, configObj)
       .then(resp => resp.json())
-      .then(data => {
-        this.renderSelectedRecipe(data)
+      .then(recipeData => {
+        // Update Recipe class objects
+        Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients)
+        // Update recipe held in matchingRecipes array
+        // const recipeToBeUpdated = this.matchingRecipes.find(recipe => recipe.id === data.id)
+        // recipeToBeUpdated.substituted_ingredient_id = data.substituted_ingredient_id
+        this.renderSelectedRecipe(recipeData)
       })
       .catch(err=> alert(err))
   }

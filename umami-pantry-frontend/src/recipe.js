@@ -8,7 +8,7 @@ class Recipe {
     this.serving = recipe.servings
     this.time = recipe.time
     this.directions = recipe.directions
-    this.ingredients = recipe.recipe_ingredients
+    this.ingredients = recipe.ingredients
     this.constructor.all.push(this)
   }
 
