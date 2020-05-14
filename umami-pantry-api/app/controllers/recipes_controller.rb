@@ -12,12 +12,7 @@ class RecipesController < ApplicationController
 
     # recipes = Recipe.all.select { |r| r.matches_ingredients?(selected_ingredients) }
     recipes = Recipe.filter_by_ingredients(selected_ingredients)
-
-    # if recipes.any?
     render json: RecipeSerializer.new(recipes).instances_to_serialized_json
-    # else
-    #   render json: { message: 'No recipes found for this combination of ingredients.'}
-    # end
   end
 
   def show

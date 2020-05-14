@@ -39,7 +39,7 @@ class RecipeSerializer
     # return @recipe.to_json(options)
     recipe_hash = recipe.attributes
 
-    recipe_hash["recipe_ingredients"] = []
+    recipe_hash["ingredients"] = []
     recipe.recipe_ingredients.each do |ri|
       name = ri.ingredient.name
       ri_hash = {
@@ -49,7 +49,7 @@ class RecipeSerializer
         "preparation_method": ri.preparation_method,
         "substituted_ingredient_id": ri.substituted_ingredient_id,
       }
-      recipe_hash["recipe_ingredients"] << ri_hash
+      recipe_hash["ingredients"] << ri_hash
     end
     return recipe_hash
   end

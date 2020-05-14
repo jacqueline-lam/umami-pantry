@@ -20,13 +20,14 @@ rice = { name: "Rice", category: "Grains", image_url: '<img src="https://img.ico
 # { name: "Quinoa", category: "Grains", image_url: }
 pasta = { name: "Pasta", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/spaghetti.png" class="ingredientImg"/>' }
 rice_noodles = { name: "Rice Noodles", category: "Grains", image_url: '<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iTGF5ZXJfMV9jb3B5IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI1MTJweCIgZGF0YS1uYW1lPSJMYXllciAxIGNvcHkiPjxwYXRoIGQ9Im01OCAzM2MtNi0xMC4zMy0yOC00LTI4LTRsMTAuOTEgNnoiIGZpbGw9IiNiY2JlYzAiLz48cGF0aCBkPSJtMTkgNThoMjZ2NWgtMjZ6IiBmaWxsPSIjYTA2YzA0Ii8+PHBhdGggZD0ibTIxIDYxaDIydi0xaC0yMnoiIGZpbGw9IiNhMDZjMDQiLz48cGF0aCBkPSJtOSAzM3M2LTcgMTItNiAyMSA2IDIxIDZ6IiBmaWxsPSIjZTZlN2U4Ii8+PGcgZmlsbD0iIzNiYjAzYyI+PHBhdGggZD0ibTMgMThzLTEgNyA5IDZjMCAwLTEtOS05LTZ6Ii8+PHBhdGggZD0ibTUuMDkgMTkuNDhhMyAzIDAgMCAwIC43NSAxLjM1IDUuMzYgNS4zNiAwIDAgMCAzLjU3IDEuMjUgNC43NyA0Ljc3IDAgMCAwIC0xLjc0LTIuMjYgMy42MSAzLjYxIDAgMCAwIC0yLjU4LS4zNHoiLz48cGF0aCBkPSJtNTAuNzUgMjMuMjJzNS45MiAzLjg3IDkuMjUtNS42MWMwIDAtOC41OC0yLjkxLTkuMjUgNS42MXoiLz48cGF0aCBkPSJtNTMgMjEuOTVhMyAzIDAgMCAwIDEuNTQtLjExIDUuMzYgNS4zNiAwIDAgMCAyLjY1LTIuNzEgNC43OCA0Ljc4IDAgMCAwIC0yLjc4LjYyIDMuNjIgMy42MiAwIDAgMCAtMS40MSAyLjJ6Ii8+PC9nPjxwYXRoIGQ9Im02MiAzM3Y3YTE4IDE4IDAgMCAxIC0xOCAxOGgtMjRhMTggMTggMCAwIDEgLTE4LTE4di03eiIgZmlsbD0iI2ZkY2EyZiIvPjxwYXRoIGQ9Im02MiAzM3Y3YTE4IDE4IDAgMCAxIC0xOCAxOGgtMjRhMTcuODEgMTcuODEgMCAwIDEgLTkuNzgtMi45di0uMDdhMTAuODcgMTAuODcgMCAwIDEgMS4xLTEuNThjMi4yNy0yLjg2IDguMzEtOC43MiAyMC40NS05Ljk0YTM1Ljc4IDM1Ljc4IDAgMCAwIDE5LjMzLTguNTFjLjktLjc3IDEuNjItMS40NSAyLjE2LTJ6IiBmaWxsPSIjZjJiNDFjIi8+PHBhdGggZD0ibTE2IDEwYTEgMSAwIDAgMSAtLjEyLTJsNDctNmExIDEgMCAxIDEgLjI1IDJsLTQ3IDZ6IiBmaWxsPSIjODQ0MjE1Ii8+PHBhdGggZD0ibTEzIDE1YTEgMSAwIDAgMSAwLTJsNTAtMWExIDEgMCAwIDEgMSAxIDEgMSAwIDAgMSAtMSAxeiIgZmlsbD0iIzg0NDIxNSIvPjxwYXRoIGQ9Im0yOCAzMmExIDEgMCAwIDEgLTEtMXYtMjBhMSAxIDAgMCAxIDIgMHYyMGExIDEgMCAwIDEgLTEgMXoiIGZpbGw9IiNlNmU3ZTgiLz48cGF0aCBkPSJtMjEuODggMzFhMSAxIDAgMCAxIC0xLTF2LTI1YTEgMSAwIDAgMSAyIDB2MjVhMSAxIDAgMCAxIC0xIDF6IiBmaWxsPSIjZTZlN2U4Ii8+PHBhdGggZD0ibTM0IDMzYTEgMSAwIDAgMSAtMS0xdi0yOWExIDEgMCAwIDEgMiAwdjI5YTEgMSAwIDAgMSAtMSAxeiIgZmlsbD0iI2U2ZTdlOCIvPjxwYXRoIGQ9Im0xMyA0MWgtMWExIDEgMCAwIDEgMC0yaDFhMSAxIDAgMCAxIDAgMnoiIGZpbGw9IiNmMmI0MWMiLz48cGF0aCBkPSJtMTcgNDFoLTFhMSAxIDAgMCAxIDAtMmgxYTEgMSAwIDAgMSAwIDJ6IiBmaWxsPSIjZjJiNDFjIi8+PC9zdmc+Cg==" class="ingredientImg"/>' }
-  #'<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M17.91667,39.41667h129v7.16667h-129z" fill="#5d4037"></path><path d="M17.81635,28.67466l129.15131,-7.20033l0.39891,7.1552l-129.15131,7.20033z" fill="#5d4037"></path><path d="M49.09167,100.69167c1.075,-0.71667 2.50833,-1.79167 4.3,-2.15c1.43333,-0.35833 2.50833,-0.71667 3.94167,-0.71667c0,0 0,0 0.35833,0c3.225,0 6.80833,1.43333 9.31667,4.3c1.43333,1.43333 2.86667,2.15 4.3,2.15h0.35833c2.15,0 3.94167,-1.43333 4.65833,-2.15c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333c1.43333,-0.35833 2.50833,-0.71667 3.94167,-0.71667h0.35833c3.225,0 6.45,1.43333 9.31667,4.3c1.43333,1.43333 3.225,2.15 4.3,2.15v0c2.15,0 3.94167,-1.43333 4.65833,-2.15c2.15,-2.15 5.73333,-3.94167 9.675,-4.3h0.35833c3.225,0 6.45,1.075 9.31667,4.3c1.43333,1.43333 2.86667,2.15 4.3,2.15h0.35833c0.35833,0 1.075,0 1.43333,-0.35833c1.79167,-0.71667 3.225,-1.79167 3.225,-1.79167c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333c1.43333,-0.35833 2.50833,-0.71667 3.94167,-0.71667h0.35833c2.86667,0 5.73333,1.075 7.88333,2.86667c0.35833,0 1.075,-0.35833 1.43333,-0.71667c1.43333,-1.43333 1.43333,-3.58333 0,-5.01667c-3.94167,-3.94167 -8.6,-5.01667 -13.61667,-3.58333c-3.225,1.075 -5.73333,3.225 -5.73333,3.58333c0,0 -1.43333,1.075 -3.225,1.79167c-2.15,0.71667 -4.3,0.35833 -6.09167,-1.79167c-7.16667,-7.16667 -15.40833,-3.94167 -19.35,0c-1.075,1.075 -5.01667,4.3 -9.31667,0c-3.94167,-3.94167 -8.6,-5.01667 -13.61667,-3.58333c-3.225,1.075 -5.73333,3.225 -5.73333,3.58333c-1.075,1.075 -5.01667,4.3 -9.31667,0c-3.94167,-3.94167 -8.6,-5.01667 -13.61667,-3.58333c-3.225,1.075 -5.73333,3.225 -5.73333,3.58333c-1.43333,1.43333 -1.43333,3.58333 0,5.01667c0.71667,0 1.43333,0.35833 1.79167,0.71667z" fill="#f6f6f4"></path><path d="M43,129.35833c0,0 0,-0.35833 0,0c0,-1.43333 0.35833,-2.86667 0.71667,-4.3c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c0.71667,-0.71667 2.15,-2.50833 2.15,-4.65833v-0.35833c0,-1.43333 -0.71667,-2.86667 -2.15,-4.3c-2.86667,-3.225 -4.3,-6.45 -4.3,-9.31667v-0.35833c0,-3.94167 2.15,-7.525 4.3,-9.675c0.71667,-0.71667 2.15,-2.50833 2.15,-4.65833v-0.35833c0,-1.43333 -0.71667,-2.86667 -2.15,-4.3c-2.86667,-2.86667 -4.3,-6.09167 -4.3,-9.31667v-0.35833c0,-1.43333 0.35833,-2.50833 0.71667,-3.94167c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c0.71667,-0.71667 2.15,-2.50833 2.15,-4.65833v-0.35833c0,-1.43333 -0.71667,-2.86667 -2.15,-4.3c-2.86667,-2.86667 -4.3,-6.09167 -4.3,-9.31667v-0.35833c0,-1.43333 0.35833,-2.50833 0.71667,-3.94167c0.71667,-1.79167 1.43333,-3.225 2.15,-4.3c0,-0.71667 -0.35833,-1.075 -0.71667,-1.43333c-1.43333,-1.43333 -3.58333,-1.43333 -5.01667,0c-0.35833,0.35833 -2.50833,2.50833 -3.58333,5.73333c-1.43333,4.65833 -0.35833,9.675 3.58333,13.61667c4.3,4.3 1.075,8.24167 0,9.31667c-0.35833,0.35833 -2.50833,2.50833 -3.58333,5.73333c-1.43333,4.65833 -0.35833,9.675 3.58333,13.61667c4.3,4.3 1.075,8.24167 0,9.31667c-3.94167,3.94167 -7.16667,12.18333 0,19.35c4.3,4.3 1.075,8.24167 0,9.31667c-0.35833,0.35833 -2.50833,2.50833 -3.58333,5.73333c-1.43333,4.65833 -0.35833,9.675 3.58333,13.61667c0.71667,0.71667 1.43333,1.075 2.50833,1.075c1.075,0 1.79167,-0.35833 2.50833,-1.075c0.35833,-0.35833 0.71667,-1.075 0.71667,-1.43333c-1.79167,-2.50833 -2.86667,-5.01667 -2.86667,-7.88333z" fill="#f6f6f4"></path><path d="M99.975,111.08333c-3.225,0 -6.80833,-1.43333 -9.31667,-4.3c-4.3,-4.3 -8.24167,-1.075 -9.31667,0c-3.94167,3.94167 -12.18333,7.16667 -19.35,0c-4.3,-4.3 -8.24167,-1.075 -9.31667,0c-1.43333,1.43333 -3.58333,1.43333 -5.01667,0c-1.43333,-1.43333 -1.43333,-3.58333 0,-5.01667c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333c4.65833,-1.79167 9.675,-0.35833 13.61667,3.58333c4.3,4.3 8.24167,1.075 9.31667,0c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333c4.65833,-1.43333 9.675,-0.35833 13.61667,3.58333c4.3,4.3 8.24167,1.075 9.31667,0c3.94167,-3.94167 12.18333,-7.16667 19.35,0c2.15,2.15 3.94167,2.50833 6.09167,1.79167c1.79167,-0.71667 3.225,-1.79167 3.225,-1.79167c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333c4.65833,-1.43333 9.675,-0.35833 13.61667,3.58333c1.43333,1.43333 1.43333,3.58333 0,5.01667c-1.43333,1.43333 -3.58333,1.43333 -5.01667,0c-2.15,-2.15 -3.94167,-2.50833 -6.09167,-1.79167c-1.79167,0.71667 -3.225,1.79167 -3.225,1.79167c-0.35833,0.35833 -2.50833,2.50833 -5.73333,3.58333c-4.65833,1.43333 -9.675,0.35833 -13.61667,-3.58333c-4.3,-4.3 -8.24167,-1.075 -9.31667,0c-0.35833,0.35833 -2.50833,2.50833 -5.73333,3.58333c-1.43333,0.35833 -2.86667,0.71667 -4.3,0.71667zM36.55,125.05833c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c0.71667,-0.71667 2.15,-2.50833 2.15,-4.65833v-0.35833c0,-1.43333 -0.71667,-2.86667 -2.15,-4.3c-2.86667,-2.86667 -4.3,-6.45 -4.3,-9.31667c0,-0.35833 0,-0.35833 0,-0.35833c0,-3.94167 2.15,-7.525 4.3,-9.675c0.71667,-0.71667 2.15,-2.50833 2.15,-4.65833v-0.35833c0,-1.43333 -0.71667,-2.86667 -2.15,-4.3c-2.86667,-2.86667 -4.3,-6.09167 -4.3,-9.31667v-0.35833c0,-1.43333 0.35833,-2.50833 0.71667,-3.94167c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c0.71667,-0.71667 2.15,-2.50833 2.15,-4.65833v-0.35833c0,-1.43333 -0.71667,-2.86667 -2.15,-4.3c-2.86667,-2.86667 -4.3,-6.09167 -4.3,-9.31667v-0.35833c0,-1.43333 0.35833,-2.50833 0.71667,-3.94167c0.71667,-1.79167 1.43333,-3.225 2.15,-4.3c0,-0.71667 -0.35833,-1.075 -0.71667,-1.43333c-1.43333,-1.43333 -3.58333,-1.43333 -5.01667,0c-0.35833,0.35833 -2.50833,2.50833 -3.58333,5.73333c-1.43333,4.65833 -0.35833,9.675 3.58333,13.61667c4.3,4.3 1.075,8.24167 0,9.31667c-0.35833,0.35833 -2.50833,2.50833 -3.58333,5.73333c-1.43333,4.65833 -0.35833,9.675 3.58333,13.61667c4.3,4.3 1.075,8.24167 0,9.31667c-3.94167,3.94167 -7.16667,12.18333 0,19.35c4.3,4.3 1.075,8.24167 0,9.31667c-1.43333,1.43333 -1.43333,3.58333 0,5.01667c0.71667,0.71667 1.43333,1.075 2.50833,1.075c0.35833,0 0.71667,0 1.075,-0.35833z" fill="#e0e4e5"></path><path d="M49.80833,139.75c-1.075,0 -1.79167,-0.35833 -2.50833,-1.075c-3.94167,-3.94167 -5.01667,-8.6 -3.58333,-13.61667c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c1.075,-1.075 4.3,-5.01667 0,-9.31667c-7.16667,-7.16667 -3.94167,-15.40833 0,-19.35c1.075,-1.075 4.3,-5.01667 0,-9.31667c-3.94167,-3.94167 -5.01667,-8.6 -3.58333,-13.61667c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c1.075,-1.075 4.3,-5.01667 0,-9.31667c-3.94167,-3.94167 -5.01667,-8.6 -3.58333,-13.61667c1.075,-3.225 3.225,-5.73333 3.58333,-5.73333c1.43333,-1.43333 3.58333,-1.43333 5.01667,0c1.43333,1.43333 1.43333,3.58333 0,5.01667c-1.075,1.075 -4.3,5.01667 0,9.31667c3.94167,3.94167 5.01667,8.6 3.58333,13.61667c-1.075,3.225 -3.225,5.73333 -3.58333,5.73333c-1.075,1.075 -4.3,5.01667 0,9.31667c3.94167,3.94167 5.01667,8.6 3.58333,13.61667c-1.075,3.225 -3.225,5.73333 -3.58333,5.73333c-1.075,1.075 -4.3,5.01667 0,9.31667c3.94167,3.94167 5.01667,8.6 3.58333,13.61667c-1.075,3.225 -3.225,5.73333 -3.58333,5.73333c-1.075,1.075 -4.3,5.01667 0,9.31667c1.43333,1.43333 1.43333,3.58333 0,5.01667c-0.71667,0.71667 -1.79167,1.075 -2.50833,1.075z" fill="#e0e4e5"></path><path d="M138.675,87.43333c-1.43333,-1.43333 -3.58333,-1.43333 -5.01667,0c0,0 -1.43333,1.075 -3.225,1.79167c-2.15,0.71667 -4.3,0.35833 -6.09167,-1.79167c-7.16667,-7.16667 -15.40833,-3.94167 -19.35,0c-1.075,1.075 -5.01667,4.3 -9.31667,0c-3.94167,-3.94167 -8.6,-5.01667 -13.61667,-3.58333c-3.225,1.075 -5.73333,3.225 -5.73333,3.58333c-1.075,1.075 -5.01667,4.3 -9.31667,0c-3.94167,-3.94167 -8.6,-5.01667 -13.61667,-3.58333c-0.71667,0.35833 -1.79167,0.71667 -2.15,1.075v7.16667c0.71667,-0.35833 1.43333,-0.71667 2.15,-1.075c1.43333,-0.35833 2.50833,-0.71667 3.94167,-0.71667h0.35833c3.225,0 6.80833,1.43333 9.31667,4.3c1.43333,1.43333 2.86667,2.15 4.3,2.15h0.35833c2.15,0 3.94167,-1.43333 4.65833,-2.15c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333c1.43333,-0.35833 2.50833,-0.71667 3.94167,-0.71667h0.35833c3.225,0 6.45,1.43333 9.31667,4.3c1.43333,1.43333 3.225,2.15 4.65833,2.15v0c2.15,0 3.94167,-1.43333 4.65833,-2.15c2.15,-2.15 5.73333,-3.94167 9.675,-4.3h0.35833c3.225,0 6.45,1.075 9.31667,4.3c1.43333,1.43333 2.86667,2.15 4.3,2.15h0.35833c0.35833,0 1.075,0 1.43333,-0.35833c1.79167,-0.71667 3.225,-1.79167 3.225,-1.79167c0.35833,-0.35833 2.50833,-2.50833 5.73333,-3.58333v0c0.71667,-1.075 0.35833,-2.50833 -0.71667,-3.58333z" fill="#e0e4e5"></path><path d="M17.91667,103.91667c0,28.30833 18.275,37.98333 43.35833,46.58333h42.28333c25.08333,-8.6 43.35833,-18.275 43.35833,-46.58333z" fill="#00bcd4"></path><path d="M143.69167,121.83333c2.15,-5.01667 3.225,-10.75 3.225,-17.91667h-129c0,7.16667 1.075,12.9 3.225,17.91667z" fill="#0097a7"></path></g></g></svg>'
 egg_noodles = { name: "Egg Noodles", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/noodles.png" class="ingredientImg"/>' }
 bread = { name: "Bread", category: "Grains", image_url:  '<img src="https://img.icons8.com/color/100/000000/bread.png" class="ingredientImg"/>' }
 rice_paper = { name: "Rice Paper", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/grains-of-rice.png" class="ingredientImg"/>' }
 oats = { name: "Oats", category: "Grains", image_url: '<img src="https://img.icons8.com/dusk/100/000000/rolled-oats.png" class="ingredientImg"/>' }
 cornflakes = { name: "Cornflakes", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/cereal.png" class="ingredientImg"/>' }
 flour = { name: "Flour", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/flour-in-paper-packaging.png" class="ingredientImg"/>' }
+# tortilla_chips = {name: "Tortilla Chips", category: "Grains", image_url: '<img src="https://img.icons8.com/color/100/000000/nachos.png" class="ingredientImg"/>'}
+
 
 chickpeas = { name: "Chickpeas", category: "Beans and Peas", image_url:'<img src="https://static.thenounproject.com/png/1525935-200.png" class="ingredientImg"/>' }
 beans = { name: "Beans", category: "Beans and Peas", image_url: '<img src="https://img.icons8.com/color/100/000000/heinz-beans.png" class="ingredientImg"/>' }
@@ -65,7 +66,7 @@ cabbage = { name: "Cabbage", category: "Other Vegetables", image_url: '<img src=
 mushroom = { name: "Mushroom", category: "Other Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/mushroom.png" class="ingredientImg"/>' }
 scallion = { name: "Scallion", category: "Other Vegetables", image_url: '<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgd2lkdGg9IjUxMnB4Ij48Zz48cGF0aCBkPSJtNjEuNzE4IDYuNWEzNzguOTU4IDM3OC45NTggMCAwIDEgLTIuNDgzIDU0Ljg0Nmw5LjM0MSAxLjcxYy44MzYtMTYuNjg3LTEuMDM2LTM0LjkwNC02Ljg1OC01Ni41NTZ6IiBmaWxsPSIjYTVjYzJhIi8+PHBhdGggZD0ibTgzLjkgNi41Yy0xOS45IDMyLjE2Ny0yNC42ODcgNTcuNS0yNC42ODcgODQuNzVsMS45NTQgMi4wODNoNS4zMzNsMi4yODctMi4wODNjMC02LjU0Mi0xLjAzNy0zNC44NzUgMTUuMTEzLTg0Ljc1eiIgZmlsbD0iI2JhZTU0MyIvPjxwYXRoIGQ9Im00NC4xIDYuNWMxOS45IDMyLjE2NyAyNC42ODcgNTcuNSAyNC42ODcgODQuNzVsLTEuOTU0IDIuMDgzaC01LjMzM2wtMi4yODctMi4wODNjMC02LjU0MiAxLjAzNy0zNC44NzUtMTUuMTEzLTg0Ljc1eiIgZmlsbD0iI2JhZTU0MyIvPjxnIGZpbGw9IiNkOGQ4ZDgiPjxwYXRoIGQ9Im02NCAxMjMuMjVhMS43NTEgMS43NTEgMCAwIDEgLTEuNzUtMS43NXYtNi45NTJhMS43NSAxLjc1IDAgMCAxIDMuNSAwdjYuOTUyYTEuNzUxIDEuNzUxIDAgMCAxIC0xLjc1IDEuNzV6Ii8+PHBhdGggZD0ibTY4LjUyNCAxMjMuMjVhMS43NDQgMS43NDQgMCAwIDEgLTEuMzg1LS42NzljLS40MjMtLjU0Ny00LjEyOC01LjQ1OS00LjEyOC05LjcxNGExLjc1IDEuNzUgMCAxIDEgMy41IDBjMCAyLjYxMSAyLjQ1MSA2LjM1MSAzLjQgNy41NzJhMS43NSAxLjc1IDAgMCAxIC0xLjM4MyAyLjgyMXoiLz48cGF0aCBkPSJtNTkuNDc3IDEyMy4yNWExLjc1MSAxLjc1MSAwIDAgMSAtMS4zODUtMi44MTljLjk0NS0xLjIyNiAzLjQtNC45NzYgMy40LTcuNTc0YTEuNzUgMS43NSAwIDAgMSAzLjUgMGMwIDQuMjU1LTMuNzA1IDkuMTY3LTQuMTI4IDkuNzE0YTEuNzQ1IDEuNzQ1IDAgMCAxIC0xLjM4Ny42Nzl6Ii8+PC9nPjxwYXRoIGQ9Im02OC43MTcgOTIuMjQ5LjA3LTFoLTkuNTc0bC4wNDIuNjA3YTEzLjU4MiAxMy41ODIgMCAwIDEgLTIuNzA1IDkuNDI4IDkuNDQyIDkuNDQyIDAgMCAwIC0yLjA1NyA1Ljg4MyA5LjYwOSA5LjYwOSAwIDAgMCA5LjIxMiA5LjUxOSA5LjUgOS41IDAgMCAwIDcuOTI4LTE1LjE2MyAxMy45NDMgMTMuOTQzIDAgMCAxIC0yLjkxNi05LjI3NHoiIGZpbGw9IiNlYWVhZjAiLz48L2c+PC9zdmc+Cg==" class="ingredientImg"/>' }
 zucchini = { name: "Zucchini", category: "Other Vegetables", image_url: '<img src="https://img.icons8.com/color/48/000000/zucchini.png" class="ingredientImg"/>' }
-asparagus = { name: "Asparagus", category: "Other Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/cucumber.png" class="ingredientImg"/>' }
+asparagus = { name: "Asparagus", category: "Other Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/asparagus.png" class="ingredientImg"/>' }
 celery = { name: "Celery", category: "Other Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/celery.png" class="ingredientImg"/>' }
 bell_pepper = { name: "Bell Pepper", category: "Other Vegetables", image_url: '<img src="https://img.icons8.com/color/100/000000/paprika.png" class="ingredientImg"/>' }
 
@@ -92,16 +93,20 @@ broth = { name: "Broth", category: "Soup and Broth", image_url: '<img src="https
 coconut_milk = { name: "Coconut Milk", category: "Soup and Broth", image_url: '<img src="https://img.icons8.com/color/100/000000/coconut-milk.png" class="ingredientImg"/>' }
 
 miso = {name: 'Miso', category: 'Additives', image_url:'<img src="https://vignette.wikia.nocookie.net/huntcook/images/c/cd/Recipes_-_Miso.png/revision/latest?cb=20160821190307" class="ingredientImg"/>' }
+rice_vinegar = { name:'Rice Vinegar', category: 'Additives', image_url:'<img src="https://img.icons8.com/color/100/000000/rice-vinegar.png" class="ingredientImg"/>' }
 soy_sauce = { name: 'Soy Sauce', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/soy-sauce.png" class="ingredientImg"/>' }
 olive_oil = { name: 'Olive Oil', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/olive-oil.png" class="ingredientImg"/>' }
 salt = { name: 'Salt', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/salt-shaker.png" class="ingredientImg"/>' }
 sugar = { name: 'Sugar', category: 'Additives', image_url: '<img src="https://img.icons8.com/color/100/000000/sugar.png" class="ingredientImg"/>' }
+honey = { name: 'Honey', category: 'Additives', image_url:'<img src="https://img.icons8.com/color/100/000000/honey.png" class="ingredientImg"/>' }
+syrup= { name: 'Syrup', category: 'Additives', image_url:'<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4Ij48cGF0aCBkPSJtNDA4LjUgMzQ2LjUyMWMwIDc3LjY5OS0yOS4yNSAxNDkuMjI4LTM1LjI0NCAxNjMuMDctLjYzNCAxLjQ2NS0yLjA3NCAyLjQwOS0zLjY3IDIuNDA5aC0yMjcuMTgyYy0xLjU5NiAwLTMuMDM2LS45NDQtMy42Ny0yLjQwOS01Ljk5My0xMy44NDMtMzUuMjM0LTg1LjM3MS0zNS4yMzQtMTYzLjA3IDAtNTMuNjc4IDM2Ljc1MS0xMjAuODE3IDYwLjE0OS0xNjEuNTc2IDMwLjA0OS01Mi4zMzIgMzIuNzAxLTg3LjIxNiAzMi43MDEtODcuMjE2aDExOS4yOXMyLjY2MiAzNC44ODQgMzIuNzAxIDg3LjIxNmMyMy4zOTcgNDAuNzYgNjAuMTU5IDEwNy44OTkgNjAuMTU5IDE2MS41NzZ6IiBmaWxsPSIjZDM1ZDNmIi8+PHBhdGggZD0ibTM0OC4zNDEgMTg0Ljk0NmMtMzAuMDM5LTUyLjMzMi0zMi43MDEtODcuMjE2LTMyLjcwMS04Ny4yMTZoLTMwLjg0czIuNjYyIDM0Ljg4NCAzMi43MDEgODcuMjE2YzIzLjM5NyA0MC43NTkgNjAuMTU5IDEwNy44OTggNjAuMTU5IDE2MS41NzYgMCA4Ni41NjgtMzYuMzEgMTY1LjQ3OC0zNi4zMSAxNjUuNDc4aDI4LjIzNmMxLjU5NiAwIDMuMDM2LS45NDQgMy42Ny0yLjQwOSA1Ljk5NC0xMy44NDIgMzUuMjQ0LTg1LjM3MSAzNS4yNDQtMTYzLjA3IDAtNTMuNjc3LTM2Ljc2Mi0xMjAuODE2LTYwLjE1OS0xNjEuNTc1eiIgZmlsbD0iI2MyNGIzMSIvPjxwYXRoIGQ9Im0zMTkuOTQ2IDEwMy4wMThoLTEyNy44OTJjLTIuMjA5IDAtNC0xLjc5MS00LTR2LTk1LjAxOGMwLTIuMjA5IDEuNzkxLTQgNC00aDEyNy44OTNjMi4yMDkgMCA0IDEuNzkxIDQgNHY5NS4wMThjLS4wMDEgMi4yMDktMS43OTIgNC00LjAwMSA0eiIgZmlsbD0iI2ZmY2EyOCIvPjxwYXRoIGQ9Im0yOTMuMDQxIDB2MTAzLjAxOGgyNi45MDVjMi4yMDkgMCA0LTEuNzkxIDQtNHYtOTUuMDE4YzAtMi4yMDktMS43OTEtNC00LTR6IiBmaWxsPSIjZmZiMzAwIi8+PHBhdGggZD0ibTMxOS45NDYgMTAzLjAxOGgtMTI3Ljg5MmMtMi4yMDkgMC00LTEuNzkxLTQtNHYtNDcuNTA5aDEzNS44OTN2NDcuNTA5Yy0uMDAxIDIuMjA5LTEuNzkyIDQtNC4wMDEgNHoiIGZpbGw9IiNmZmU4Y2YiLz48cGF0aCBkPSJtMjkzLjA0MSA1MS41MDl2NTEuNTA5aDI2LjkwNWMyLjIwOSAwIDQtMS43OTEgNC00di00Ny41MDl6IiBmaWxsPSIjZjJjZGFlIi8+PHBhdGggZD0ibTMwNi4xNSAzODkuNjIzIDExLjU4OSAxNS45NThjMS40NCAxLjk4My4wMjMgNC43NjMtMi40MjcgNC43NjNoLTExOC41NzJjLTIuNDUxIDAtMy44NjgtMi43OC0yLjQyNy00Ljc2M2wxMS41ODktMTUuOTU4YzEuMTItMS41NDIuNTM3LTMuNzIzLTEuMjAyLTQuNTAxbC0zOS40Ny0xNy42NjZjLTIuMTg0LS45NzgtMi40MDEtMy45OTQtLjM3OC01LjI3NGwzMi4xNzgtMjAuMzU0YzEuMjU2LS43OTQgMS43NDEtMi4zODggMS4xNDEtMy43NDdsLTEzLjM3My0zMC4yNzdjLTEuMDA0LTIuMjc0IDEuMDM0LTQuNzEzIDMuNDUtNC4xMjhsMjkuMDA3IDcuMDJjMS43OTUuNDM1IDMuNTUzLS44NDEgMy42OTctMi42ODNsMy45NDYtNTAuNzEyYy4xODEtMi4zMzEgMi44NDItMy41NjggNC43NDEtMi4yMDRsMjQuNjQyIDE3LjdjMS4wNDYuNzUxIDIuNDU1Ljc1MSAzLjUwMSAwbDI0LjYzNC0xNy42OThjMS44OTktMS4zNjQgNC41Ni0uMTI4IDQuNzQxIDIuMjA0bDMuOTQ2IDUwLjcxYy4xNDMgMS44NDIgMS45MDIgMy4xMTggMy42OTggMi42ODNsMjguOTYxLTcuMDE4YzIuNDE1LS41ODUgNC40NTMgMS44NTEgMy40NTIgNC4xMjVsLTEzLjMzNCAzMC4yODFjLS41OTggMS4zNTktLjExMyAyLjk1MSAxLjE0MiAzLjc0NGwzMi4xODEgMjAuMzU2YzIuMDIzIDEuMjc5IDEuODA2IDQuMjk2LS4zNzggNS4yNzRsLTM5LjQ3IDE3LjY2NmMtMS43NDIuNzc2LTIuMzI0IDIuOTU3LTEuMjA1IDQuNDk5eiIgZmlsbD0iI2ZmY2EyOCIvPjwvc3ZnPgo=" class="ingredientImg"/>' }
 baking_soda = { name: 'Baking Soda', category: 'Additives', image_url: '<img src="https://urbanremedy.com/wp-content/uploads/icon-baking_soda.png" class="ingredientImg"/>' }
 vanilla = { name: 'Vanilla', category: 'Additives', image_url: '<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjQgNjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY0IDY0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkRGMUE5O30KCS5zdDF7ZmlsbDojNTUzQjI1O30KCS5zdDJ7ZmlsbDojRjhCRjUxO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTguMiw0MWMtMi4xLDAtNC4xLDAuNi01LjgsMS43bC0zLjIsMi4xbDAsMGwwLjgtNS40YzAtMS45LTEuNi0zLjUtMy41LTMuNVM0MywzNy42LDQzLDM5LjVsMC44LDUuNWwwLDAgICBsLTMuMi0yLjNjLTEuNy0xLjEtMy43LTEuNy01LjgtMS43SDMzYzAsMy4yLDEuNCw2LjEsMy45LDguMUwzOCw1MGwzLDJoMTFsMy0ybDEuMS0wLjljMi41LTIsMy45LTUsMy45LTguMUg1OC4yeiIvPgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTcsNTdjMC0yLDAuNi0zLjksMS43LTUuNWwxMC40LTE0LjhjNC42LTYuNSw4LjUtMTMuNCwxMS43LTIwLjZsMy4yLTdjMC42LTEuNCwxLjYtMi42LDIuOS0zLjRMMzgsNWwtMy0yICAgbC0xLjgsMi42Yy0wLjIsMC4yLTAuMywwLjUtMC41LDAuN2wtNi4xLDcuM0MyMC45LDIwLjUsMTUuOSwyOCwxMS44LDM2bC00LjEsNy45QzUuMyw0OC42LDQsNTMuNyw0LDU5YzAsMS4xLDAuOSwyLDIsMmgxICAgYzEuMSwwLDItMC45LDItMkM3LjksNTksNyw1OC4xLDcsNTd6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNDQsNGwtMi0xTDMxLjUsMjguM2MtMSwyLjUtMi4yLDQuOS0zLjUsNy4zTDE3LjQsNTQuNmMtMC45LDEuNi0yLjMsMi43LTQsMy4zYy0wLjUsMC4yLTAuOCwwLjctMC42LDEuMiAgIGMwLjEsMC40LDAuNiwwLjcsMSwwLjZsMS45LTAuM2MyLjEtMC4zLDQtMS41LDUuMS0zLjNsOS43LTE1LjhjMy00LjksNS40LTEwLjEsNy4xLTE1LjVMNDQsNHoiLz4KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik01MS4zLDU1LjFjMC4yLTAuNywxLjEtMS4zLDEuMS0yLjFzLTAuOC0xLjQtMS4xLTIuMWMtMC4zLTAuNywwLTEuNy0wLjUtMi4zYy0wLjUtMC41LTEuNC0wLjUtMi4xLTAuN2wwLDAgICBjMCwwLTAuMSwwLTAuMS0wLjFjLTAuNy0wLjMtMS4zLTEuMi0yLTEuMnMtMS40LDAuOS0yLDEuMmMtMC4xLDAtMC4xLDAuMS0wLjIsMC4xbDAsMGMtMC43LDAuMi0xLjUsMC4yLTIsMC43ICAgYy0wLjUsMC42LTAuMywxLjYtMC41LDIuM2MtMC4yLDAuNy0xLjEsMS4zLTEuMSwyLjFzMC44LDEuNCwxLjEsMi4xYzAuMywwLjcsMCwxLjcsMC41LDIuM2MwLjIsMC4yLDAuNiwwLjQsMC45LDAuNWwwLDAgICBjMC40LDAuMSwwLjksMC4yLDEuMywwLjNjMC43LDAuMywxLjMsMS4yLDIsMS4yczEuNC0wLjgsMi0xLjJjMC42LTAuMywxLjUtMC4yLDIuMi0wLjhDNTEuMyw1Ni45LDUxLDU1LjgsNTEuMyw1NS4xeiBNNDksNDkuMiAgIGMwLDEuOC0wLjcsMy41LTIsNC44aC0xYy0xLjMtMS4zLTItMy0yLTQuOGwwLDBjMCwxLjgsMC43LDMuNSwyLDQuOGgxQzQ4LjMsNTIuNyw0OSw1MSw0OSw0OS4yTDQ5LDQ5LjJ6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDkuNyw1Ny45YzIuMSwxLjQsNC40LDIuMyw2LjksMi43TDU5LDYxbDAsMGMwLTMuMy0xLTYuNC0yLjgtOS4yTDU1LDUwbC0yLjgsMi40Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDAuOCw1Mi40TDM4LDUwbC0xLjIsMS44QzM1LDU0LjYsMzQsNTcuNywzNCw2MWwwLDBsMi40LTAuNGMyLjQtMC40LDQuNi0xLjMsNi42LTIuN2wwLjEtMC4xIi8+Cgk8cGF0aCBkPSJNOSw1OGMtMC42LDAtMS0wLjQtMS0xYzAtMS43LDAuNS0zLjUsMS41LTQuOUwyMCwzNy4zYzQuNi02LjUsOC41LTEzLjUsMTEuOC0yMC43bDMuMi03YzAuNS0xLjIsMS40LTIuMywyLjUtM2wxLjEtMC43ICAgYzAuNS0wLjMsMC42LTAuOSwwLjMtMS40Yy0wLjEtMC4xLTAuMi0wLjItMC4zLTAuM2wtMy0yYy0wLjUtMC4zLTEuMS0wLjItMS40LDAuM2MwLDAsMCwwLDAsMGwtMS44LDIuNmMtMC4xLDAuMi0wLjMsMC40LTAuNSwwLjYgICBMMjUuOSwxM2MtNS44LDctMTAuOCwxNC41LTE1LDIyLjZsLTQuMSw3LjlDNC4zLDQ4LjIsMyw1My42LDMsNTljMCwxLjcsMS4zLDMsMywzaDFjMS43LDAsMy0xLjMsMy0zQzEwLDU4LjQsOS42LDU4LDksNTh6ICAgIE03LjcsNTkuN0M3LjUsNTkuOSw3LjMsNjAsNyw2MEg2Yy0wLjYsMC0xLTAuNC0xLTFjMC01LjEsMS4yLTEwLjEsMy42LTE0LjZsNC4xLTcuOWM0LjEtNy45LDkuMS0xNS40LDE0LjgtMjIuMkwzMy41LDcgICBjMC4yLTAuMiwwLjQtMC41LDAuNi0wLjhsMS4yLTEuOEwzNi4yLDVjLTEuMywwLjktMi40LDIuMi0zLjEsMy43bC0zLjIsN2MtMy4yLDcuMi03LjEsMTQtMTEuNiwyMC40TDcuOSw1MUM2LjcsNTIuNyw2LDU0LjgsNiw1NyAgIEM2LDU4LjIsNi43LDU5LjIsNy43LDU5Ljd6Ii8+Cgk8cGF0aCBkPSJNNDUsNC4zYzAuMS0wLjUtMC4xLTEtMC41LTEuMmwtMi0xYy0wLjItMC4xLTAuNS0wLjEtMC44LDBjLTAuMywwLjEtMC41LDAuMy0wLjYsMC42TDMwLjYsMjcuOWMtMSwyLjQtMi4yLDQuOC0zLjUsNy4xICAgTDE2LjUsNTQuMWMtMC43LDEuMy0yLDIuMy0zLjQsMi44Yy0xLDAuMy0xLjYsMS41LTEuMiwyLjVjMC4zLDAuOCwxLDEuMywxLjksMS4zYzAuMSwwLDAuMiwwLDAuMywwbDEuOS0wLjMgICBjMi40LTAuMyw0LjUtMS43LDUuOC0zLjhsOS43LTE1LjhjMy00LjksNS40LTEwLjIsNy4yLTE1LjhMNDUsNC4zeiBNMjkuNiwzOS44bC05LjcsMTUuOGMtMSwxLjYtMi42LDIuNi00LjQsMi45bC0xLjgsMC4zICAgYzEuOS0wLjYsMy41LTIsNC41LTMuN0wyOC45LDM2YzEuMy0yLjQsMi41LTQuOCwzLjYtNy40bDEwLTI0LjNsMC4zLDAuMWwtNi4yLDIwQzM0LjksMjkuOSwzMi42LDM1LDI5LjYsMzkuOHoiLz4KCTxwYXRoIGQ9Ik02MSw0MWMwLTAuNi0wLjQtMS0xLTFoLTEuOWMtMi4yLDAtNC40LDAuNy02LjMsMS45bC0xLjMsMC45bDAuNS0zLjFjMC0wLjEsMC0wLjEsMC0wLjJjMC0yLjUtMi00LjUtNC41LTQuNSAgIFM0MiwzNyw0MiwzOS41YzAsMCwwLDAuMSwwLDAuMWwwLjUsMy4ybC0xLjMtMC45Yy0xLjktMS4zLTQuMS0xLjktNi4zLTEuOUgzM2MtMC42LDAtMSwwLjQtMSwxYzAsMy41LDEuNiw2LjcsNC4zLDguOWwwLjQsMC4zICAgbC0wLjcsMS4xQzM0LDU0LjIsMzMsNTcuNSwzMyw2MWMwLDAuNiwwLjQsMSwxLDFjMC4xLDAsMC4xLDAsMC4yLDBsMi40LTAuNGMyLjQtMC40LDQuNy0xLjMsNi44LTIuN2wwLDBjMC4yLDAsMC40LDAuMSwwLjcsMC4yICAgYzAuMiwwLjEsMC40LDAuMiwwLjUsMC40YzAuNSwwLjUsMS4yLDAuOCwxLjksMC45YzAuNy0wLjEsMS40LTAuNCwyLTAuOWMwLjItMC4xLDAuMy0wLjMsMC41LTAuNGMwLjItMC4xLDAuMy0wLjEsMC41LTAuMSAgIGMyLjEsMS4zLDQuNSwyLjIsNi45LDIuNmwyLjQsMC40YzAuMSwwLDAuMSwwLDAuMiwwYzAuNiwwLDEtMC40LDEtMWMwLTMuNS0xLTYuOC0yLjktOS43bC0wLjctMS4xbDAuNC0wLjMgICBDNTkuNCw0Ny43LDYxLDQ0LjUsNjEsNDF6IE01Mi45LDQzLjZjMS41LTEsMy40LTEuNiw1LjItMS42aDAuOGMtMC4zLDIuNS0xLjUsNC44LTMuNSw2LjNsLTEuMSwwLjl2MGMwLDAsMCwwLDAsMGwtMS45LDEuNyAgIGMtMC4xLTAuMS0wLjEtMC4yLTAuMi0wLjNjLTAuMS0wLjItMC4xLTAuNS0wLjEtMC43YzAtMC43LTAuMi0xLjQtMC42LTEuOWMtMC41LTAuNS0xLTAuNy0xLjctMC44bDAuMy0xLjdMNTIuOSw0My42eiBNNDUsNDguNyAgIGMwLjMtMC4yLDAuNi0wLjQsMC44LTAuNmMwLjItMC4yLDAuNC0wLjMsMC43LTAuNGMwLjIsMC4xLDAuNSwwLjMsMC43LDAuNGMwLjMsMC4yLDAuNSwwLjQsMC44LDAuNnYwLjVjMCwxLjQtMC41LDIuOC0xLjQsMy44ICAgaC0wLjFjLTAuOS0xLjEtMS40LTIuNC0xLjQtMy44VjQ4Ljd6IE00Ni41LDM3YzEuNCwwLDIuNSwxLjEsMi41LDIuNGwtMS4xLDYuN2MtMC40LTAuMy0wLjktMC41LTEuNC0wLjVjLTAuNSwwLTEuMSwwLjItMS41LDAuNSAgIGwtMS02LjhDNDQsMzguMSw0NS4xLDM3LDQ2LjUsMzd6IE0zNC4xLDQyaDAuOGMxLjgsMCwzLjcsMC41LDUuMiwxLjZsMi45LDJsMC4yLDEuNmMtMC42LDAuMS0xLjIsMC40LTEuNiwwLjggICBjLTAuNCwwLjUtMC42LDEuMi0wLjYsMS45YzAsMC4yLDAsMC41LTAuMSwwLjdjLTAuMSwwLjEtMC4xLDAuMi0wLjIsMC4zbC0xLjktMS43YzAsMCwwLDAsMCwwdjBsLTEuMS0wLjkgICBDMzUuNiw0Ni44LDM0LjMsNDQuNSwzNC4xLDQyeiBNMzYuMiw1OS42TDM1LDU5LjhjMC4yLTIuNiwxLjEtNS4yLDIuNi03LjRsMC42LTAuOWwxLjUsMS4zYzAsMC4xLDAsMC4yLDAsMC4zICAgYzAsMC43LDAuMywxLjQsMC44LDEuOWMwLjEsMC4yLDAuMywwLjQsMC40LDAuNmMwLjEsMC4yLDAuMSwwLjUsMC4xLDAuN2MwLDAuNiwwLjIsMS4xLDAuNCwxLjZDMzkuNyw1OC43LDM4LDU5LjMsMzYuMiw1OS42eiAgICBNNDguMSw1Ny4zYy0wLjMsMC4yLTAuNiwwLjQtMC45LDAuNmMtMC4yLDAuMi0wLjYsMC41LTAuNywwLjVjLTAuMi0wLjEtMC41LTAuMy0wLjctMC40Yy0wLjMtMC4zLTAuNi0wLjUtMC45LTAuNiAgIGMtMC40LTAuMi0wLjctMC4zLTEuMS0wLjNjLTAuMywwLTAuNS0wLjEtMC44LTAuMmMtMC4xLTAuMi0wLjEtMC41LTAuMS0wLjdjMC0wLjQtMC4xLTAuOC0wLjItMS4yYy0wLjItMC40LTAuNC0wLjctMC42LTEuMSAgIGMtMC4yLTAuMi0wLjMtMC40LTAuNC0wLjdjMC4xLTAuMywwLjItMC41LDAuNC0wLjdjMC4zLTAuMywwLjUtMC43LDAuNi0xLjFjMC4xLTAuNCwwLjItMC44LDAuMi0xLjJjMC0wLjIsMC0wLjUsMC4xLTAuNyAgIGMwLDIsMC45LDQsMi4zLDUuNGMwLjIsMC4yLDAuNCwwLjMsMC43LDAuM2gxYzAuMywwLDAuNS0wLjEsMC43LTAuM2MxLjQtMS40LDIuMy0zLjQsMi4zLTUuNGMwLjEsMC4yLDAuMSwwLjUsMC4xLDAuNyAgIGMwLDAuNCwwLjEsMC44LDAuMiwxLjJjMC4yLDAuNCwwLjQsMC43LDAuNiwxLjFjMC4yLDAuMiwwLjMsMC40LDAuNCwwLjdjLTAuMSwwLjMtMC4yLDAuNS0wLjQsMC43Yy0wLjYsMC42LTAuOCwxLjUtMC44LDIuMyAgIGMwLDAuMiwwLDAuNC0wLjEsMC42Yy0wLjMsMC4yLTAuNiwwLjMtMC45LDAuM0M0OC44LDU3LDQ4LjQsNTcuMSw0OC4xLDU3LjN6IE01OCw1OS44bC0xLjItMC4yYy0xLjgtMC4zLTMuNS0wLjktNS4xLTEuNyAgIGMwLjMtMC41LDAuNS0xLjEsMC41LTEuOGMwLTAuMiwwLTAuNSwwLjEtMC43YzAuMS0wLjIsMC4yLTAuNCwwLjQtMC42YzAuNS0wLjUsMC43LTEuMiwwLjgtMS45YzAtMC4xLDAtMC4yLDAtMC4zbDEuNS0xLjNsMC42LDAuOSAgIEM1Ni45LDU0LjYsNTcuOCw1Ny4yLDU4LDU5Ljh6Ii8+CjwvZz4KPC9zdmc+Cg==" class="ingredientImg"/>' }
+mayonnaise = {name: 'Mayonnaise', category: 'Additives', image_url: '<img src="https://img.icons8.com/office/100/000000/mayonnaise.png" class="ingredientImg"/>'}
 
 
 red_pepper_flakes = {name: 'Red Pepper Flakes', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/chili-pepper.png" class="ingredientImg" />' }
-parsley = {name: 'Parsley', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/natural-food.png" class="ingredientImg"/>' }
+herbs = {name: 'Herbs', category: 'Herb and Spices', image_url: '<img src="https://img.icons8.com/color/100/000000/natural-food.png" class="ingredientImg"/>' }
 
 banana = { name: "Banana", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/banana.png" class="ingredientImg"/>' }
 lemon = { name: "Lemon", category: "Fruits", image_url: '<img src="https://img.icons8.com/color/100/000000/citrus.png" class="ingredientImg"/>' }
@@ -118,8 +123,8 @@ ingredients = [rice, pasta, rice_noodles, egg_noodles, bread, rice_paper, oats, 
   tomato, corn, cauliflower, avocado, brussels_sprout, green_bean, cucumber, cabbage, mushroom, scallion, zucchini, asparagus, celery, bell_pepper,
   milk, butter, cream, yogurt, parmesan,
   banana, lemon, lime, berries, raisin,
-  broth, coconut_milk, miso, soy_sauce, olive_oil,
-  red_pepper_flakes, parsley, salt, sugar, baking_soda, vanilla]
+  broth, coconut_milk, miso, rice_vinegar, soy_sauce, olive_oil, mayonnaise,
+  red_pepper_flakes, herbs, salt, sugar, honey, syrup, baking_soda, vanilla]
 
 # Store all ingredients inside a hash
 ingredients_hash = {}
@@ -137,14 +142,14 @@ recipe_data = [
   {
     name: 'Five-Ingredient Creamy Miso Pasta',
     category: 'Japanese',
-    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</li><li>Add the butter, miso and 1 1/4 cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes.</li><li>Add the pasta and parmesan and cook, stirring vigorously with tongs until cheese is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</li><li>Divide among shallow bowls and sprinkle with nori or furikake, if using any.</li></ol>",
+    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1.5 cups pasta water, then drain the pasta.</li><li>Add the butter, miso and 1 ¼ cups pasta water to the pot and whisk over medium heat until miso breaks down and liquid is uniform, 1 to 2 minutes.</li><li>Add the pasta and parmesan and cook, stirring vigorously with tongs until parmesan is melted and sauce emulsifies. To achieve a silky smooth pasta instead of a gloppy one, put your cacio e pepe skills to work.)</li><li>Divide among shallow bowls and sprinkle with nori or furikake, if using any.</li></ol>",
     image_url: '<img src="https://static01.nyt.com/images/2020/04/17/dining/17help/aw-miso-pasta-articleLarge.jpg"/>',
     servings: 4,
     time: 25,
     ingredients: [
       {
         item: ingredients_hash['Pasta'],
-        amount: '16 ounces',
+        amount: '16 oz.',
       },
       {
         item: ingredients_hash['Butter'],
@@ -156,7 +161,7 @@ recipe_data = [
       },
       {
         item: ingredients_hash['Parmesan'],
-        amount: '4 ounces',
+        amount: '4 oz.',
         preparation_method: 'finely grated (1 packed cup)',
       },
     ],
@@ -165,7 +170,7 @@ recipe_data = [
   {
     name: 'Aglio e Olio (aka 🧄🧀🍝)',
     category: 'Italian',
-    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1 cup pasta water, then drain the pasta.</li><li>Add the oil, garlic and red pepper flakes into a large deep pan set over medium-high heat, and cook until the garlic is translucent and golden, 2 to 3 minutes. Add the parsley to the pan, and turn off the heat.</li><li>Cool the oil for a couple of minutes, add 1/2 cup of the pasta cooking water, and reduce over high heat by about half.</li><li>Add the pasta, and stir vigorously as it continues to cook. Add the reserved pasta water a bit at a time as necessary to finish cooking the pasta, and develop the thickened sauce.</li><li>Add the parmesan and toss well. Season with salt, and serve.</li></ol>",
+    directions: "<ol><li>Bring a large pot of salted water to a boil. Add the pasta and cook, stirring occasionally, until al dente. Reserve 1 cup pasta water, then drain the pasta.</li><li>Add the oil, garlic and red pepper flakes into a large deep pan set over medium-high heat, and cook until the garlic is translucent and golden, 2 to 3 minutes. Add the parsley to the pan, and turn off the heat.</li><li>Cool the oil for a couple of minutes, add ½ cup of the pasta cooking water, and reduce over high heat by about half.</li><li>Add the pasta, and stir vigorously as it continues to cook. Add the reserved pasta water a bit at a time as necessary to finish cooking the pasta, and develop the thickened sauce.</li><li>Add the parmesan and toss well. Season with salt, and serve.</li></ol>",
     image_url: '<img src="https://static01.nyt.com/images/2015/03/22/magazine/22eat5pepperoncini/22eat5pepperoncini-articleLarge.jpg"/>',
     servings: 4,
     time: 20,
@@ -179,7 +184,7 @@ recipe_data = [
       },
       {
         item: ingredients_hash['Red Pepper Flakes'],
-        amount: '1/2 tsps',
+        amount: '½ tsps',
       },
       {
         item: ingredients_hash['Garlic'],
@@ -191,14 +196,14 @@ recipe_data = [
         amount: '2/3 cup',
       },
       {
-        item: ingredients_hash['Parsley'],
-        amount: '1/4 cup',
-        preparation_method: 'finely chopped',
+        item: ingredients_hash['Herbs'],
+        amount: '¼ cup',
+        preparation_method: 'parsley preferred, finely chopped',
       },
       {
         item: ingredients_hash['Parmesan'],
         amount: '1 cup',
-        preparation_method: 'freshly grated, plus extra for serving',
+        preparation_method: 'freshly grated, + extra for serving',
       },
     ],
   },
@@ -212,7 +217,7 @@ recipe_data = [
     ingredients: [
       {
         item: ingredients_hash['Butter'],
-        amount: '1/2 cup',
+        amount: '½ cup',
         preparation_method: 'softened and at room temperature'
       },
       {
@@ -241,15 +246,203 @@ recipe_data = [
       },
       {
         item: ingredients_hash['Salt'],
-        amount: '1/2 tsp'
+        amount: '½ tsp'
       },
       {
         item: ingredients_hash['Vanilla'],
-        amount: '1/2 tsp',
+        amount: '½ tsp',
         preparation_method: 'optional'
       },
     ],
   },
+  {
+    name: 'Creamy White Beans With Herb Oil',
+    category: 'Comfort',
+    directions: "<ol><li>Make the oil: In a food processor, add herbs, and pulse until finely chopped. Add 2 tbsp of olive oil, and pulse again until mixture is silky and emulsified. Transfer to a small bowl, stir in lemon juice and salt to taste. Set aside.</li><li>Prepare the beans: In a skillet, heat olive oil over medium-low heat. Add garlic and cook until translucent, about 1 minute. Add beans to the skillet and season with salt and pepper. Cook, stirring occasionally, until the flavors have melded, about 2 to 3 minutes. With the back of a spoon or spatula, smash half of the beans and stir until they are incorporated into the rest of the bean mixture. A good portion of the remaining beans should maintain their structure.
+    </li><li>Add stock or water and bring to a gentle simmer. Cook until sauce becomes creamy and is reduced by about about half, about 1 to 2 minutes more. Add a few more tablespoons of water, if needed, to reach desired consistency and stir again to combined.</li><li>Transfer beans to a bowl and swirl with herb oil on top. Season with salt!</li></ol>",
+    image_url: '<img src="https://static01.nyt.com/images/2018/07/11/dining/colu-creamy-beans-horizontal/colu-creamy-beans-horizontal-articleLarge.jpg"/>',
+    servings: 3,
+    time: 15,
+    ingredients: [
+      {
+        item: ingredients_hash['Herbs'],
+        amount: '1.5 cup',
+        preparation_method: 'roughly chopped herbs, such as chives and cilantro'
+      },
+      {
+        item: ingredients_hash['Olive Oil'],
+        amount: '½ cup+',
+      },
+      {
+        item: ingredients_hash['Lemon'],
+        amount: 'A squeeze',
+      },
+      {
+        item: ingredients_hash['Garlic'],
+        amount: '2 cloves',
+        preparation_method: 'thinly sliced'
+      },
+      {
+        item: ingredients_hash['Beans'],
+        amount: '15 oz. or 2 cans',
+        preparation_method: 'rinsed and drained',
+      },
+      {
+        item: ingredients_hash['Broth'],
+        amount: '1 cup',
+        preparation_method: 'broth, stock, or water',
+      },
+    ]
+  },
+  {
+    name: 'Maple Miso Sheet-Pan Salmon With Green Beans',
+    category: 'Japanese',
+    directions: "<ol><li>Heat oven to 400 degrees and line a sheet pan with parchment paper or foil. Season the salmon fillets well with salt and pepper, and place them on a plate or in a large shallow bowl.</li><li>In a bowl, whisk together the maple syrup, miso, rice wine vinegar, soy sauce and garlic. Pour the mixture on top of the salmon and gently massage the marinade all over the fish. Let marinate while the oven comes to temperature.</li><li>In a medium bowl, toss together the green beans with the olive oil, red-pepper flakes and olive oil and season generously with salt and pepper. Lay the salmon fillets on the sheet pan skin side down and spread the green beans out surrounding the fillets.
+    </li><li>Arrange the salmon skin side down on the sheet pan and bake until the salmon is opaque and the green beans are cooked through, about 12 minutes.</li><li>Right before serving, scatter with herbs and a good squeeze of lime. Season with salt and serve with rice or any grains.</li></ol>",
+    image_url: '<img src="https://static01.nyt.com/images/2018/12/20/dining/CH-salmon-and-green-beans/CH-salmon-and-green-beans-articleLarge-v2.jpg"/>',
+    servings: 4,
+    time: 20,
+    ingredients: [
+      {
+        item: ingredients_hash['Salmon'],
+        amount: '4 or 6 oz.',
+        preparation_method: '1-inch thick'
+      },
+      {
+        item: ingredients_hash['Salt'],
+        preparation_method: 'to taste'
+      },
+      {
+        item: ingredients_hash['Syrup'],
+        amount: '4 tbsps',
+      },
+      {
+        item: ingredients_hash['Miso'],
+        amount: '1 tbsp',
+      },
+      {
+        item: ingredients_hash['Rice Vinegar'],
+        amount: '1 tbsp',
+      },
+      {
+        item: ingredients_hash['Soy Sauce'],
+        amount: '2 tsps',
+      },
+      {
+        item: ingredients_hash['Garlic'],
+        amount: '2 cloves',
+        preparation_method: 'grated'
+      },
+      {
+        item: ingredients_hash['Green Bean'],
+        amount: '1 pound',
+        preparation_method: 'trimmed'
+      },
+      {
+        item: ingredients_hash['Olive Oil'],
+        amount: '2 tbsps',
+      },
+      {
+        item: ingredients_hash['Red Pepper Flakes'],
+        amount: 'A pinch',
+      },
+      {
+        item: ingredients_hash['Herbs'],
+        amount: '¼ cup',
+        preparation_method: 'roughly chopped, cilantro preferred'
+      },
+      {
+        item: ingredients_hash['Lime'],
+        amount: '4 wedges',
+        preparation_method: 'for serving'
+      },
+      {
+        item: ingredients_hash['Rice'],
+        amount: '1 bowl',
+        preparation_method: 'optional for serving'
+      },
+    ]
+  },
+  {
+    name: 'Pasta Al Limone 🍋',
+    category: 'Italian',
+    directions: "<ol><li>Finely grate lemon zest into a large pot (like a Dutch oven). Cut lemon in half and squeeze out enough juice to yield 2 tbsps into a small bowl; set aside.</li><li>Cook pasta in another large pot of boiling salted water, stirring occasionally, until very al dente (pasta will finish cooking in the sauce).</li><li><Meanwhile, add cream to pot with lemon zest and cook over medium heat, whisking often, until liquid is just beginning to simmer, about 2 minutes.</li><li>Reduce heat to medium-low. Whisk in butter 1 Tbsp. at a time until melted and sauce is creamy and emulsified. Remove from heat.</li><li>Scoop out 1½ cups pasta cooking liquid. Add ¾ cup pasta cooking liquid to cream sauce and return to medium heat. Using tongs, transfer pasta to pot with sauce. Cook, tossing often and adding Parmesan little by little, until cheese is melted and sauce is creamy, about 3 minutes. If sauce looks tight, add 1–2 Tbsp. pasta cooking liquid. (Cream sauces tighten up very quickly as they cool, so it’s better to lean on the saucier side of things.) Stir in reserved lemon juice; season with more salt, if needed.</li><li>Divide pasta among bowls. Season with pepper, then top with reserved lemon zest strips.</li></ol>",
+    image_url: '<img src="https://assets.bonappetit.com/photos/5b9a901947aaaf7cd9ea90f4/master/w_1536/ba-recipe-pasta-al-limone-1.jpg"/>',
+    servings: 4,
+    time: 15,
+    ingredients: [
+      {
+        item: ingredients_hash['Lemon'],
+        amount: '1',
+      },
+      {
+        item: ingredients_hash['Pasta'],
+        amount: '12 oz.',
+      },
+      {
+        item: ingredients_hash['Cream'],
+        amount: '¾ cup',
+        preparation_method: 'heavy cream preferred'
+      },
+      {
+        item: ingredients_hash['Butter'],
+        amount: '6 tbsps',
+        preparation_method: 'thinly sliced'
+      },
+
+      {
+        item: ingredients_hash['Parmesan'],
+        amount: '3 oz.',
+        preparation_method: 'finely grated',
+      },
+    ]
+  },
+
+
+# {
+  #   name: '',
+  #   category: '',
+  #   directions: "<ol><li></li><li></li><li></li><li></li></ol>",
+  #   image_url: '<img src="https://hips.hearstapps.com/wdy.h-cdn.co/assets/17/03/3200x1600/landscape-1484858019-wdy-0217-courtesy-matt-armendariz-fiesta-bbq-chicken-nachos-recipe.jpg?resize=1200:*"/>',
+  #   servings: 3,
+  #   time: 15,
+  #   ingredients: [
+  #     {
+  #       item: ingredients_hash['Herbs'],
+  #       amount: '1.5 cup',
+  #       preparation_method: 'Roughly chopped herbs, such as chives and cilantro'
+  #     },
+  #     {
+  #       item: ingredients_hash['Olive Oil'],
+  #       amount: '½ cup+',
+  #     },
+  #     {
+  #       item: ingredients_hash['Lemon'],
+  #       amount: 'A squeeze',
+  #     },
+  #     {
+  #       item: ingredients_hash['Salt'],
+  #       amount: 'to taste',
+  #     },
+  #     {
+  #       item: ingredients_hash['Garlic'],
+  #       amount: '2 cloves',
+  #       preparation_method: 'thinly sliced'
+  #     },
+
+  #     {
+  #       item: ingredients_hash['Beans'],
+  #       amount: '15 oz. or 2 cans',
+  #       preparation_method: 'rinsed and drained',
+  #     },
+  #     {
+  #       item: ingredients_hash['Broth'],
+  #       amount: '1 cup',
+  #       preparation_method: 'Broth, stock, or water',
+  #     },
+  #   ]
+  # },
+
   # {
   #   name: 'CYO Stir Fry Noodles',
   #   category: 'Chinese',
@@ -260,7 +453,7 @@ recipe_data = [
   #   ingredients: [
   #     {
   #       item: ingredients_hash['Butter'],
-  #       amount: '1/2 cup',
+  #       amount: '½ cup',
   #       preparation_method: 'softened and at room temperature'
   #     },
   #     {
@@ -333,15 +526,9 @@ end
 # Meaning that it's "all or nothing"
 ActiveRecord::Base.transaction do
   save_queue.flatten.each_with_index do |item_to_be_saved, index|
+    binding.pry if !item_to_be_saved.valid?
     item_to_be_saved.save!
   end
 end
-
-# =================== Create RecipeIngredient instances ===================
-# Create recipe_ingredient instances to enable the many-to-many relationship
-  # amount
-  # preparation_method
-  # recipe.id
-  # ingredient.id
 
 puts "Done seeding!"
