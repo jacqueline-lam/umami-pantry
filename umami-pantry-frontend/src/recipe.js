@@ -27,7 +27,6 @@ class Recipe {
     const recipeIngs = recipeIngridents.map(function (rIngredient, name, value) {
       return Object.assign({}, rIngredient, { [name]: value })
     })
-
   }
 
   static findById(id) {

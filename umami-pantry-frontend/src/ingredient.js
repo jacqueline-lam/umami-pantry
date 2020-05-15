@@ -7,5 +7,4 @@ class Ingredient {
     this.constructor.all.push(this)
   }
   static all = []
-  // fetchAndLoadIngredients() {}
 }

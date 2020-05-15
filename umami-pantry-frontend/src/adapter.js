@@ -3,7 +3,7 @@ const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard');
 const recipesContainer = document.getElementById('recipesContainer');
-const recipesNode = document.getElementById("recipeCards");
+const recipesDiv = document.getElementById("recipeCardsDiv");
 // const recipeCards = document.getElementsByClassName('recipeCard');
 // const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
 const selectedRecipeContainer = document.getElementById('selectedRecipeContainer');
@@ -150,8 +150,8 @@ class Adapter {
     //empty selectedIngredients array
     this.selectedIngredients.splice(0, this.selectedIngredients.length);
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
-    while (recipesNode.firstChild) {
-      recipesNode.removeChild(recipesNode.lastChild);
+    while (recipesDiv.firstChild) {
+      recipesDiv.removeChild(recipesDiv.lastChild);
     }
     console.log(this.selectedIngredients);
   };
@@ -180,19 +180,19 @@ class Adapter {
   renderMatchingRecipes(matchingRecipes) {
     // Reload recipe cards when a new ingredient is chosen
 
-    while (recipesNode.firstChild) {
-      recipesNode.removeChild(recipesNode.lastChild);
+    while (recipesDiv.firstChild) {
+      recipesDiv.removeChild(recipesDiv.lastChild);
     }
 
     if (matchingRecipes.length === 0) {
       const p = document.createElement('p')
       p.innerText = 'No recipes are found for this combination of ingredients'
-      recipesNode.appendChild(p)
+      recipesDiv.appendChild(p)
     }
     //create DOM nodes and insert data into them to render in the DOM
     matchingRecipes.forEach(recipe => {
       // render recipe if recipeCard is not displayed yet
-      let recipeCard = recipesNode.appendChild(document.createElement('div'));
+      let recipeCard = recipesDiv.appendChild(document.createElement('div'));
       recipeCard.classList.add('recipeCard', 'card')
       recipeCard.setAttribute('data-recipe-id', recipe.id)
 
@@ -421,9 +421,6 @@ class Adapter {
       .then(recipeData => {
         // Update Recipe class objects
         Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients)
-        // Update recipe held in matchingRecipes array
-        // const recipeToBeUpdated = this.matchingRecipes.find(recipe => recipe.id === data.id)
-        // recipeToBeUpdated.substituted_ingredient_id = data.substituted_ingredient_id
         this.renderSelectedRecipe(recipeData)
       })
       .catch(err=> alert(err))
