@@ -1,5 +1,4 @@
 // Instantiate adapter - propagates other actions to happen
-const app = new Adapter
-// console.log(app)
-app.getIngredients();
+const app = new AppContainer
+app.renderAllIngredients();
 app.bindEventListeners();

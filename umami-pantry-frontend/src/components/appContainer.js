@@ -13,15 +13,17 @@ const returnBtn = document.getElementById('returnToRecipesBtn');
 const addSubIngredientBtn = document.getElementById('substitutIngredientBtn');
 let renderedSIForm = false;
 
-class Adapter {
+class AppContainer {
   constructor(baseUrl='http://localhost:3000') {
+    this.ingredientsAdapter = new IngredientsAdapter();
+
     this.baseUrl = 'http://localhost:3000';
     this.ingredientsUrl = `${baseUrl}/ingredients`;
     this.findRecipesUrl = `${baseUrl}/get_recipes`;
     this.recipeUrl = `${baseUrl}/recipes/`
     this.recipeIngredientsUrl = `${baseUrl}/recipe_ingredients`
   }
-  static ingredients = [];
+  // static ingredients = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
   formInputs = document.querySelectorAll('.formInput');
 
@@ -78,34 +80,23 @@ class Adapter {
   //   return this.selectedIngredients.includes(ingredientId);
   // }
 
-  // make a fetch request to ingredientsUrl
-  getIngredients() {
-    const categories = ['Grains', 'Protein_Foods','Beans_and_Peas', 'Nuts_and_Seeds', 'Root_Vegetables', 'Dark_Green_Vegetables', 'Other_Vegetables', 'Dairy', 'Soup_and_Broth', 'Fruits', 'Additives', 'Herb_and_Spices'];
+  renderAllIngredients() {
+    Ingredient.categories.forEach(category => {
+      this.ingredientsAdapter.getIngredients(category)
+      .then(ingredientsData => {
+        ingredientsData.forEach(ingredient => new Ingredient(ingredient));
+        this.createIngredientCards(ingredientsData, category);
+      })
+    });
+  }
 
-    categories.forEach(category => {
-    // fetch returns Promise representing what the api sent back
-    // call .then on returned obj -> get resp, parse JSON rep of ingredients from resp
-      fetch(`${this.baseUrl}/get_ingredients/?category=${category}`)
-        .then(resp => resp.json())
-        .then(ingredientsData => {
-          ingredientsData.forEach( ingredient => {
-            Adapter.ingredients.push(new Ingredient(ingredient.id, ingredient.name, ingredient.category, ingredient.image_url));
-          });
-          this.renderIngredients(ingredientsData, category);
-        })
-        .catch(err => alert(err));
-    })
-  };
-
-  // display ingredients by categories
-  renderIngredients(ingredientsData, category) {
+  // Display ingredients by categories
+  createIngredientCards(ingredientsData, category) {
     //create DOM nodes, insert data into them to render in the DOM
-      // g flag of regular expression -> indicates global search and replace
+    // g flag of regular expression -> indicates global search and replace
     const formattedCategory = category.toLowerCase().replace(new RegExp('_', 'g'), '-');
     const categoryContainer = document.getElementById(formattedCategory);
     ingredientsData.forEach(ingredient => {
-      // new Ingredient(ingredient.id, ingredient.name, ingredient.category, ingredient.image_url)
-
       let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
       ingredientCard.className = 'ingredientCard'
       ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
@@ -159,7 +150,6 @@ class Adapter {
   // get request for all recipes that match ingredientId
   // populate recipe + associated properties with returned data
   // temporarily persisting to propetrties in container instances
-  // call renderMatchingRecipes - DOM manipulation via render activities
   getMatchingRecipes() {
     let matchingRecipes = []
     // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
@@ -247,7 +237,7 @@ class Adapter {
   };
 
   // SINGLE RECIPE
-  getSingleRecipe(recipeId){
+  getSingleRecipe(recipeId) {
     console.log("Got recipe ID: " + recipeId);
     return fetch(`${this.recipeUrl}/${recipeId}`)
       .then(resp => resp.json())
@@ -337,7 +327,7 @@ class Adapter {
   displayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
     subIngredientForm.style.display = 'none';
-    this.getMatchingRecipes();
+    RecipesAdapter.getMatchingRecipes(this.selectedIngredients);
     recipesContainer.style.display = 'block';
   };
 
@@ -397,14 +387,16 @@ class Adapter {
       }
     }
     this.postSubIngredient(formData)
+    // RecipesAdapter.postSubIngredient(formData)
     formDiv.style.display = 'none';
   }
 
+  // CREATE RECIPE INGREDIENT
+  // addNewSubIngredient (recipeIngredientObj) {}
   postSubIngredient(recipeIngredientObj) {
     let configObj = {
       method: 'POST',
       mode: 'cors',
-      // credentials: 'include',
       headers: { // indicate format of data being sent and acceoted in return
         'Content-Type': 'application/json',
         'Accept': "application/json"
