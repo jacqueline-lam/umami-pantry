@@ -74,37 +74,39 @@ class AppContainer {
   //   return this.selectedIngredients.includes(ingredientId);
   // }
 
-  renderAllIngredients() {
-    Ingredient.categories.forEach(category => {
-      // parse JSON representation of ingredients from Fetch resp
-      this.ingredientsAdapter.getIngredients(category)
-      .then(ingredientsData => {
-        ingredientsData.forEach(ingredient => new Ingredient(ingredient));
-        this.createIngredientCards(ingredientsData, category);
-      })
-    });
-  }
+  //-----------------------------
+  // renderAllIngredients() {
+  //   Ingredient.categories.forEach(category => {
+  //     // parse JSON representation of ingredients from Fetch resp
+  //     this.ingredientsAdapter.getIngredients(category)
+  //     .then(ingredientsData => {
+  //       ingredientsData.forEach(ingredient => new Ingredient(ingredient));
+  //       this.createIngredientCards(ingredientsData, category);
+  //     })
+  //   });
+  // }
 
-  // Display ingredients by categories
-  createIngredientCards(ingredientsData, category) {
-    //create DOM nodes, insert data into them to render in the DOM
-    // g flag of regular expression -> indicates global search and replace
-    const formattedCategory = category.toLowerCase().replace(new RegExp('_', 'g'), '-');
-    const categoryContainer = document.getElementById(formattedCategory);
-    ingredientsData.forEach(ingredient => {
-      // Apend ingredientCard to specified category
-      let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
-      ingredientCard.className = 'ingredientCard'
-      ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
+  // // Display ingredients by categories
+  // createIngredientCards(ingredientsData, category) {
+  //   //create DOM nodes, insert data into them to render in the DOM
+  //   // g flag of regular expression -> indicates global search and replace
+  //   const formattedCategory = category.toLowerCase().replace(new RegExp('_', 'g'), '-');
+  //   const categoryContainer = document.getElementById(formattedCategory);
+  //   ingredientsData.forEach(ingredient => {
+  //     // Apend ingredientCard to specified category
+  //     let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
+  //     ingredientCard.className = 'ingredientCard'
+  //     ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
 
-      const img = ingredient.image_url;
-      ingredientCard.innerHTML += img;
+  //     const img = ingredient.image_url;
+  //     ingredientCard.innerHTML += img;
 
-      const p = document.createElement('p');
-      p.innerText = ingredient.name
-      ingredientCard.appendChild(p);
-    });
-  };
+  //     const p = document.createElement('p');
+  //     p.innerText = ingredient.name
+  //     ingredientCard.appendChild(p);
+  //   });
+  // };
+  // ------------------------------------
 
   // Handle ingredient selections
   selectIngredientHandler(ingredient) {
@@ -160,9 +162,10 @@ class AppContainer {
       recipesDiv.removeChild(recipesDiv.lastChild);
     }
 
+    // Render no match message
     if (recipes.length === 0) {
       const p = document.createElement('p')
-      p.innerText = 'No recipes are found for this combination of ingredients'
+      p.innerText = 'No recipes are found for this combination of ingredients.'
       recipesDiv.appendChild(p)
     }
     //create DOM nodes and insert data into them to render in the DOM
@@ -230,7 +233,6 @@ class AppContainer {
 
   createSelectedRecipeDiv(recipe) {
     selectedRecipeContainer.dataset.recipeId = recipe.id
-
     selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
 
     let heading = document.createElement('div')
