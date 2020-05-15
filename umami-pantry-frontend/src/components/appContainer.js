@@ -17,11 +17,7 @@ class AppContainer {
   constructor(baseUrl='http://localhost:3000') {
     this.ingredientsAdapter = new IngredientsAdapter();
     this.recipesAdapter = new RecipesAdapter();
-    // this.findRecipesUrl = `${baseUrl}/get_recipes`;
-    // this.recipeUrl = `${baseUrl}/recipes/`
-    // this.recipeIngredientsUrl = `${baseUrl}/recipe_ingredients`
   }
-  // static ingredients = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
   formInputs = document.querySelectorAll('.formInput');
 
