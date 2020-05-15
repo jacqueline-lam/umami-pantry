@@ -16,12 +16,10 @@ let renderedSIForm = false;
 class AppContainer {
   constructor(baseUrl='http://localhost:3000') {
     this.ingredientsAdapter = new IngredientsAdapter();
-
-    this.baseUrl = 'http://localhost:3000';
-    this.ingredientsUrl = `${baseUrl}/ingredients`;
-    this.findRecipesUrl = `${baseUrl}/get_recipes`;
-    this.recipeUrl = `${baseUrl}/recipes/`
-    this.recipeIngredientsUrl = `${baseUrl}/recipe_ingredients`
+    this.recipesAdapter = new RecipesAdapter();
+    // this.findRecipesUrl = `${baseUrl}/get_recipes`;
+    // this.recipeUrl = `${baseUrl}/recipes/`
+    // this.recipeIngredientsUrl = `${baseUrl}/recipe_ingredients`
   }
   // static ingredients = [];
   selectedIngredients = []; // to hold ingredientIds, also acts as single frontend state source of truth
@@ -51,7 +49,7 @@ class AppContainer {
     });
     // eventlistener for 'Clear All Ingredients' Button
     let clearIngredientsBtn = document.getElementById('clearIngredientsBtn')
-    clearIngredientsBtn.addEventListener('click', this.unselectIngredientsHandler.bind(app));
+    clearIngredientsBtn.addEventListener('click', this.clearIngredientsHandler.bind(app));
 
     // eventlistener for Selected Recipe Div
     selectedRecipeContainer.addEventListener('click', e => {
@@ -60,7 +58,7 @@ class AppContainer {
         ingredientsContainer.style.display = 'block';
         returnBtn.style.display = 'none';
         addSubIngredientBtn.style.display = 'none';
-        this.displayMatchingRecipes();
+        this.redisplayMatchingRecipes();
       } else if (e.target === addSubIngredientBtn){ // Add A Subsitute Ingredient Btn
         addSubIngredientBtn.style.display = 'none';
         let recipeId = parseInt(selectedRecipeContainer.dataset.recipeId, 10);
@@ -82,6 +80,7 @@ class AppContainer {
 
   renderAllIngredients() {
     Ingredient.categories.forEach(category => {
+      // parse JSON representation of ingredients from Fetch resp
       this.ingredientsAdapter.getIngredients(category)
       .then(ingredientsData => {
         ingredientsData.forEach(ingredient => new Ingredient(ingredient));
@@ -97,6 +96,7 @@ class AppContainer {
     const formattedCategory = category.toLowerCase().replace(new RegExp('_', 'g'), '-');
     const categoryContainer = document.getElementById(formattedCategory);
     ingredientsData.forEach(ingredient => {
+      // Apend ingredientCard to specified category
       let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
       ingredientCard.className = 'ingredientCard'
       ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
@@ -110,34 +110,33 @@ class AppContainer {
     });
   };
 
-  // handle ingredient(s) option
-  // @param ingredient: The div DOM element
+  // Handle ingredient selections
   selectIngredientHandler(ingredient) {
     let ingredientId = ingredient.dataset.ingredientId;
     var index = this.selectedIngredients.indexOf(ingredientId);
 
-    // Ingredient does not exist in current state
-    // And we're selecting it, then we add it in
+    // Ingredient DOE in current state, add its id to array
     if (index === -1) {
+      // Select ingredient
       this.selectedIngredients.push(ingredientId);
       ingredient.setAttribute("style", "background-color: lightgray;");
     } else {
-      // If ingredient already exists in current state
-      // And we're selecting it, then we should remove it
+      // Deselect ingredient
+      // Ingredient already exists in current state, we should remove its id
       this.selectedIngredients.splice(index, 1);
       ingredient.setAttribute("style", "background-color: white;");
     }
     // Above logic *should* enforce uniqueness constraints
-    // This just makes absolutely sure
+    // This method just makes absolutely sure
     this.selectedIngredients.filter((ing, i, arr) => arr.indexOf(ing) === i);
 
     console.log("Current array IDs: " + this.selectedIngredients);
 
-    // Handle recipe get for selected ingredients
-    this.getMatchingRecipes(this.selectedIngredients);
+    // Handle GET recipes request for selected ingredients
+    this.renderMatchingRecipes(this.selectedIngredients);
   }
 
-  unselectIngredientsHandler() {
+  clearIngredientsHandler() {
     //empty selectedIngredients array
     this.selectedIngredients.splice(0, this.selectedIngredients.length);
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
@@ -147,40 +146,31 @@ class AppContainer {
     console.log(this.selectedIngredients);
   };
 
-  // get request for all recipes that match ingredientId
-  // populate recipe + associated properties with returned data
-  // temporarily persisting to propetrties in container instances
-  getMatchingRecipes() {
-    let matchingRecipes = []
-    // http://localhost:3000/get_recipes/?selected_ingredients=1753,1752
-    return fetch(`${this.findRecipesUrl}/?selected_ingredients=${this.selectedIngredients}`)
-      .then(resp => resp.json())
-      .then(recipesData => {
-        recipesData.forEach(recipe => {
-          // recipe instanceof Recipe ? "" : matchingRecipes.push(new Recipe(recipe));
-          let r = Recipe.findById(recipe.id)
-          r = r || new Recipe(recipe)
-          matchingRecipes.push(r);
-        })
-        this.renderMatchingRecipes(matchingRecipes);
+  renderMatchingRecipes(ingredientIds) {
+    let matchingRecipes = [];
+    this.recipesAdapter.getMatchingRecipes(ingredientIds).then(recipesData => {
+      recipesData.forEach(recipe => {
+        let r = Recipe.findById(recipe.id)
+        r = r || new Recipe(recipe)
+        matchingRecipes.push(r);
       })
-      .catch(err => console.log(err));
-  };
+      this.createRecipeCards(matchingRecipes);
+    })
+  }
 
-  renderMatchingRecipes(matchingRecipes) {
+  createRecipeCards(recipes) {
     // Reload recipe cards when a new ingredient is chosen
-
     while (recipesDiv.firstChild) {
       recipesDiv.removeChild(recipesDiv.lastChild);
     }
 
-    if (matchingRecipes.length === 0) {
+    if (recipes.length === 0) {
       const p = document.createElement('p')
       p.innerText = 'No recipes are found for this combination of ingredients'
       recipesDiv.appendChild(p)
     }
     //create DOM nodes and insert data into them to render in the DOM
-    matchingRecipes.forEach(recipe => {
+    recipes.forEach(recipe => {
       // render recipe if recipeCard is not displayed yet
       let recipeCard = recipesDiv.appendChild(document.createElement('div'));
       recipeCard.classList.add('recipeCard', 'card')
@@ -215,7 +205,7 @@ class AppContainer {
         li.className = 'list-group-item';
         li.setAttribute('data-ingredient-id', ingredient.id);
         li.innerText = ingredient['name'];
-        // display substitute ingredients in red
+        // display substitute ingredients in teal
         if (!!ingredient.substituted_ingredient_id) {
           li.classList.add('subIngredient');
         }
@@ -231,21 +221,18 @@ class AppContainer {
         recipesContainer.style.display = 'none';
         ingredientsContainer.style.display = 'none';
         formDiv.style.display = 'none';
-        this.getSingleRecipe(selectedRecipeId);
+        this.renderSelectedRecipe(selectedRecipeId);
       });
     });
   };
 
-  // SINGLE RECIPE
-  getSingleRecipe(recipeId) {
-    console.log("Got recipe ID: " + recipeId);
-    return fetch(`${this.recipeUrl}/${recipeId}`)
-      .then(resp => resp.json())
-      .then(recipeData => (this.renderSelectedRecipe(recipeData)))
-      .catch(err => console.log(err))
-  };
+  // READ SINGLE RECIPE
+  renderSelectedRecipe(recipeId){
+    this.recipesAdapter.getSelectedRecipe(recipeId)
+      .then(recipeData => this.createSelectedRecipeDiv(recipeData))
+  }
 
-  renderSelectedRecipe(recipe) {
+  createSelectedRecipeDiv(recipe) {
     selectedRecipeContainer.dataset.recipeId = recipe.id
 
     selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
@@ -280,7 +267,7 @@ class AppContainer {
       ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : ""
       tr.append(td1, td2)
 
-      // check for substitute ingredient
+      // Render substitute ingredient if any
       if (!!ingredient.substituted_ingredient_id) {
         let newIngObj = {
           ogIngId: ingredient.substituted_ingredient_id,
@@ -297,7 +284,7 @@ class AppContainer {
     row.appendChild(col1);
     selectedRecipeDiv.appendChild(row);
 
-    // add styling to og vs. substituted ingredient
+    // Add styling to og vs. substituted ingredient
     subIngredientsArray.forEach(newIngObj => {
       let ogIngredientTr = document.querySelector(`tr[data-ingredient-id="${newIngObj['ogIngId']}"]`);
       ogIngredientTr.className = 'ogIngredient';
@@ -306,7 +293,8 @@ class AppContainer {
       let subIngredientTr = newIngObj["newIngTr"];
       subIngredientTr.className = 'subIngredient';
 
-      ogIngredientTr.insertAdjacentElement('afterend',subIngredientTr)
+      // Display substitute ingredient tr right after its og ingredient
+      ogIngredientTr.insertAdjacentElement('afterend', subIngredientTr)
     });
 
     // Recipe Directions
@@ -321,13 +309,12 @@ class AppContainer {
 
     //Back to results
     returnBtn.style.display = 'inline-block';
-
   };
 
-  displayMatchingRecipes(){
+  redisplayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
     subIngredientForm.style.display = 'none';
-    RecipesAdapter.getMatchingRecipes(this.selectedIngredients);
+    this.recipesAdapter.getMatchingRecipes(this.selectedIngredients);
     recipesContainer.style.display = 'block';
   };
 
@@ -343,8 +330,8 @@ class AppContainer {
     let ogIngredientSelect = document.getElementById('ogIngredientSelect');
     let recipe = Recipe.findById(recipeId);
 
+    // Render ingredient options for substitution
     recipe.ingredients.forEach(ingredient => {
-      // don't allow substitute ingredient to be rendered
       if (!ingredient.substituted_ingredient_id) {
         let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`
         ogIngredientSelect.innerHTML += option
@@ -356,7 +343,6 @@ class AppContainer {
     // filter out existing recipe ingredients
     const subIngredientOptions = Ingredient.all.filter(ing => !recipeIngredientIds.includes(ing.id))
     // optgroup: group by ing categroy
-
     // add all options into select tag
     subIngredientOptions.forEach(ingredient => {
       let option = `<option class="options" value=${ingredient.id}>${ingredient.name}</option>`
@@ -375,7 +361,7 @@ class AppContainer {
     recipeIdHiddenInput.setAttribute('value', recipeId)
   }
 
-  // Add a substitute ingredient (recipe ingredient object)
+  // Add a substitute ingredient (recipe ingredient)
   handleSubmitForm() {
     let formData = {
       recipe_ingredient: {
@@ -386,35 +372,18 @@ class AppContainer {
         preparation_method: this.formInputs[3].value,
       }
     }
-    this.postSubIngredient(formData)
-    // RecipesAdapter.postSubIngredient(formData)
+    this.addSubIngredient(formData)
     formDiv.style.display = 'none';
   }
 
   // CREATE RECIPE INGREDIENT
   // addNewSubIngredient (recipeIngredientObj) {}
-  postSubIngredient(recipeIngredientObj) {
-    let configObj = {
-      method: 'POST',
-      mode: 'cors',
-      headers: { // indicate format of data being sent and acceoted in return
-        'Content-Type': 'application/json',
-        'Accept': "application/json"
-      },
-     // data must be sent as text between client and server
-     // convert objects to strings
-      body: JSON.stringify(recipeIngredientObj)
-    }
-
-    const url = 'http://localhost:3000/recipe_ingredients';
-
-    fetch(url, configObj)
-      .then(resp => resp.json())
+  addSubIngredient(recipeIngredientObj) {
+    this.recipesAdapter.addSubIngredient(recipeIngredientObj)
       .then(recipeData => {
         // Update Recipe class objects
         Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients)
         this.renderSelectedRecipe(recipeData)
       })
-      .catch(err=> alert(err))
   }
 };

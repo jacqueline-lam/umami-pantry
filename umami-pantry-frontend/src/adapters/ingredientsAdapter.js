@@ -5,13 +5,11 @@ class IngredientsAdapter {
 
   // READ INGREDIENTS - GET request to /ingredients
   getIngredients(category) {
-    // return Ingredient.categories.map(category => {
     // fetch returns Promise representing what the api sent back
-    // call .then on returned obj -> get resp, parse JSON rep of ingredients from resp
+    // call .then on returned obj -> return resp
     return fetch(`${this.baseUrl}/?category=${category}`)
         .then(resp => resp.json())
-        .then(json => json)
-        .catch(err => alert(err));
+        .catch(err => alert(err))
     }
         // .then(ingredientsData => {
         //   ingredientsData.forEach( ingredient => {
