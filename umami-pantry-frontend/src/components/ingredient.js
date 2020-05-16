@@ -8,7 +8,8 @@ class Ingredient {
   }
   static categories = ['Grains', 'Protein_Foods','Beans_and_Peas', 'Nuts_and_Seeds', 'Root_Vegetables', 'Dark_Green_Vegetables', 'Other_Vegetables', 'Dairy', 'Soup_and_Broth', 'Fruits', 'Additives', 'Herb_and_Spices'];
   static all = []
-
+  // to hold ingredientIds, also acts as single frontend state source of truth
+  static selectedIngredients = [];
 
   static renderAllIngredients() {
     Ingredient.categories.forEach(category => {
@@ -41,6 +42,43 @@ class Ingredient {
       p.innerText = ingredient.name
       ingredientCard.appendChild(p);
     });
+  };
+
+  // Handle ingredient selections
+  static selectIngredientHandler(ingredient) {
+    let ingredientId = ingredient.dataset.ingredientId;
+    var index = this.selectedIngredients.indexOf(ingredientId);
+
+    // Ingredient DOE in current state, add its id to array
+    if (index === -1) {
+      // Select ingredient
+      this.selectedIngredients.push(ingredientId);
+      ingredient.setAttribute("style", "background-color: lightgray;");
+    } else {
+      // Deselect ingredient
+      // Ingredient already exists in current state, we should remove its id
+      this.selectedIngredients.splice(index, 1);
+      ingredient.setAttribute("style", "background-color: white;");
+    }
+    // Above logic *should* enforce uniqueness constraints
+    // This method just makes absolutely sure
+    this.selectedIngredients.filter((ing, i, arr) => arr.indexOf(ing) === i);
+
+    console.log("Current array IDs: " + this.selectedIngredients);
+
+    // Handle GET recipes request for selected ingredients
+    Recipe.renderMatchingRecipes(this.selectedIngredients);
+  }
+
+  static clearIngredientsHandler(e) {
+    //empty selectedIngredients array
+    this.selectedIngredients.splice(0, this.selectedIngredients.length);
+    Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
+    debugger
+    while (recipesDiv.firstChild) {
+      recipesDiv.removeChild(recipesDiv.lastChild);
+    }
+    console.log(this.selectedIngredients);
   };
 
 }
