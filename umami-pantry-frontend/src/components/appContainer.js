@@ -30,7 +30,13 @@ class AppContainer {
     //   })
     // })
 
-    // eventlistener for Ingredient Card
+    selectIngredientListener();
+    clearIngredientsListener();
+    addSubIngredientListener();
+  };
+
+  // eventlistener for Ingredient Card
+  selectIngredientListener() {
     ingredientsContainer.addEventListener('click', e => {
       for (const ingredientCard of ingredientCards) {
         // if ingredientCard is clicked
@@ -39,7 +45,10 @@ class AppContainer {
         }
       }
     });
-    // eventlistener for 'Clear All Ingredients' Button
+  }
+
+  // eventlistener for 'Clear All Ingredients' Button
+  clearIngredientsListener() {
     let clearIngredientsBtn = document.getElementById('clearIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', () => Ingredient.clearIngredientsHandler());
 
@@ -58,13 +67,16 @@ class AppContainer {
         renderedSIForm = true;
       };
     });
+  };
 
+  addSubIngredientListener() {
     //eventlistener for Substitute Ingredient Submit btn
     formDiv.addEventListener('submit', e => {
       e.preventDefault();
       Recipe.handleSubmitForm();
     })
   };
+
 
   // isSelected(ingredientId) {
   //   return this.selectedIngredients.includes(ingredientId);

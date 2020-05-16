@@ -251,7 +251,6 @@ class Recipe {
   }
 
   // CREATE RECIPE INGREDIENT
-  // addNewSubIngredient (recipeIngredientObj) {}
   static addSubIngredient(recipeIngredientObj) {
     this.recipesAdapter.postSubIngredient(recipeIngredientObj)
       .then(recipeData => {

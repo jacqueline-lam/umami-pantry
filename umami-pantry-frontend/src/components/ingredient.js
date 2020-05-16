@@ -74,7 +74,6 @@ class Ingredient {
     //empty selectedIngredients array
     this.selectedIngredients.splice(0, this.selectedIngredients.length);
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
-    debugger
     while (recipesDiv.firstChild) {
       recipesDiv.removeChild(recipesDiv.lastChild);
     }
