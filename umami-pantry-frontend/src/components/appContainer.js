@@ -30,9 +30,9 @@ class AppContainer {
     //   })
     // })
 
-    selectIngredientListener();
-    clearIngredientsListener();
-    addSubIngredientListener();
+    this.selectIngredientListener();
+    this.clearIngredientsListener();
+    this.addSubIngredientListener();
   };
 
   // eventlistener for Ingredient Card
@@ -76,7 +76,6 @@ class AppContainer {
       Recipe.handleSubmitForm();
     })
   };
-
 
   // isSelected(ingredientId) {
   //   return this.selectedIngredients.includes(ingredientId);
