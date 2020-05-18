@@ -56,7 +56,7 @@ class Ingredient {
       ingredient.setAttribute("style", "background-color: lightgray;");
     } else {
       // Deselect ingredient
-      // Ingredient already exists in current state, we should remove its id
+      // Ingredient already exists in current state -> remove its id
       this.selectedIngredients.splice(index, 1);
       ingredient.setAttribute("style", "background-color: white;");
     }

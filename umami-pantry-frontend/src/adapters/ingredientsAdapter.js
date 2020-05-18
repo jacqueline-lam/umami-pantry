@@ -11,10 +11,4 @@ class IngredientsAdapter {
         .then(resp => resp.json())
         .catch(err => alert(err))
     }
-        // .then(ingredientsData => {
-        //   ingredientsData.forEach( ingredient => {
-        //     AppContainer.ingredients.push(new Ingredient(ingredient.id, ingredient.name, ingredient.category, ingredient.image_url));
-        //   });
-        //   AppContainer.renderIngredients(ingredientsData, category);
-        // })
   };
