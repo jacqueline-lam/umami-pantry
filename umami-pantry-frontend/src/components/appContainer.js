@@ -32,6 +32,7 @@ class AppContainer {
 
     this.selectIngredientListener();
     this.clearIngredientsListener();
+    this.selectedRecipeDivListener();
     this.addSubIngredientListener();
   };
 
@@ -51,7 +52,9 @@ class AppContainer {
   clearIngredientsListener() {
     let clearIngredientsBtn = document.getElementById('clearIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', () => Ingredient.clearIngredientsHandler());
+  };
 
+  selectedRecipeDivListener() {
     // eventlistener for Selected Recipe Div
     selectedRecipeContainer.addEventListener('click', e => {
       // Return to Matching Recipes Btn

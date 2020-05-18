@@ -9,8 +9,8 @@ class RecipesController < ApplicationController
 
   def get_recipes
     selected_ingredients = params[:selected_ingredients].split(',').map(&:to_i)
-    # recipes = Recipe.all.select { |r| r.matches_ingredients?(selected_ingredients) }
     recipes = Recipe.filter_by_ingredients(selected_ingredients)
+    # extract work of customizing JSON data and put in service class
     render json: RecipeSerializer.new(recipes).instances_to_serialized_json
   end
 

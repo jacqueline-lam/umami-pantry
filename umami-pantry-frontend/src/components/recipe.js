@@ -192,7 +192,7 @@ class Recipe {
   static redisplayMatchingRecipes(){
     selectedRecipeDiv.innerHTML = '';
     subIngredientForm.style.display = 'none';
-    this.recipesAdapter.getMatchingRecipes(this.selectedIngredients);
+    this.renderMatchingRecipes(Ingredient.selectedIngredients);
     recipesContainer.style.display = 'block';
   };
 
