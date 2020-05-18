@@ -6,47 +6,48 @@ const formInputs = document.querySelectorAll('.formInput');
 class Recipe {
   constructor(recipe) {
     // name, imageUrl, category, serving, time, directions, ingredients
-    this.id = recipe.id
-    this.name = recipe.name
-    this.imageUrl = recipe.image_url
-    this.category = recipe.category
-    this.serving = recipe.servings
-    this.time = recipe.time
-    this.directions = recipe.directions
-    this.ingredients = recipe.ingredients
+    this.id = recipe.id;
+    this.name = recipe.name;
+    this.imageUrl = recipe.image_url;
+    this.category = recipe.category;
+    this.serving = recipe.servings;
+    this.time = recipe.time;
+    this.directions = recipe.directions;
+    this.ingredients = recipe.ingredients;
     this.constructor.all.push(this)
-  }
-  static all = []
+  };
+
+  static all = [];
   static findById(id) {
     return Recipe.all.find(recipe => recipe.id === id)
-  }
+  };
   static recipesAdapter = new RecipesAdapter;
 
   static renderMatchingRecipes(ingredientIds) {
     let matchingRecipes = [];
     this.recipesAdapter.getMatchingRecipes(ingredientIds).then(recipesData => {
       recipesData.forEach(recipe => {
-        let r = Recipe.findById(recipe.id)
-        r = r || new Recipe(recipe)
+        let r = Recipe.findById(recipe.id);
+        r = r || new Recipe(recipe);
         matchingRecipes.push(r);
       })
       this.createRecipeCards(matchingRecipes);
-    })
-  }
+    });
+  };
 
   static clearExistingRecipeCards () {
     while (recipesDiv.firstChild) {
       recipesDiv.removeChild(recipesDiv.lastChild)
-    }
-  }
+    };
+  };
 
   static handleNoMatchingRecipes(recipes) {
     if (recipes.length === 0) {
-      const p = document.createElement('p')
-      p.innerText = 'No matching recipes found.'
-      recipesDiv.appendChild(p)
-    }
-  }
+      const p = document.createElement('p');
+      p.innerText = 'No matching recipes found.';
+      recipesDiv.appendChild(p);
+    };
+  };
 
   static createRecipeCards(recipes) {
     // Reload recipe cards when a new ingredient is chosen
@@ -58,11 +59,11 @@ class Recipe {
     recipes.forEach(recipe => {
       // render recipe if recipeCard is not displayed yet
       let recipeCard = recipesDiv.appendChild(document.createElement('div'));
-      recipeCard.classList.add('recipeCard', 'card')
-      recipeCard.setAttribute('data-recipe-id', recipe.id)
+      recipeCard.classList.add('recipeCard', 'card');
+      recipeCard.setAttribute('data-recipe-id', recipe.id);
 
       // Recipe name
-      let h3 = document.createElement('h3')
+      let h3 = document.createElement('h3');
       h3.className = 'card-header';
       recipeCard.appendChild(h3);
       let a = document.createElement('a');
@@ -88,8 +89,8 @@ class Recipe {
         li.innerText = ingredient['name'];
         // display substitute ingredients in teal
         if (!!ingredient.substituted_ingredient_id) {
-          li.classList.add('subIngredient');
-        }
+          li.classList.add('subIngredient')
+        };
         ul.appendChild(li);
       }
       recipeCard.appendChild(ul);
@@ -98,7 +99,7 @@ class Recipe {
       recipeCard.children[0].addEventListener('click', e => {
         let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id');
         if (!selectedRecipeId) {
-          selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id')
+          selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
         };
         recipesContainer.style.display = 'none';
         ingredientsContainer.style.display = 'none';
@@ -112,41 +113,41 @@ class Recipe {
   static renderSelectedRecipe(recipeId){
     this.recipesAdapter.getSelectedRecipe(recipeId)
       .then(recipeData => this.createSelectedRecipeDiv(recipeData))
-  }
+  };
 
   static createSelectedRecipeDiv(recipe) {
-    selectedRecipeContainer.dataset.recipeId = recipe.id
-    selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>'
+    selectedRecipeContainer.dataset.recipeId = recipe.id;
+    selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>';
 
-    let heading = document.createElement('div')
-    heading.id = 'recipeHeading'
-    heading.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`
+    let heading = document.createElement('div');
+    heading.id = 'recipeHeading';
+    heading.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`;
     selectedRecipeDiv.appendChild(heading);
 
     // Recipe time, servings
-    let row = document.createElement('div')
-    row.className = 'row'
-    let col1 = document.createElement('div')
-    col1.className = 'col-4'
-    col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()}</li></ul><h3>Ingredients</h3>`
+    let row = document.createElement('div');
+    row.className = 'row';
+    let col1 = document.createElement('div');
+    col1.className = 'col-4';
+    col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()}</li></ul><h3>Ingredients</h3>`;
 
     // Ingredient List
-    let ingredientsTable = document.createElement('table')
+    let ingredientsTable = document.createElement('table');
     ingredientsTable.classList.add('table', 'table-hover');
 
-    let tbody = document.createElement('tbody')
-    let subIngredientsArray = []
+    let tbody = document.createElement('tbody');
+    let subIngredientsArray = [];
     recipe.ingredients.forEach(ingredient => {
-      let tr = document.createElement('tr')
-      tr.dataset.ingredientId = ingredient.id
+      let tr = document.createElement('tr');
+      tr.dataset.ingredientId = ingredient.id;
 
-      let td1 = document.createElement('td')
-      ingredient.amount ? (td1.innerHTML += `<b>${ingredient.amount}</b>`) : ""
+      let td1 = document.createElement('td');
+      ingredient.amount ? (td1.innerHTML += `<b>${ingredient.amount}</b>`) : "";
 
-      let td2 = document.createElement('td')
-      td2.textContent = ingredient.name
-      ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : ""
-      tr.append(td1, td2)
+      let td2 = document.createElement('td');
+      td2.textContent = ingredient.name;
+      ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : "";
+      tr.append(td1, td2);
 
       // Render substitute ingredient if any
       if (!!ingredient.substituted_ingredient_id) {
@@ -174,15 +175,15 @@ class Recipe {
       subIngredientTr.className = 'subIngredient';
 
       // Display substitute ingredient tr right after its og ingredient
-      ogIngredientTr.insertAdjacentElement('afterend', subIngredientTr)
+      ogIngredientTr.insertAdjacentElement('afterend', subIngredientTr);
     });
 
     // Recipe Directions
-    let col2 = document.createElement('div')
+    let col2 = document.createElement('div');
     col2.classList.add('col-8');
-    col2.id = 'directions'
-    col2.innerHTML += `<h3>Directions</h3><hr>${recipe.directions}`
-    row.appendChild(col2)
+    col2.id = 'directions';
+    col2.innerHTML += `<h3>Directions</h3><hr>${recipe.directions}`;
+    row.appendChild(col2);
 
     // Redisplay buttons
     addSubIngredientBtn.style.display = 'inline-block';
@@ -209,30 +210,30 @@ class Recipe {
     // Render ingredient options for substitution
     recipe.ingredients.forEach(ingredient => {
       if (!ingredient.substituted_ingredient_id) {
-        let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`
-        ogIngredientSelect.innerHTML += option
-        recipeIngredientIds.push(ingredient.id)
+        let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`;
+        ogIngredientSelect.innerHTML += option;
+        recipeIngredientIds.push(ingredient.id);
       }
     })
 
     let subIngredientSelect = document.getElementById('subIngredientSelect');
     // filter out existing recipe ingredients
-    const subIngredientOptions = Ingredient.all.filter(ing => !recipeIngredientIds.includes(ing.id))
+    const subIngredientOptions = Ingredient.all.filter(ing => !recipeIngredientIds.includes(ing.id));
     // optgroup: group by ing categroy
     subIngredientOptions.forEach(ingredient => {
-      let option = `<option class="options" value=${ingredient.id}>${ingredient.name}</option>`
-      let optGroup = document.getElementById(ingredient.category)
+      let option = `<option class="options" value=${ingredient.id}>${ingredient.name}</option>`;
+      let optGroup = document.getElementById(ingredient.category);
       if (!optGroup) {
-        optGroup = document.createElement('optgroup')
-        optGroup.setAttribute('label', ingredient.category)
-        optGroup.id= ingredient.category
-        subIngredientSelect.appendChild(optGroup)
-      }
-      optGroup.innerHTML += option
+        optGroup = document.createElement('optgroup');
+        optGroup.setAttribute('label', ingredient.category);
+        optGroup.id= ingredient.category;
+        subIngredientSelect.appendChild(optGroup);
+      };
+      optGroup.innerHTML += option;
     })
 
-    let recipeIdHiddenInput = document.getElementById('recipeId')
-    recipeIdHiddenInput.setAttribute('value', recipeId)
+    let recipeIdHiddenInput = document.getElementById('recipeId');
+    recipeIdHiddenInput.setAttribute('value', recipeId);
   }
 
   // Add a substitute ingredient (recipe ingredient)
@@ -246,7 +247,7 @@ class Recipe {
         preparation_method: formInputs[3].value,
       }
     }
-    this.addSubIngredient(formData)
+    this.addSubIngredient(formData);
     formDiv.style.display = 'none';
   }
 
@@ -255,8 +256,8 @@ class Recipe {
     this.recipesAdapter.postSubIngredient(recipeIngredientObj)
       .then(recipeData => {
         // Update Recipe class objects
-        Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients)
-        this.renderSelectedRecipe(recipeData.id)
+        Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients);
+        this.renderSelectedRecipe(recipeData.id);
       })
   }
 }

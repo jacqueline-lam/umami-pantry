@@ -1,9 +1,9 @@
 class RecipesAdapter {
   constructor() {
-    this.baseUrl = 'http://localhost:3000/'
-    this.recipesUrl = `${this.baseUrl}/get_recipes`
-    this.recipeUrl = `${this.baseUrl}/recipes/`
-    this.recipeIngredientsUrl = `${this.baseUrl}/recipe_ingredients`
+    this.baseUrl = 'http://localhost:3000/';
+    this.recipesUrl = `${this.baseUrl}/get_recipes`;
+    this.recipeUrl = `${this.baseUrl}/recipes/`;
+    this.recipeIngredientsUrl = `${this.baseUrl}/recipe_ingredients`;
   }
 
   // READ MATCHING RECIPES

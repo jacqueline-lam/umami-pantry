@@ -15,7 +15,7 @@ class Ingredient {
     Ingredient.categories.forEach(category => {
       // parse JSON representation of ingredients from Fetch resp
       const ingredientsAdapter = new IngredientsAdapter();
-      ingredientsAdapter.getIngredients(category);
+      ingredientsAdapter.getIngredients(category)
       .then(ingredientsData => {
         ingredientsData.forEach(ingredient => new Ingredient(ingredient));
         this.createIngredientCards(ingredientsData, category);
