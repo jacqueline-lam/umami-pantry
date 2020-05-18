@@ -259,5 +259,4 @@ class Recipe {
         this.renderSelectedRecipe(recipeData.id)
       })
   }
-
 }

@@ -7,7 +7,7 @@ class Ingredient {
     this.constructor.all.push(this);
   }
   static categories = ['Grains', 'Protein_Foods','Beans_and_Peas', 'Nuts_and_Seeds', 'Root_Vegetables', 'Dark_Green_Vegetables', 'Other_Vegetables', 'Dairy', 'Soup_and_Broth', 'Fruits', 'Additives', 'Herb_and_Spices'];
-  static all = []
+  static all = [];
   // to hold ingredientIds, also acts as single frontend state source of truth
   static selectedIngredients = [];
 
@@ -15,13 +15,13 @@ class Ingredient {
     Ingredient.categories.forEach(category => {
       // parse JSON representation of ingredients from Fetch resp
       const ingredientsAdapter = new IngredientsAdapter();
-      ingredientsAdapter.getIngredients(category)
+      ingredientsAdapter.getIngredients(category);
       .then(ingredientsData => {
         ingredientsData.forEach(ingredient => new Ingredient(ingredient));
         this.createIngredientCards(ingredientsData, category);
       })
     });
-  }
+  };
 
   // Display ingredients by categories
   static createIngredientCards(ingredientsData, category) {
@@ -32,14 +32,14 @@ class Ingredient {
     ingredientsData.forEach(ingredient => {
       // Apend ingredientCard to specified category
       let ingredientCard = categoryContainer.appendChild(document.createElement('div'));
-      ingredientCard.className = 'ingredientCard'
-      ingredientCard.setAttribute('data-ingredient-id', ingredient.id)
+      ingredientCard.className = 'ingredientCard';
+      ingredientCard.setAttribute('data-ingredient-id', ingredient.id);
 
       const img = ingredient.image_url;
       ingredientCard.innerHTML += img;
 
       const p = document.createElement('p');
-      p.innerText = ingredient.name
+      p.innerText = ingredient.name;
       ingredientCard.appendChild(p);
     });
   };
@@ -68,7 +68,7 @@ class Ingredient {
 
     // Handle GET recipes request for selected ingredients
     Recipe.renderMatchingRecipes(this.selectedIngredients);
-  }
+  };
 
   static clearIngredientsHandler(e) {
     //empty selectedIngredients array
@@ -76,8 +76,7 @@ class Ingredient {
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
     while (recipesDiv.firstChild) {
       recipesDiv.removeChild(recipesDiv.lastChild);
-    }
+    };
     console.log(this.selectedIngredients);
   };
-
 }
