@@ -1,8 +1,3 @@
-// const recipesContainer = document.getElementById('recipesContainer');
-// const recipesDiv = document.getElementById("recipeCardsDiv");
-// let renderedSIForm = false;
-const formInputs = document.querySelectorAll('.formInput');
-
 class Recipe {
   constructor(recipe) {
     this.id = recipe.id;
@@ -62,7 +57,7 @@ class Recipe {
       formDiv.style.display = 'none';
       this.renderSelectedRecipe(selectedRecipeId);
     });
-  }
+  };
 
   static createRecipeCards(recipes) {
     // Reload recipe cards when a new ingredient is chosen
@@ -148,7 +143,6 @@ class Recipe {
 
       let td1 = document.createElement('td');
       ingredient.amount ? (td1.innerHTML += `<b>${ingredient.amount}</b>`) : "";
-
       let td2 = document.createElement('td');
       td2.textContent = ingredient.name;
       ingredient.preparation_method ? (td2.innerText += `, ${ingredient.preparation_method}`) : "";
@@ -207,8 +201,8 @@ class Recipe {
     if (!!renderedSIForm) {
       let existingOptions =  Array.from(document.getElementsByClassName('options'));
       existingOptions.map(option => option.remove());
-    }
-  }
+    };
+  };
 
   static renderAddSubIngredientForm(recipeId) {
     this.removePreviousFormOptions();
@@ -223,8 +217,8 @@ class Recipe {
         let option = `<option class="options" value=${ingredient.id} >${ingredient.name}</option>`;
         ogIngredientSelect.innerHTML += option;
         recipeIngredientIds.push(ingredient.id);
-      }
-    })
+      };
+    });
 
     let subIngredientSelect = document.getElementById('subIngredientSelect');
     // filter out existing recipe ingredients
@@ -240,11 +234,12 @@ class Recipe {
         subIngredientSelect.appendChild(optGroup);
       };
       optGroup.innerHTML += option;
-    })
-  }
+    });
+  };
 
   // Add a substitute ingredient (recipe ingredient)
   static handleSubmitForm() {
+    const formInputs = document.querySelectorAll('.formInput');
     let formData = {
       recipe_ingredient: {
         recipe_id: parseInt(selectedRecipeContainer.dataset.recipeId),
@@ -253,7 +248,7 @@ class Recipe {
         amount: formInputs[2].value,
         preparation_method: formInputs[3].value,
       }
-    }
+    };
     this.addSubIngredient(formData);
     formDiv.style.display = 'none';
   }
@@ -266,5 +261,5 @@ class Recipe {
         Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients);
         this.renderSelectedRecipe(recipeData.id);
       })
-  }
+  };
 }

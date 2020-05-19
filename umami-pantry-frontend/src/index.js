@@ -1,4 +1,4 @@
-// Instantiate adapter - propagates other actions to happen
+// Instantiate AppContainer instance - propagates other actions to happen
 const app = new AppContainer
 Ingredient.renderAllIngredients();
 app.bindEventListeners();

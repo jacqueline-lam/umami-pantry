@@ -25,7 +25,7 @@ class AppContainer {
     this.addSubIngredientListener();
   };
 
-  // eventlistener for Ingredient Card
+  // Eventlistener for Ingredient Card
   selectIngredientListener() {
     ingredientsContainer.addEventListener('click', e => {
       for (const ingredientCard of ingredientCards) {
@@ -37,14 +37,14 @@ class AppContainer {
     });
   }
 
-  // eventlistener for 'Clear All Ingredients' Button
+  // Eventlistener for 'Clear All Ingredients' Button
   clearIngredientsListener() {
     let clearIngredientsBtn = document.getElementById('clearIngredientsBtn')
     clearIngredientsBtn.addEventListener('click', () => Ingredient.clearIngredientsHandler());
   };
 
+  // Eventlistener for Selected Recipe Div
   selectedRecipeDivListener() {
-    // eventlistener for Selected Recipe Div
     selectedRecipeContainer.addEventListener('click', e => {
       // Return to Matching Recipes Btn
       if (e.target === returnBtn) {
@@ -61,6 +61,7 @@ class AppContainer {
     });
   };
 
+  // EventListener for Substitute Ingredient Submission
   addSubIngredientListener() {
     //eventlistener for Substitute Ingredient Submit btn
     formDiv.addEventListener('submit', e => {
