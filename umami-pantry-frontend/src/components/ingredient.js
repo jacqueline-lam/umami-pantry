@@ -71,10 +71,11 @@ class Ingredient {
     Recipe.renderMatchingRecipes(this.selectedIngredients);
   };
 
-  static clearIngredientsHandler(e) {
+  static clearIngredientsHandler() {
     //empty selectedIngredients array
     this.selectedIngredients.splice(0, this.selectedIngredients.length);
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
+    //remove matching recipes
     while (recipesDiv.firstChild) {
       recipesDiv.removeChild(recipesDiv.lastChild);
     };

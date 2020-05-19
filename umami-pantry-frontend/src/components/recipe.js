@@ -18,6 +18,7 @@ class Recipe {
   };
 
   static all = [];
+
   static findById(id) {
     return Recipe.all.find(recipe => recipe.id === id)
   };
@@ -49,6 +50,20 @@ class Recipe {
     };
   };
 
+  // Event listener for recipe
+  static recipeCardListener(recipeCard) {
+    recipeCard.children[0].addEventListener('click', e => {
+      let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id');
+      if (!selectedRecipeId) {
+        selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
+      };
+      recipesContainer.style.display = 'none';
+      ingredientsContainer.style.display = 'none';
+      formDiv.style.display = 'none';
+      this.renderSelectedRecipe(selectedRecipeId);
+    });
+  }
+
   static createRecipeCards(recipes) {
     // Reload recipe cards when a new ingredient is chosen
     this.clearExistingRecipeCards();
@@ -57,7 +72,7 @@ class Recipe {
 
     //create DOM nodes and insert data into them to render in the DOM
     recipes.forEach(recipe => {
-      // render recipe if recipeCard is not displayed yet
+      // render recipe if recipeCard is not displayed  yet
       let recipeCard = recipesDiv.appendChild(document.createElement('div'));
       recipeCard.classList.add('recipeCard', 'card');
       recipeCard.setAttribute('data-recipe-id', recipe.id);
@@ -95,17 +110,18 @@ class Recipe {
       }
       recipeCard.appendChild(ul);
 
-      // Event listener for recipe
-      recipeCard.children[0].addEventListener('click', e => {
-        let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id');
-        if (!selectedRecipeId) {
-          selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
-        };
-        recipesContainer.style.display = 'none';
-        ingredientsContainer.style.display = 'none';
-        formDiv.style.display = 'none';
-        this.renderSelectedRecipe(selectedRecipeId);
-      });
+      // // Event listener for recipe
+      this.recipeCardListener(recipeCard);
+      // recipeCard.children[0].addEventListener('click', e => {
+      //   let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id');
+      //   if (!selectedRecipeId) {
+      //     selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
+      //   };
+      //   recipesContainer.style.display = 'none';
+      //   ingredientsContainer.style.display = 'none';
+      //   formDiv.style.display = 'none';
+      //   this.renderSelectedRecipe(selectedRecipeId);
+      // });
     });
   };
 
@@ -197,11 +213,16 @@ class Recipe {
     recipesContainer.style.display = 'block';
   };
 
-  static renderAddSubIngredientForm(recipeId) {
+  // ADD SUBSTITUTE INGREDIENT FORM
+  static removePreviousFormOptions() {
     if (!!renderedSIForm) {
       let existingOptions =  Array.from(document.getElementsByClassName('options'));
       existingOptions.map(option => option.remove());
     }
+  }
+
+  static renderAddSubIngredientForm(recipeId) {
+    this.removePreviousFormOptions();
     formDiv.style.display = 'block';
     let recipeIngredientIds = [];
     let ogIngredientSelect = document.getElementById('ogIngredientSelect');
@@ -219,7 +240,7 @@ class Recipe {
     let subIngredientSelect = document.getElementById('subIngredientSelect');
     // filter out existing recipe ingredients
     const subIngredientOptions = Ingredient.all.filter(ing => !recipeIngredientIds.includes(ing.id));
-    // optgroup: group by ing categroy
+    // optgroup: group by ingredient categroy
     subIngredientOptions.forEach(ingredient => {
       let option = `<option class="options" value=${ingredient.id}>${ingredient.name}</option>`;
       let optGroup = document.getElementById(ingredient.category);
