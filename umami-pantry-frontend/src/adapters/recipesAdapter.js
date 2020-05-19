@@ -29,7 +29,6 @@ class RecipesAdapter {
   postSubIngredient(recipeIngredientObj) {
     let configObj = {
       method: 'POST',
-      mode: 'cors',
       headers: { // indicate format of data being sent and accepted in return
         'Content-Type': 'application/json',
         'Accept': "application/json"

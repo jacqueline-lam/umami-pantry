@@ -29,6 +29,7 @@
     <!-- <button type="button" class="btn btn-primary id="getIngredientsBtn">Show all ingredients</button><br><br> -->
 
     <div id="ingredientsContainer">
+      <h1>Ingredients:</h1><br>
       <h4>Select the available ingredients in your pantry:</h4><br>
       <!-- Display all ingredients for user selection -->
       <!-- div to wrap around each ingredient category -->
@@ -99,8 +100,8 @@
               </div>
             </div>
 
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput">
+            <!-- <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> -->
+            <!-- <input type="hidden" id="recipeId" name="recipeId" value="" class="formInput"> -->
             <button id="submitSubIngredientBtn" type="submit" class="btn btn-danger">Submit</button>
           </fieldset>
         </form>

@@ -56,12 +56,11 @@ class Ingredient {
       ingredient.setAttribute("style", "background-color: lightgray;");
     } else {
       // Deselect ingredient
-      // Ingredient already exists in current state -> remove its id
       this.selectedIngredients.splice(index, 1);
       ingredient.setAttribute("style", "background-color: white;");
     }
     // Above logic *should* enforce uniqueness constraints
-    // This method just makes absolutely sure
+    // this method just makes absolutely sure
     this.selectedIngredients.filter((ing, i, arr) => arr.indexOf(ing) === i);
 
     console.log("Current array IDs: " + this.selectedIngredients);
@@ -71,10 +70,10 @@ class Ingredient {
   };
 
   static clearIngredientsHandler() {
-    //empty selectedIngredients array
+    // empty selectedIngredients array
     this.selectedIngredients.splice(0, this.selectedIngredients.length);
     Array.from(ingredientCards).forEach(card => card.setAttribute("style", "background-color: white;"));
-    //remove matching recipes
+    // remove matching recipes
     while (recipesDiv.firstChild) {
       recipesDiv.removeChild(recipesDiv.lastChild);
     };

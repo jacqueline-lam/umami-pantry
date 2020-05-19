@@ -5,7 +5,6 @@ const formInputs = document.querySelectorAll('.formInput');
 
 class Recipe {
   constructor(recipe) {
-    // name, imageUrl, category, serving, time, directions, ingredients
     this.id = recipe.id;
     this.name = recipe.name;
     this.imageUrl = recipe.image_url;
@@ -124,10 +123,10 @@ class Recipe {
     selectedRecipeContainer.dataset.recipeId = recipe.id;
     selectedRecipeDiv.innerHTML = '<h1>Selected Recipe:</h1>';
 
-    let heading = document.createElement('div');
-    heading.id = 'recipeHeading';
-    heading.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`;
-    selectedRecipeDiv.appendChild(heading);
+    let header = document.createElement('div');
+    header.id = 'recipeHeading';
+    header.innerHTML += `<h2>${recipe.name}</h2>${recipe.image_url}`;
+    selectedRecipeDiv.appendChild(header);
 
     // Recipe time, servings
     let row = document.createElement('div');
@@ -241,16 +240,13 @@ class Recipe {
       };
       optGroup.innerHTML += option;
     })
-
-    let recipeIdHiddenInput = document.getElementById('recipeId');
-    recipeIdHiddenInput.setAttribute('value', recipeId);
   }
 
   // Add a substitute ingredient (recipe ingredient)
   static handleSubmitForm() {
     let formData = {
       recipe_ingredient: {
-        recipe_id: parseInt(formInputs[4].value),
+        recipe_id: parseInt(selectedRecipeContainer.dataset.recipeId),
         substituted_ingredient_id: parseInt(formInputs[0].value, 10),
         ingredient_id: parseInt(formInputs[1].value, 10),
         amount: formInputs[2].value,
