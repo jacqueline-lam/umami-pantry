@@ -9,8 +9,6 @@ class RecipesAdapter {
 
   // READ MATCHING RECIPES
   // GET request for all recipes that match ingredientId
-  // populate recipe + associated properties with returned data
-  // temporarily persisting to propetrties in container instances
   getMatchingRecipes(ingredientIds) {
     return fetch(`${this.recipesUrl}/?selected_ingredients=${ingredientIds}`)
       .then(resp => resp.json())

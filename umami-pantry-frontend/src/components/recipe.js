@@ -28,6 +28,7 @@ class Recipe {
     .then(recipesData => {
       recipesData.forEach(recipe => {
         let r = Recipe.findById(recipe.id);
+        // temporarily persisting to propetrties in recipe container instances
         r = r || new Recipe(recipe);
         matchingRecipes.push(r);
       })
@@ -129,11 +130,11 @@ class Recipe {
     selectedRecipeDiv.appendChild(header);
 
     // Recipe time, servings
-    let row = document.createElement('div');
-    row.className = 'row';
-    let col1 = document.createElement('div');
-    col1.className = 'col-4';
-    col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()} min</li></ul><h3>Ingredients</h3>`;
+    let recipeRow = document.createElement('div');
+    recipeRow.className = 'row';
+    let recipeCol1 = document.createElement('div');
+    recipeCol1.className = 'col-4';
+    recipeCol1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()} min</li></ul><h3>Ingredients</h3>`;
 
     // Ingredient List
     let ingredientsTable = document.createElement('table');
@@ -166,9 +167,9 @@ class Recipe {
     });
 
     ingredientsTable.appendChild(tbody);
-    col1.appendChild(ingredientsTable);
-    row.appendChild(col1);
-    selectedRecipeDiv.appendChild(row);
+    recipeCol1.appendChild(ingredientsTable);
+    recipeRow.appendChild(recipeCol1);
+    selectedRecipeDiv.appendChild(recipeRow);
 
     // Add styling to og vs. substituted ingredient
     subIngredientsArray.forEach(newIngObj => {
@@ -183,11 +184,11 @@ class Recipe {
     });
 
     // Recipe Directions
-    let col2 = document.createElement('div');
-    col2.classList.add('col-8');
-    col2.id = 'directions';
-    col2.innerHTML += `<h3>Directions</h3><hr>${recipe.directions}`;
-    row.appendChild(col2);
+    let recipeCol2 = document.createElement('div');
+    recipeCol2.classList.add('col-8');
+    recipeCol2.id = 'directions';
+    recipeCol2.innerHTML += `<br><h3>Directions</h3><hr>${recipe.directions}`;
+    recipeRow.appendChild(recipeCol2);
 
     // Redisplay buttons
     addSubIngredientBtn.style.display = 'inline-block';
