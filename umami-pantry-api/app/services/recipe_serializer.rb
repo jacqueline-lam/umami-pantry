@@ -4,12 +4,9 @@ class RecipeSerializer
     @recipe_collection = recipe_object
   end
 
-  # def update(recipe_object)
-  #   RecipeSerializer.find(recipe_collection)
-  # end
   # call to_json on this instance variable
   # handling inclusion and exclusion of attributes
-  # get out data customized in JSON string
+  # extract data customized in JSON string
   def instance_to_serialized_json
     return get_recipe_hash(@recipe_collection).to_json
   end
@@ -20,6 +17,7 @@ class RecipeSerializer
       recipe_hash = get_recipe_hash(recipe)
       to_return << recipe_hash
     end
+    # explicitly converting array to JSON
     return to_return.to_json
   end
 
@@ -37,6 +35,7 @@ class RecipeSerializer
     #   except: [:created_at, :updated_at]
     # }
     # return @recipe.to_json(options)
+
     recipe_hash = recipe.attributes
 
     recipe_hash["ingredients"] = []

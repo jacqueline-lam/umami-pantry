@@ -200,7 +200,7 @@ class Recipe {
   static renderAddSubIngredientForm(recipeId) {
     if (!!renderedSIForm) {
       let existingOptions =  Array.from(document.getElementsByClassName('options'));
-      existingOptions.map(option => option.parentNode.removeChild(option));
+      existingOptions.map(option => option.remove());
     }
     formDiv.style.display = 'block';
     let recipeIngredientIds = [];

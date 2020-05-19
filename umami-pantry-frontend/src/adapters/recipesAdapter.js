@@ -1,5 +1,6 @@
 class RecipesAdapter {
   constructor() {
+    // endpoints to access specific pieces of data
     this.baseUrl = 'http://localhost:3000/';
     this.recipesUrl = `${this.baseUrl}/get_recipes`;
     this.recipeUrl = `${this.baseUrl}/recipes/`;
@@ -7,7 +8,7 @@ class RecipesAdapter {
   }
 
   // READ MATCHING RECIPES
-  // get request for all recipes that match ingredientId
+  // GET request for all recipes that match ingredientId
   // populate recipe + associated properties with returned data
   // temporarily persisting to propetrties in container instances
   getMatchingRecipes(ingredientIds) {

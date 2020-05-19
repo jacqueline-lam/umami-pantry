@@ -15,6 +15,7 @@ class Ingredient {
     Ingredient.categories.forEach(category => {
       // parse JSON representation of ingredients from Fetch resp
       const ingredientsAdapter = new IngredientsAdapter();
+      // use JSON (returned content from resp) to manipulate DOM
       ingredientsAdapter.getIngredients(category)
       .then(ingredientsData => {
         ingredientsData.forEach(ingredient => new Ingredient(ingredient));
