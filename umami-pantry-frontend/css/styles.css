@@ -147,6 +147,10 @@ div #selectedRecipe {
   margin-bottom: 3%;
 }
 
+div #selectedRecipe tbody {
+  font-size: 90%;
+}
+
 div#directions.col-8 li{
   /* margin-bottom: 30px; */
   /* font-size: 20px; */

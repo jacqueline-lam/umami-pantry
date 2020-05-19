@@ -19,17 +19,6 @@ class AppContainer {
 
   // Event delegation / Manage event listeners
   bindEventListeners() {
-    // ingredientBtn.addEventListener('click', this.getIngredients);
-    // ingredientCards.forEach(card => {
-    //   card.addEventListener('click', e => {
-    //     console.log(e.target)
-    //     // console.log(e.target);
-    //     // if (e.target == card) {
-    //     //   this.selectIngredientHandler(card)
-    //     // }
-    //   })
-    // })
-
     this.selectIngredientListener();
     this.clearIngredientsListener();
     this.selectedRecipeDivListener();
@@ -79,8 +68,4 @@ class AppContainer {
       Recipe.handleSubmitForm();
     });
   };
-
-  // isSelected(ingredientId) {
-  //   return this.selectedIngredients.includes(ingredientId);
-  // }
 };

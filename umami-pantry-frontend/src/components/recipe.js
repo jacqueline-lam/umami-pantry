@@ -22,11 +22,11 @@ class Recipe {
   static findById(id) {
     return Recipe.all.find(recipe => recipe.id === id)
   };
-  static recipesAdapter = new RecipesAdapter;
 
   static renderMatchingRecipes(ingredientIds) {
     let matchingRecipes = [];
-    this.recipesAdapter.getMatchingRecipes(ingredientIds).then(recipesData => {
+    app.recipesAdapter.getMatchingRecipes(ingredientIds)
+    .then(recipesData => {
       recipesData.forEach(recipe => {
         let r = Recipe.findById(recipe.id);
         r = r || new Recipe(recipe);
@@ -72,7 +72,6 @@ class Recipe {
 
     //create DOM nodes and insert data into them to render in the DOM
     recipes.forEach(recipe => {
-      // render recipe if recipeCard is not displayed  yet
       let recipeCard = recipesDiv.appendChild(document.createElement('div'));
       recipeCard.classList.add('recipeCard', 'card');
       recipeCard.setAttribute('data-recipe-id', recipe.id);
@@ -110,24 +109,14 @@ class Recipe {
       }
       recipeCard.appendChild(ul);
 
-      // // Event listener for recipe
+      // Event listener for recipe
       this.recipeCardListener(recipeCard);
-      // recipeCard.children[0].addEventListener('click', e => {
-      //   let selectedRecipeId = this.selectedRecipeId || e.target.parentNode.getAttribute('data-recipe-id');
-      //   if (!selectedRecipeId) {
-      //     selectedRecipeId = this.selectedRecipeId || e.target.parentNode.parentNode.getAttribute('data-recipe-id');
-      //   };
-      //   recipesContainer.style.display = 'none';
-      //   ingredientsContainer.style.display = 'none';
-      //   formDiv.style.display = 'none';
-      //   this.renderSelectedRecipe(selectedRecipeId);
-      // });
     });
   };
 
   // READ SINGLE RECIPE
   static renderSelectedRecipe(recipeId){
-    this.recipesAdapter.getSelectedRecipe(recipeId)
+    app.recipesAdapter.getSelectedRecipe(recipeId)
       .then(recipeData => this.createSelectedRecipeDiv(recipeData))
   };
 
@@ -145,7 +134,7 @@ class Recipe {
     row.className = 'row';
     let col1 = document.createElement('div');
     col1.className = 'col-4';
-    col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()}</li></ul><h3>Ingredients</h3>`;
+    col1.innerHTML += `<ul><li>Servings: ${recipe.servings.toString()}</li><li>Total Time: ${recipe.time.toString()} min</li></ul><h3>Ingredients</h3>`;
 
     // Ingredient List
     let ingredientsTable = document.createElement('table');
@@ -274,7 +263,7 @@ class Recipe {
 
   // CREATE RECIPE INGREDIENT
   static addSubIngredient(recipeIngredientObj) {
-    this.recipesAdapter.postSubIngredient(recipeIngredientObj)
+    app.recipesAdapter.postSubIngredient(recipeIngredientObj)
       .then(recipeData => {
         // Update Recipe class objects
         Object.assign(Recipe.findById(recipeData.id).ingredients, recipeData.ingredients);
