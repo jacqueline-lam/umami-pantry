@@ -22,20 +22,6 @@ class RecipeSerializer
   end
 
   def get_recipe_hash(recipe)
-    # options = {
-    #   # include - API to send resource's data along with its associated resources' data
-    #   include: {
-    #     ingredients: {
-    #       only: [:name]
-    #     },
-    #     recipe_ingredients: {
-    #       only: [:ingredient_id, :amounts, :preparation_method]
-    #     }
-    #   },
-    #   except: [:created_at, :updated_at]
-    # }
-    # return @recipe.to_json(options)
-
     recipe_hash = recipe.attributes
 
     recipe_hash["ingredients"] = []
@@ -51,5 +37,18 @@ class RecipeSerializer
       recipe_hash["ingredients"] << ri_hash
     end
     return recipe_hash
+    # options = {
+    #   # include - API to send resource's data along with its associated resources' data
+    #   include: {
+    #     ingredients: {
+    #       only: [:name]
+    #     },
+    #     recipe_ingredients: {
+    #       only: [:ingredient_id, :amounts, :preparation_method]
+    #     }
+    #   },
+    #   except: [:created_at, :updated_at]
+    # }
+    # return @recipe.to_json(options)
   end
 end

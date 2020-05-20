@@ -9,6 +9,7 @@ class Recipe < ApplicationRecord
   #   return (ingredients.sort & recipe_ingredient_ids) == ingredients.sort
   # end
 
+  # Return unique recipes of selected ingredients
   def self.filter_by_ingredients(ingredientsArray)
     ingredientsArray.map { |selected_ingredient|
       self.joins(:recipe_ingredients).where('ingredient_id = ?', selected_ingredient)

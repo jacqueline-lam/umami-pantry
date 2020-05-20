@@ -27,8 +27,23 @@ class Recipe {
         r = r || new Recipe(recipe);
         matchingRecipes.push(r);
       })
+      this.sortRecipes(matchingRecipes);
       this.createRecipeCards(matchingRecipes);
     });
+  };
+
+  static sortRecipes(matchingRecipes) {
+    matchingRecipes.sort(function(a,b) {
+      let nameA = a.name;
+      let nameB = b.name;
+      if (nameA < nameB) {
+        return -1;
+      };
+      if (nameA > nameB) {
+        return 1;
+      };
+    });
+    return matchingRecipes;
   };
 
   static clearExistingRecipeCards () {
