@@ -3,6 +3,8 @@ const ingredientBtn = document.getElementById('getIngredientsBtn');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
 const ingredientCards = document.getElementsByClassName('ingredientCard');
 const recipesContainer = document.getElementById('recipesContainer');
+// const filterBtnsDiv = document.getElementById('filterRecipeBtns');
+// const filterBtns = document.querySelectorAll('.filterBtn')
 const recipesDiv = document.getElementById("recipeCardsDiv");
 const selectedRecipeContainer = document.getElementById('selectedRecipeContainer');
 const selectedRecipeDiv = document.getElementById('selectedRecipe');
@@ -20,6 +22,7 @@ class AppContainer {
   // Event delegation / Manage event listeners
   bindEventListeners() {
     this.selectIngredientListener();
+    // this.filterRecipeBtnsListener();
     this.clearIngredientsListener();
     this.selectedRecipeDivListener();
     this.addSubIngredientListener();
@@ -35,7 +38,7 @@ class AppContainer {
         };
       };
     });
-  }
+  };
 
   // Eventlistener for 'Clear All Ingredients' Button
   clearIngredientsListener() {
@@ -69,4 +72,27 @@ class AppContainer {
       Recipe.handleSubmitForm();
     });
   };
+
+  // EXTRA FEATURE
+  // Eventlistener for filter recipe buttons
+  // filterRecipeBtnsListener() {
+  //   filterBtns.forEach((button)=> {
+  //     filterBtns.addEventListener('click', (e) => {
+  //         e.preventDefault()
+  //         const filter = e.target.dataset.filter
+
+  //         Recipe.matchingRecipe.forEach((recipeCard)=> {
+  //             if (filter === 'all'){
+  //                 recipeCard.style.display = 'block'
+  //             } else {
+  //                 if (recipeCard.classList.contains(filter)){
+  //                     recipeCard.style.display = 'block'
+  //                 } else {
+  //                     recipeCard.style.display = 'none'
+  //                 }
+  //             }
+  //         })
+  //     })
+  //   })
+  // };
 };

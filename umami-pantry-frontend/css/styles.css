@@ -128,7 +128,7 @@ div.card {
 }
 
 .ogIngredient{
-  text-decoration: underline #3fb099;
+  text-decoration: line-through #3fb099;
   /* background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #67D4B8 65%); */
 }
 
