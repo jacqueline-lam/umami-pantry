@@ -3,8 +3,32 @@ This is a single page application that shows matching recipes for different pant
 
 The app is composed of backend rails API and front-end modular JS clients, which use asynchronous Javascript to make HTTP requests to the API to get/ post data and render them to the user interface.
 
-## Installation
+![project demo](./umami-pantry-frontend/images/umami-pantry.gif)
+* [Video Demo](https://youtu.be/xL5mj8t-rMM)
+* [Blog Post](https://dev.to/jacquelinelam/building-a-single-page-cooking-app-for-covid-19-lockdown-28ke)
 
+## Features
+1. Single Page App: Users will not have to travel across different URL links
+2. Pick Ingredients: Users can select ingredients by clicking the ingredient icons available
+3. Matching Recipes: recipe results will automatically show up as users select ingredients
+4. Recipe Card: Displays the recipe name, category, and ingredients
+5. Selected Recipe: User can read the instructions, ingredient list and choose to add any substitute ingredients
+
+
+## Technologies Implemented
+1. ActiveRecord
+2. Bootsrap
+3. CRUD
+4. HTML & CSS
+5. Fetch API
+6. JavaScript
+7. Object Oriented Design
+8. PostgreSQL
+9. RESTful API
+10. Ruby
+11. Ruby On Rails
+
+## Installation
 Download zip from my project repository: https://github.com/jacqueline-lam/umami-pantry
 
 Go to your terminal and change directory:
