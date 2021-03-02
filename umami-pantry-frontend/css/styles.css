@@ -118,14 +118,6 @@ div.recipeCard a:hover {
   color: #3fb099;
 }
 
-div.card {
-  /* width: 50%; */
-  /* height: auto; */
-  /* display: inline-grid; */
-  /* float: left; */
-  /* margin-right: 5%; */
-  /* max-width: 33%; */
-}
 
 .ogIngredient{
   text-decoration: line-through #3fb099;
@@ -207,6 +199,3 @@ div#subIngredientForm {
   margin-top: 1%;
   margin-bottom: 3%;
 }
-
-/* Footnote
-----------------------------------------------------*/
